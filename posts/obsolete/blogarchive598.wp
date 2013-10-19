@@ -1,0 +1,36 @@
+在从长春回来之后换了联想的Thinkpad E40s本本，有一段曲折的经历。
+
+刚入手的晚上发现本本的T键明显松动，像翘翘板一样。于是第二天去问销售员。他说不是什么问题，用镊子重新卡好了键。
+
+一天后的下午，我看到高二和高一的暑假NOIP集训题，顺手写了一道。在按下熟悉的F8时，gdb跳出来了，然而在gdb提示符后面多了一个字符。
+后来发现是F7，F8的毛病，按了一次实际响应了两次。我切到windows底下试了试，问题还是存在。于是打电话再问，他说要找维修中心的出具鉴定才能换机。我马上和我爸一起到了维修中心。工作人员测试之后确认了问题是BIOS firmware的或者硬件，我RP太低了，在等待服务的过程中维修中心就停电了。鉴定单来电之前是打印不成了，等到6点他们下班也没来电。
+
+第二天终于取得了单子，也换到了机子，倒腾了硬盘上已经有的数据。累啊。。
+
+F7,F8恰好也是配合Fn进行亮度调节的键，我总觉得是BIOS写囧了之类的。今天去官方驱动上看了下，BIOS从1.11升到了1.17，遂更新。果然，问题没有了。Change Log很好地印证了这一点。
+
+以前总觉得像BIOS这种firmware升级Fix的bug也估计是些对一般用户无关痛痒的东西。这次因为Bug大热天跑断腿啊~~~
+
+<pre>
+CHANGES IN THIS RELEASE
+Version 1.17
+
+[Important Updates]
+Nothing
+
+[New functions or enhancements]
+- Intel CPU Microcode Upgrade rev 00000017h
+- Support battery charging with 65W AC adapter for E420s.
+- Prevent back flashing to 8JET30WW or older to support new BIOS/EC flashing
+tool.
+
+[Problem fixes]
+- Fixed issue that brightness level is not preserved after resume from standby
+mode on Windows XP.
+- Fixed issue that Peak Shift schedule does not start on time.
+**- Fixed issue that scan code is not sent properly for F7 and F8 key.**
+- Correct FRU part number displayed on Power Manager.
+- Fixed issue that fan error is sometimes detected during BIOS POST.
+- Fixed an issue where expected serial number might not be stored in serial 
+number field of SMBIOS type 3 structure depending on system setting.
+</pre>

@@ -1,0 +1,33 @@
+因为一般我们都用的PC所以User（使用者）也就是Administrator（管理员）了。。 自己看看常犯的十个错误自己犯了多少个哈： [http://bl
+ogs.techrepublic.com.com/10things/?p=455](http://blogs.techrepublic.com.com/10
+things/?p=455) 我。。。也比较囧。。三个 #1: Installing applications from various types
+This might not seem like such a bad idea at first. You are running Ubuntu so
+you know the package management system uses .deb packages. But there are a
+number of applications that you find only in source form. No big deal right?
+They install, they work. Why shouldn’t you? Simple, your package management
+system can’t keep track of what you have installed if it’s installed from
+source. So what happens when package A (that you installed from source)
+depends upon package B (that was installed from a .deb binary) and package B
+is upgraded from the update manager? Package A might still work or it might
+not. But if both package A and B are installed from .debs, the chances of them
+both working are far higher. Also, updating packages is much easier when all
+packages are from the same binary type. 选用不同类型的安装包进行安装，导致难以管理升级更新。 #9: Logging
+in as root user I can’t stress this enough. Do NOT log in as root. If you need
+root privileges to execute or configure an application, su to root in a
+standard user account. Why is logging in as root bad? Well, when you log on as
+a standard user, all running X applications still have access only to the
+system limited to that user. If you log in as root, X has all root
+permissions. This can cause two problems: 1) if you make a big mistake via a
+GUI, that mistake can be catastrophic to the system and 2) with X running as
+root that makes your system more vulnerable.
+习惯于用root登录，有可能不慎作出错误操作而导致不可逆转的损害。。 原因是当以root登录时。。X
+window等也被赋予了root权限。相当可怕，一旦出错就惨了。 #10: Ignoring log files There is a reason
+/var/log exists. It is a single location for all log files. This makes it
+simple to remember where you first need to look when there is a problem.
+Possible security issue? Check /var/log/secure. One of the very first places I
+look is /var/log/messages. This log file is the common log file where all
+generic errors and such are logged to. In this file you will get messages
+about networking, media changes, etc. When administering a machine you can
+always use a third-party application such as logwatch that can create various
+reports for you based on your /var/log files. 忽略记录日志(Log Files)。这玩意儿我基本没看过。。
+

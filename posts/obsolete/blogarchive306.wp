@@ -1,0 +1,522 @@
+经过三天的奋战 传说中的2-3树的insert find remove 三大基本操作已经完成 刚开始就对网上2-3Tree的资料稀少而惊奇
+发现2-3Tree的实现代码更罕见:找不到c++,java的也很少
+于是自己写,差点被恶心死:书上说的过于理论化,说用3个指针分别存儿子..事实证明,这样基本写不出来..
+然后我突然想到2-3Tree是B树的一种,曾经在wiki上看到B树的结构:一个父亲的儿子用一个链表组织起来
+妙哉!这样不需要知道父结点也能对一个结点的兄弟进行操作. 实现ok了,花了一定时间保证正确性.然后随便测了组N=1000000,M=10000(N为指令数,
+M为数的上限)的随机数据,结果让人跌眼睛的是treap竟比2-3快一些! 把N改大几个数量级也是这样.
+原来是我把M弄得太小了,这样treap的常数优势就体现出来了,而2-3由于维护时较复杂. 于是我选用不同的N和M,以及同时使用了-O2优化
+这样2-3Tree某些inline能够发挥作用,指针操作得以优化,才公平.  [caption id="" align="alignnone"
+width="476" caption="Test1"][![Test1](http://www.tedyin.com/blog/wp-
+content/imgs/treetest_time1.png)](http://www.tedyin.com/blog/wp-
+content/imgs/treetest_time1.png)[/caption] 上图为随机插入查询删除用时情况 [caption id=""
+align="alignnone" width="468"
+caption="Test2"][![Test1](http://www.tedyin.com/blog/wp-
+content/imgs/treetest_time2.png)](http://www.tedyin.com/blog/wp-
+content/imgs/treetest_time2.png)[/caption] 上图为随机插入查询(无删除)的用时情况 [caption id=""
+align="alignnone" width="461"
+caption="Test3"][![Test1](http://www.tedyin.com/blog/wp-
+content/imgs/treetest_depth.png)](http://www.tedyin.com/blog/wp-
+content/imgs/treetest_depth.png)[/caption]
+上图是进行N次插入后的平均深度的统计,2-3Tree优势明显!这是由于它的完全平衡性和3叉大量存在的缘故,是它的一大特色.
+综上,2-3Tree常数相对Treap较大,但是综合性能优异.尤其是具有B树的深度小,每次访问路径代价小的优点.
+而Treap实现远比2-3Tree简单,在考试中效率甚至达到和高于2-3Tree,所以以后用它吧... 附2-3Tree代码:
+
+    
+    
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    
+    
+    #define MAXS 40000001
+    
+    #define ALLOC(ptr) \
+    
+    { \
+    
+    	if (top) (ptr) = Rec[top--]; else (ptr) = Ptr++;\
+    
+    	(ptr) -> Son = (ptr) -> next = (ptr) -> prev = NULL; (ptr) -> Rep = 1;\
+    
+    } 
+    
+    
+    
+    using namespace std;
+    
+    
+    
+    struct T23 {
+    
+    
+    
+    	T23 *Son,*next,*prev;
+    
+    	int Lm,Mm,M,Rep;
+    
+    
+    
+    };
+    
+    
+    
+    T23 Bst[MAXS],*Ptr,*Rec[MAXS],*base = NULL;
+    
+    int top = 0;
+    
+    
+    
+    ////////////////DEBUG///////////////////
+    
+    bool state[1024];
+    
+    void print(T23 *pos,int d) {
+    
+    
+    
+    	if (pos -> Son) printf("___[%4d]\n",pos -> M); else printf("___[0x%x] %d x %d\n",(int)pos,pos -> Lm,pos -> Rep);
+    
+    	state[d + 1] = 1;
+    
+    	for (T23 *now = pos -> Son; now; now = now -> next)
+    
+    	{
+    
+    		for (int i = 1; i  next == NULL) state[d + 1] = 0;
+    
+    		print(now,d + 1);
+    
+    	}
+    
+    }
+    
+    ////////////////DEBUG///////////////////
+    
+    
+    
+    inline void update(T23 * &pos) {
+    
+    
+    
+    	pos -> Lm = pos -> Son -> M;
+    
+    	pos -> Mm = pos -> Son -> next -> M;
+    
+    	pos -> M = 0;
+    
+    	for (T23 *now = pos -> Son; now; now = now -> next)
+    
+    		if (now -> M > pos -> M) pos -> M = now -> M;
+    
+    }
+    
+    
+    
+    inline void addson(T23 * &pos,int x) {
+    
+    
+    
+    	T23 *now,*m;
+    
+    	if (x  Son -> Lm)
+    
+    	{
+    
+    		//		now = Ptr++;
+    
+    		ALLOC(now);
+    
+    		now -> next = pos -> Son;
+    
+    		pos -> Son -> prev = now;
+    
+    		pos -> Son = now;
+    
+    	}
+    
+    	else if (x == pos -> Son -> Lm) {pos -> Son -> Rep++; return;} //repeat
+    
+    	else
+    
+    	{
+    
+    		for (now = pos -> Son;now -> next && now -> next -> Lm  next);
+    
+    
+    
+    		if (now -> next && now -> next -> Lm == x) {now -> next -> Rep++; return;} //repeat
+    
+    		else
+    
+    		{
+    
+    			m = now -> next;
+    
+    			//			now -> next = Ptr++; //allocate new node
+    
+    			ALLOC(now -> next)
+    
+    				now -> next -> prev = now;
+    
+    			now = now -> next;
+    
+    			if (m != NULL) m -> prev = now;
+    
+    			now -> next = m;
+    
+    		}
+    
+    	}//insert the leaf at a proper position in the link list
+    
+    	now -> M = now -> Lm = x;
+    
+    }	
+    
+    
+    
+    void ainsert(T23 * &pos,int x) {
+    
+    
+    
+    	T23 *now = pos -> Son;
+    
+    	if (now -> Son == NULL) addson(pos,x); //is the parent of leaves then add a leaf
+    
+    	else
+    
+    	{
+    
+    		if (x  Lm) ainsert(now,x);
+    
+    		else if (now -> next -> next == NULL || x  Mm) ainsert(now -> next,x);
+    
+    		else ainsert(now -> next -> next,x);
+    
+    		//reach the parent of leaves
+    
+    	}
+    
+    	now = pos -> Son -> next;
+    
+    	if (now -> next != NULL && now -> next -> next != NULL) //has more than 4 sons
+    
+    	{
+    
+    		T23 *m;
+    
+    		//	= Ptr++;
+    
+    		ALLOC(m);
+    
+    		m -> Son = now -> next;
+    
+    		now -> next -> prev = NULL;
+    
+    		now -> next = NULL;
+    
+    		m -> next = pos -> next;
+    
+    		if (pos -> next != NULL) pos -> next -> prev = m;
+    
+    		m -> prev = pos;
+    
+    		pos -> next = m;//split & create brother
+    
+    		update(m); //update Lm Mm !!
+    
+    	}
+    
+    
+    
+    	update(pos); //update Lm Mm !!
+    
+    }
+    
+    
+    
+    void insert(T23 * &base,int x) {
+    
+    
+    
+    	T23 *tmp;
+    
+    	if (base == NULL)
+    
+    	{
+    
+    		//	base = Ptr++;
+    
+    		ALLOC(base)
+    
+    			base -> M = base -> Lm = x;
+    
+    	} //if T is empty
+    
+    	else if (base -> Son == NULL) // if T is just 1 node
+    
+    	{
+    
+    		T23 *l,*r;
+    
+    		l = base; ALLOC(r)// r = Ptr++;
+    
+    		r -> M = r -> Lm = x;
+    
+    		if (x  M)  {tmp = l; l = r; r = tmp;}
+    
+    		l -> next = r;
+    
+    		ALLOC(tmp)
+    
+    			base = tmp;// = Ptr++;
+    
+    		tmp -> Son = l;
+    
+    		base -> Son -> next -> prev = base -> Son;
+    
+    		update(base);
+    
+    	}
+    
+    	else
+    
+    	{
+    
+    		ainsert(base,x);
+    
+    		if (base -> next != NULL) //the root has a brother so create a new root
+    
+    		{
+    
+    			//			tmp = Ptr++;
+    
+    			ALLOC(tmp);
+    
+    			tmp -> Son = base;
+    
+    			update(tmp);
+    
+    			base = tmp;
+    
+    		}
+    
+    	}
+    
+    }
+    
+    
+    
+    void delson(T23 * &now,T23 * &pos) {
+    
+    
+    
+    	if (now -> prev) now -> prev -> next = now -> next;
+    
+    	else pos -> Son = now -> next;
+    
+    	if (now -> next) now -> next -> prev = now -> prev;
+    
+    	Rec[++top] = now; //Recycle
+    
+    }
+    
+    
+    
+    T23 *remove(T23 * &pos,int x) {
+    
+    
+    
+    	T23 *now = pos -> Son,*d;
+    
+    
+    
+    	if (now == NULL)
+    
+    	{
+    
+    		if (--pos -> Rep) return NULL; //Repeat
+    
+    		if (pos -> next == NULL && pos -> prev == NULL) {Rec[++top] = pos; pos = NULL;}//is root
+    
+    		return pos; //got x
+    
+    	}
+    
+    
+    
+    	if (x  Lm) d = remove(pos -> Son,x);
+    
+    	else if (now -> next -> next == NULL || x  Mm) d = remove(pos -> Son -> next,x);
+    
+    	else d = remove(pos -> Son -> next -> next,x);
+    
+    
+    
+    	if (d != NULL)
+    
+    	{
+    
+    		if (now -> next != NULL && now -> next -> next == NULL)
+    
+    		{
+    
+    			delson(d,pos);
+    
+    			now = pos -> Son;
+    
+    			if (pos -> next == NULL && pos -> prev == NULL) //pos is root
+    
+    			{
+    
+    				Rec[++top] = pos;
+    
+    				pos = pos -> Son;
+    
+    				return NULL;
+    
+    			}
+    
+    			else
+    
+    			{
+    
+    				T23 *sibl = pos -> next;
+    
+    				if (sibl == NULL || (pos -> prev && pos -> prev -> Son -> next -> next)) sibl = pos -> prev;
+    
+    				if (sibl == pos -> next)
+    
+    				{
+    
+    					if (sibl -> Son -> next -> next) //sibling has 3 sons
+    
+    					{
+    
+    						T23 *tmp = sibl -> Son -> next;
+    
+    						pos -> Son -> next = sibl -> Son;
+    
+    						sibl -> Son -> prev = pos -> Son;
+    
+    						sibl -> Son -> next -> prev = NULL; //NULL!!
+    
+    						sibl -> Son -> next = NULL; //NULL!!
+    
+    						sibl -> Son = tmp;
+    
+    						update(sibl); //!!!
+    
+    					}
+    
+    					else
+    
+    					{
+    
+    						sibl -> Son -> prev = pos -> Son;
+    
+    						pos -> Son -> next = sibl -> Son;
+    
+    						sibl -> Son = pos -> Son;
+    
+    						update(sibl); //!!!
+    
+    						return pos;
+    
+    					}
+    
+    				} //on the right
+    
+    				else
+    
+    				{
+    
+    					if (sibl -> Son -> next -> next) //sibling has 3 sons
+    
+    					{
+    
+    						T23 *tmp = sibl -> Son -> next -> next;
+    
+    						tmp -> next = pos -> Son;
+    
+    						tmp -> prev = NULL; //NULL!!!
+    
+    						pos -> Son -> prev = tmp;
+    
+    						sibl -> Son -> next -> next = NULL; //NULL!!!
+    
+    						pos -> Son = tmp;
+    
+    						update(sibl); //!!!
+    
+    					}
+    
+    					else
+    
+    					{
+    
+    						sibl -> Son -> next -> next = pos -> Son;
+    
+    						pos -> Son -> prev = sibl -> Son -> next;
+    
+    						update(sibl); //!!!
+    
+    						return pos;
+    
+    					}
+    
+    				} //on the left
+    
+    			}
+    
+    		}
+    
+    		else delson(d,pos);
+    
+    	}
+    
+    	update(pos);
+    
+    	return NULL;
+    
+    }
+    
+    
+    
+    int find(T23 *pos,int x) {
+    
+    
+    
+    	T23 *st = pos -> Son;
+    
+    	if (st == NULL) {if (pos -> Lm == x) return (int)pos; else return 0;}
+    
+    	if (x  Lm) return find(st,x);
+    
+    	else if (st -> next -> next == NULL || x  Mm) return find(st -> next,x);
+    
+    	else return find(st -> next -> next,x);
+    
+    
+    
+    }
+    
+    
+    
+    int main() {
+    
+    
+    
+    	Ptr = Bst;
+    
+    	int N,num,opt;
+    
+    	scanf("%d",&N);
+    
+    	for (int i = 1; i 
+

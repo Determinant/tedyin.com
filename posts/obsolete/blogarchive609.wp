@@ -1,0 +1,8 @@
+由于学校最近总是隔三差五停网，感到压力很大，遂研究如何离线做TC的题。本以为google一下全是方法，结果搜了半天才好不容易翻到一个人在github上传的python脚本。结果发现用不了，无奈看了下代码，改了一处。最终用是用上了，可是获取数据太慢了，二来我不太会python。于是想写个bash script（其实我也不熟。。= =）。因为以前写过一个POJ邮件批量发送器，所以登录神马的就用curl来解决，个人觉得比wget高效。
+
+最让人头疼的是分析html，从中提取数据的部分了。我本来就只会点sed，多行匹配弄死人啊啊啊~（人家python可以用BeautifulSoup来搞定）看来是该好好学学“二外”了，python,bash神马的，awk神马的，都应该熟练掌握啊。最终还是把脚本搞出来了，私认为看上去不错。
+
+[http://repo.tedyin.com/tcget/](http://repo.tedyin.com/tcget/)先运行./fecth.sh获取SRM最近200次比赛列表，结果会存到/tmp/matches里。然后编辑tcget.sh里面的username和passwd，改成自己的(下数据时要用）。
+
+最后./tcget.sh脚本就会根据matches上的比赛把所有的题目和数据搞下来，挺快的。注意因为是利用Topcoder官网的Top Submission中A了的代码下面附带的数据来得到题目数据的，对于那些比赛中无一人A的题就没法了。但90%题目应该都有数据，那些没有数据的说明我根本做不了啊（比赛时无一人A。。。）。
+

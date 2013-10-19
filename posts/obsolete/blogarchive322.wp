@@ -1,0 +1,227 @@
+[caption id="" align="alignnone" width="349"
+caption="Reflection1"][![Reflection1](http://www.tedyin.com/blog/wp-
+content/imgs/reflect1.png)](http://www.tedyin.com/blog/wp-
+content/imgs/reflect1.png)[/caption] [caption id="" align="alignnone"
+width="337" caption="Reflection2"][![Reflection2](http://www.tedyin.com/blog
+/wp-content/imgs/reflect2.png)](http://www.tedyin.com/blog/wp-
+content/imgs/reflect2.png)[/caption] 以下点击查看原图 [caption id="" align="alignnone"
+width="502" caption="Reflection3"][![Reflection3](http://www.tedyin.com/blog
+/wp-content/imgs/reflect3.png)](http://www.tedyin.com/blog/wp-
+content/imgs/reflect3.png)[/caption] [caption id="" align="alignnone"
+width="492" caption="Reflection4"][![Reflection4](http://www.tedyin.com/blog
+/wp-content/imgs/reflect4.png)](http://www.tedyin.com/blog/wp-
+content/imgs/reflect4.png)[/caption] [caption id="" align="alignnone"
+width="502" caption="Reflection5"][![Reflection5](http://www.tedyin.com/blog
+/wp-content/imgs/reflect5.png)](http://www.tedyin.com/blog/wp-
+content/imgs/reflect5.png)[/caption] [caption id="" align="alignnone"
+width="499" caption="Reflection6"][![Reflection6](http://www.tedyin.com/blog
+/wp-content/imgs/reflect6.png)](http://www.tedyin.com/blog/wp-
+content/imgs/reflect6.png)[/caption] 贴代码(囧): 一.圆柱反射
+
+    
+    
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    
+    
+    #define PI  3.1415
+    
+    #define MAXC 100
+    
+    #define MAXR 100
+    
+    #define INF 9999999
+    
+    #define EPS 1e-6
+    
+    #define SQR(x) ((x) * (x))
+    
+    #define MAX(a,b) ((a) > (b) ? (a) : (b))
+    
+    #define MIN(a,b) ((a)  0)
+    
+    	{
+    
+    		Nor.x = -M.y;
+    
+    		Nor.y = M.x;
+    
+    	}
+    
+    	else
+    
+    	{
+    
+    		Nor.x = M.y;
+    
+    		Nor.y = -M.x;
+    
+    	}
+    
+    	Nor = Unit(Nor);
+    
+    	Nor = Nor * (fabs(dot(Indir,Nor))* 2);
+    
+    	return Indir + Nor;
+    
+    }
+    
+    
+    
+    bool GetCross(Point ST,Vect dir,Circle Cir,Point &C,Seg &Mir) {
+    
+    	Point STm = ST - Cir.cen;
+    
+    	double R = Cir.r;
+    
+    	double a = SQR(dir.x) + SQR(dir.y);
+    
+    	double b = 2 * (dir.x * STm.x + dir.y * STm.y);
+    
+    	double c = SQR(STm.x) + SQR(STm.y) - SQR(R);
+    
+    	double Det = SQR(b) - 4 * a * c;
+    
+    	if (Det = 1; i--)
+    
+    	{
+    
+    		glColor3f(nd += cdet,0.0,nd += cdet);
+    
+    		glVertex2f(Ray[i].st.x,Ray[i].st.y);
+    
+    		glVertex2f(Ray[i].ed.x,Ray[i].ed.y);
+    
+    	}
+    
+    	glEnd();
+    
+    
+    
+    	glColor3f(1.0,1.0,1.0);
+    
+    	for (int i = 1; i 
+    
+    输入:
+    
+    N -柱子数
+    
+    Xi Yi Ri 第i个圆柱的坐标和半径
+    
+    
+    
+    二.镜子反射并显示目标是否被击中
+    
+    
+    
+    
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    
+    
+    #define MAXN 1000
+    
+    #define MAXM 100000
+    
+    #define INF 99
+    
+    #define EPS 1e-6
+    
+    #define SQR(X) ((X) * (X))
+    
+    #define MAX(a,b) ((a) > (b) ? (a) : (b))
+    
+    #define MIN(a,b) ((a)  0) return 1;
+    
+    	return -1;
+    
+    }
+    
+    
+    
+    bool IsOnSeg(Point Pos,Seg a) {
+    
+    
+    
+    	if (fabs(det(Pos - a.st,a.ed - a.st)) > 0.1) return 0;
+    
+    
+    
+    	double xmin = MIN(a.st.x,a.ed.x),xmax = MAX(a.st.x,a.ed.x);
+    
+    	double ymin = MIN(a.st.y,a.ed.y),ymax = MAX(a.st.y,a.ed.y);
+    
+    
+    
+    	if (fabs(a.st.x - a.ed.x) > fabs(a.st.y - a.ed.y))
+    
+    	{
+    
+    		if (xmin = 1; i--)
+    
+    	{
+    
+    		glColor3f(nd += cdet,0.0,nd += cdet);
+    
+    		glVertex2f(Ray[i].st.x,Ray[i].st.y);
+    
+    		glVertex2f(Ray[i].ed.x,Ray[i].ed.y);
+    
+    	}
+    
+    	glEnd();
+    
+    
+    
+    
+    
+    	glColor3f(1.0,1.0,1.0);
+    
+    	glBegin(GL_LINES);
+    
+    	for (int i = 1; i 
+    
+    输入:
+    
+    N - 目标数 M - 镜子数 K - 光线最多衰减次数
+    
+    以下每行X1 Y1 X2 Y2 - 镜子线段
+    
+    
+    
+    使用:上下左右移动画面,1,2控制光线进行顺时针和逆时针旋转.3,4进行缩放
+

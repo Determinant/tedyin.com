@@ -1,0 +1,34 @@
+最近在学习Python，官方文档之详细之实用，大大超乎了我的想象。而我觉得最值得一读就是其中对于Python数据抽象理念的描述(Data Model一章)。读完它之后，Python的大致感觉也就有了，剩下的就是学习各种语言特性了。
+
+写得很不错，自然想试试逐步翻译成中文。英语语文水平不敢恭维，希望大家指正。
+
+对象是Python对于数据的抽象方式。所有在Python程序里面的数据都是以对象或以其之间的关系的形式来表现的（在某种意义上，遵循Von Neumann“储存程式型电脑”的模型，代码本身也用对象来表示）。 每个对象都有个与之对应的身份信息、所属类型和值。 一个对象一旦被创建，它的身份信息就再也不会改变。你可以把它当作是这个对象在内存中对应的地址。“is”操作符能比较两个对象的标识符，而“id()”函数能返回一个代表该对象身份的整数值（目前被实现作它的内存地址）。对象的类型也是不可变的。一个对象的类型决定了此对象支持的操作（比如说： “它有长度吗？”）并且定义了那个类型的对象可能的值。“type()” 函数返回一个对象的类型（其实它自身也是一种对象）。有些对象的值可以变化。那些自身值可以变化的对象也被称作“可变对象”mutable，而一经创建，值就不可改变的对象叫“不可变对象”immutable。（不可变容器对象中包含的引用指向的另一个可变对象的值是可以改变的，但是容器本身却仍然被认为是不可变的，因为它包含的内容不可变。因此，“不可变”性 并不直接等价于有一个不变的值，它更为精妙。） 对象不需要被显式地销毁，当他们一旦变得无法再被使用到就可能被回收。
+
+让垃圾回收延迟或是被彻底忽略在实现上都被允许----这只是个关乎实现质量好坏的事情，只要对象在能被访问到时不会被回收就行了。
+
+> Objects are Python’s abstraction for data. All data in a Python program is
+represented by objects or by relations between objects. (In a sense, and in
+conformance to Von Neumann’s model of a “stored program computer,” code is
+also represented by objects.) Every object has an identity, a type and a
+value. An object’s identity never changes once it has been created; you may
+think of it as the object’s address in memory. The ‘is‘ operator compares the
+identity of two objects; the id() function returns an integer representing its
+identity (currently implemented as its address). An object’s type is also
+unchangeable. 1 An object’s type determines the operations that the object
+supports (e.g., “does it have a length?”) and also defines the possible values
+for objects of that type. The type() function returns an object’s type (which
+is an object itself). The value of some objects can change. Objects whose
+value can change are said to be mutable; objects whose value is unchangeable
+once they are created are called immutable. (The value of an immutable
+container object that contains a reference to a mutable object can change when
+the latter’s value is changed; however the container is still considered
+immutable, because the collection of objects it contains cannot be changed.
+So, immutability is not strictly the same as having an unchangeable value, it
+is more subtle.) An object’s mutability is determined by its type; for
+instance, numbers, strings and tuples are immutable, while dictionaries and
+lists are mutable. Objects are never explicitly destroyed; however, when they
+become unreachable they may be garbage-collected. An implementation is allowed
+to postpone garbage collection or omit it altogether — it is a matter of
+implementation quality how garbage collection is implemented, as long as no
+objects are collected that are still reachable.
+

@@ -1,0 +1,195 @@
+**第一题**。。不说咯，搞OI的都能做对 考察字符串处理。。 **第二题**，贪心，而且是显而易见的贪心。思路非常清晰： 用x[i]表示纵方向上相邻两个人都在Xi和Xi+1交头接耳的总人数 用y[i]表示横方向上都在Xi和Xi+1交头接耳人数 只需要累加完x,y数组后再排序（用lx,ly进行编号，辅助）就行了 因为要求输出有顺序所以再对lx,ly排序即可 **第三题**，动规，而且也是显而易见的dp： 设f[i][j]表示从1号出发到i号，传球次数为j次的所有可能情况的总数 所以方程就是：f[i][j]=f[i-1][j-1]+f[i+1][j-1]（注意i,j极端情况处理） ** 一定要注意循环嵌套次序！！！**我就是在这套反了，结果误认为行不通就放弃了。。。 最后，我们要求f[1][m]了。。 **第四题**，相当bt的输出题。。没什么好说的。就是先写一个输出单个立方体的函数 然后从后往前，从左往右，从下到上地调用函数输出 说得轻巧，但是编起来挺有难度和技巧。。 这里给出源代码(C++未加文件)：
+
+## Ball.cpp
+
+    
+    
+    
+    #include 
+    
+    #include 
+    
+    
+    
+    using namespace std;
+    
+    
+    
+    int main() {
+    
+    
+    
+      int f[100][100];
+    
+      int n,m;
+    
+      memset(f,0,sizeof(f));
+    
+      //init
+    
+      scanf("%d%d",&n,&m);
+    
+      f[1][0]=1;
+    
+      for (int j=1; j
+    
+    
+    
+    ## Drawing.cpp
+    
+    
+    
+    
+    
+    #include 
+    
+    #include 
+    
+    
+    
+    using namespace std;
+    
+    
+    
+    char map[500][500];
+    
+    int ini[51][51];
+    
+    int borderR;
+    
+    int m,n;
+    
+    
+    
+    const char s[8][9]={"........",
+    
+                        "...+---+",
+    
+                        "../   /|",
+    
+              	  ".+---+ |",
+    
+    	           ".|   | +",
+    
+          	           ".|   |/.",
+    
+    	           ".+---+.."};
+    
+    
+    
+    void single(int x,int y) {
+    
+      for(int j=1,p=y; j=1) && (b==0)); maxm--)
+    
+        for (int i=1; i=1; j--)
+    
+      {
+    
+        for (int i=1; i
+    
+    
+    
+    ## Seat.cpp
+    
+    
+    
+    
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    
+    
+    
+    
+    using namespace std;
+    
+    
+    
+    int m,n,k,l,d;
+    
+    int y[2000],x[2000];
+    
+    int ly[2000],lx[2000];
+    
+    
+    
+    
+    
+    int main() {
+    
+      memset(x,0,sizeof(x));
+    
+      memset(y,0,sizeof(y));
+    
+      //public var init
+    
+      freopen("seat.in","r",stdin);
+    
+      scanf("%d%d%d%d%d",&m,&n,&k,&l,&d);
+    
+      int xi,yi,pi,qi;
+    
+      bool b=1;
+    
+      //var
+    
+      for (int i=1; iqi) y[qi]++; else y[yi]++;}
+    
+          else if (yi==qi) {if (xi>pi) x[pi]++; else x[xi]++;}
+    
+      }
+    
+      //read
+    
+      for (int i=1; ilx[i+1])
+    
+          {
+    
+            int tmp;
+    
+    	tmp=lx[i];
+    
+    	lx[i]=lx[i+1];
+    
+    	lx[i+1]=tmp;
+    
+    	b=1;
+    
+          }
+    
+      }
+    
+      b=1;
+    
+      while (b)
+    
+      {
+    
+        b=0;
+    
+        for (int i=1; ily[i+1])
+    
+          {
+    
+            int tmp;
+    
+    	tmp=ly[i];
+    
+    	ly[i]=ly[i+1];
+    
+    	ly[i+1]=tmp;
+    
+    	b=1;
+    
+          }
+    
+      }
+    
+      //resort
+    
+      for (int i=1; i
+

@@ -1,0 +1,47 @@
+以前一直想尝试把难看的http://ymfhome.imzone.in/blog/?p=N 形式的链接改为固定的链接（如现在）
+但是一直因为能力有限==|无法实现。。。Google了一阵终于找到了solution:
+先将Apache2中httpd.conf中（下文为资料，我的做了些更改）
+
+> #将下行前面的#删掉，加载mod_rewrite模块
+
+>
+
+>     LoadModule rewrite_module modules/mod_rewrite.so
+
+>
+
+>
+
+>
+
+>     # 默认情况下apache2对其根目录设置了 AllowOverride none的权限，
+
+>
+
+>     # 故无法创建和修改.htaccess文件，请增加下列配置
+
+>
+
+>     <Directory "D:/Apache2/htdocs/wordpress">
+
+>
+
+>         Options Indexes FollowSymLinks
+
+>
+
+>         AllowOverride All
+
+>
+
+>     </Directory> （源自http://www.linuxabc.net.cn）
+
+[![](../../wp-content/imgs/httpdconf.jpg)](../../wp-
+content/imgs/httpdconf.jpg) 然后我就一直在研究.htaccess文件应该放在哪里。。结果。。
+
+> .htaccess文件(或者"分布式配置文件"提供了针对目录改变配置的方法, 即,在一个特定的文档目录中放置一个包含一个或多个指令的文件,
+以作用于此目录及其所有子目录。（来自hi.baidu.com/52hack）
+
+[![](../wp-content/imgs/hta.jpg)](../wp-content/imgs/hta.jpg)
+囧。。原来放在需要生效的目录下即可。。 于是按照wordpress的提示配置好.htaccess文件，果然成功了～效果嘛。。您抬头看看地址栏就知道了 嘿嘿~
+
