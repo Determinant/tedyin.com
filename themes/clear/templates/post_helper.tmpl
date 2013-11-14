@@ -28,7 +28,7 @@
 </%def>
 
 
-<%def name="html_disqus(post)">
+<%def name="comment_form(post)">
     %if disqus_forum:
         <div id="disqus_thread"></div>
         <script type="text/javascript">var disqus_shortname="${disqus_forum}";var disqus_url="${post.permalink(absolute=True)}";(function(){var a=document.createElement("script");a.type="text/javascript";a.async=true;a.src="http://"+disqus_shortname+".disqus.com/embed.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)})();        </script>

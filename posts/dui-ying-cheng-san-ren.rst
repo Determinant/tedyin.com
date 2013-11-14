@@ -1,7 +1,7 @@
 .. title: 對影成三人
 .. slug: dui-ying-cheng-san-ren
 .. date: 2013/06/15 16:39:16
-.. tags: fiction, 村上春樹, 超現實, 「超」現實
+.. tags: fiction, 村上春樹, 超現實
 .. link: 
 .. description: My first fiction writing attempt.
 

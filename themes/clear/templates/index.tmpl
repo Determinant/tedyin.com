@@ -13,9 +13,9 @@
         </h1>
     </div>
     ${post.text(lang, index_teasers)}
-    ${helper.html_disqus_link(post)}
+    ${helper.comment_link(post)}
 </div>
 % endfor
 ${helper.html_pager()}
-${helper.html_disqus_script()}
+${helper.comment_link_script()}
 </%block>

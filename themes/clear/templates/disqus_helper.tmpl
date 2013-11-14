@@ -2,7 +2,7 @@
 <%!
     import json
 %>
-<%def name="html_disqus(url, title, identifier)">
+<%def name="comment_form(url, title, identifier)">
     %if disqus_forum:
         <div id="disqus_thread"></div>
         <script type="text/javascript">
@@ -25,7 +25,7 @@
     %endif
 </%def>
 
-<%def name="html_disqus_link(link, identifier)">
+<%def name="comment_link(link, identifier)">
     <p>
     %if disqus_forum:
         <a href="${link}" data-disqus-identifier="${identifier}">Comments</a>
@@ -33,7 +33,7 @@
 </%def>
 
 
-<%def name="html_disqus_script()">
+<%def name="comment_link_script()">
     %if disqus_forum:
        <script type="text/javascript">var disqus_shortname="${disqus_forum}";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script>
     %endif
