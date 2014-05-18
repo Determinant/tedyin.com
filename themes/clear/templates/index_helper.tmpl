@@ -3,12 +3,12 @@
 <ul class="pager">
   %if prevlink:
     <li class="previous">
-        <a href="${prevlink}">&larr; ${messages[lang]["Newer posts"]}</a>
+        <a href="${prevlink}">&larr; ${messages("Newer posts")}</a>
     </li>
   %endif
   %if nextlink:
     <li class="next">
-        <a href="${nextlink}">${messages[lang]["Older posts"]} &rarr;</a>
+        <a href="${nextlink}">${messages("Older posts")} &rarr;</a>
     </li>
   %endif
 </ul>
@@ -26,6 +26,8 @@
 
 <%def name="comment_link_script()">
     %if disqus_forum:
-       <script type="text/javascript">var disqus_shortname="${disqus_forum}";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script>
+       <script type="text/javascript">var
+       disqus_shortname="${disqus_forum}";(function(){var
+       a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script>
     %endif
 </%def>
