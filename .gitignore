@@ -1,0 +1,5 @@
+*.pyc
+*.pyo
+.doit.db
+cache/
+output
