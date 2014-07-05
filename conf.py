@@ -85,9 +85,9 @@ TRANSLATIONS_PATTERN = "{path}.{ext}.{lang}"
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/archive.html', 'Archives'),
-        ('/categories/index.html', 'Tags'),
-        ('/rss.xml', 'RSS'),
+        ('/archive.html', '# Archives'),
+        ('/categories/index.html', '% Tags'),
+        ('/rss.xml', '/* RSS */'),
     ),
 }
 
