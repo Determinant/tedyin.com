@@ -24,8 +24,11 @@ html {
     width: 600px;
     margin-top: 0;
     margin-left: 350px;
-    min-height: 800px;
     position: relative;
+}
+
+#post_body {
+    min-height: 600px;
 }
 
 #contentcolumn {
@@ -46,14 +49,14 @@ img {
 
 .footerbox {
     padding: 15px; 
+    font-family: 'Throw', sans-serif, 'Helvetica';
     text-align: center; 
     margin-bottom: 15px;
     bottom: 0;
-    width: 100%;
-    position: absolute;
 }
 
 .post_preamble {
+    font-family: 'Quikhand', sans-serif, 'Helvetica';
     margin-top: 20px;
     margin-bottom: 40px;
 }
@@ -158,7 +161,8 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 10px 0;
+    font-family: 'Throw', sans-serif, 'Helvetica';
+    margin: 20px 0;
     font-family: inherit;
     font-weight: normal;
     color: #ffffff;
@@ -171,6 +175,7 @@ h3 small,
 h4 small,
 h5 small,
 h6 small {
+    font-family: 'Throw', sans-serif, 'Helvetica';
     font-weight: normal;
     line-height: 1;
     color: #adafae;
@@ -178,11 +183,11 @@ h6 small {
 
 h1 {
     font-size: 60px;
-    line-height: 60px;
+    line-height: 65px;
 }
 h2 {
     font-size: 31.5px;
-    line-height: 31.5px;
+    line-height: 33px;
 }
 h3 {
     font-size: 24.5px;
@@ -420,8 +425,8 @@ pager li > a,
 }
 
 .pager {
-    margin: 20px 0;
-    height: 140px;
+    margin: 40px 0px 60px 0px;
+/*    height: 140px; */
     list-style: none;
     text-align: center;
     *zoom: 1;
@@ -441,26 +446,27 @@ pager li > a,
 .pager .next > a,
 .pager .next > span {
     float: right;
+    line-height: 20px;
 }
 .pager .previous > a,
 .pager .previous > span {
     float: left;
+    line-height: 20px;
 }
 
 .post_title {
     margin-bottom: 20px;
 }
 
-
 .badge {
     display: inline-block;
-    padding: 2px 4px;
+    padding: 4px 4px;
     font-family: 'Quikhand', 'Droid Sans', sans-serif, 'Helvetica';
-    font-size: 11.844px;
+    font-size: 14px;
     font-weight: bold;
     line-height: 14px;
     color: #ffffff;
-    vertical-align: baseline;
+    vertical-align: middle;
     white-space: nowrap;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     background-color: #007399;
@@ -485,4 +491,29 @@ ul.unstyled > li {
 
 div.section {
     margin-top: 40px;
+}
+
+/* Better styles for embedding GitHub Gists
+ * https://gist.github.com/jnrbsn/578379 */
+
+.gist {
+    font-size:13px;
+    line-height:18px;
+    margin-bottom:20px;
+    width:100%;
+}
+
+.gist pre {
+    font-family:Menlo,Monaco,'Bitstream Vera Sans Mono','Courier New',monospace !important;
+}
+
+.gist-meta{
+    font-family:Helvetica,Arial,sans-serif;font-size:13px !important;
+}
+.gist-meta a {
+    color:#26a !important;
+    text-decoration:none;
+}
+.gist-meta a:hover {
+    color:#0e4071 !important;
 }

@@ -1,5 +1,6 @@
 ## -*- coding: utf-8 -*-
 <%namespace name="helper" file="index_helper.tmpl"/>
+<%namespace name="comments" file="comments_helper.tmpl"/>
 <%inherit file="base.tmpl"/>
 <%block name="content">
 % for post in posts:
@@ -13,9 +14,10 @@
         </h1>
     </div>
     ${post.text(lang, index_teasers)}
-    ${helper.comment_link(post)}
+    ${comments.comment_link(post.permalink(), post._base_path)}
 </div>
 % endfor
 ${helper.html_pager()}
-${helper.comment_link_script()}
+${comments.comment_link_script()}
+${helper.mathjax_script(posts)}
 </%block>

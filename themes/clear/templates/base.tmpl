@@ -28,14 +28,16 @@ ${html_head()}
 </div>
 <!-- End of Menubar -->
 <div class="container" id="container">
+    <div id="post_body">
     <!--Body content-->
     <%block name="content"></%block>
     <!--End of body content-->
-    <div class="pager">
-    <div class="footerbox">
-        ${content_footer}
     </div>
-</div>
+    <div class="pager">
+        <div class="footerbox">
+        ${content_footer}
+        </div>
+    </div>
 </div>
 </body>
 </html>

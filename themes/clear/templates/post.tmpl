@@ -6,11 +6,9 @@
 <div class="postbox">
     ${helper.html_title()}
     <div class="post_preamble">
-    <small>
         ${messages[lang]["Posted"]}: ${post.date.strftime(date_format)}
         ${helper.html_translations(post)}
         ${helper.html_tags(post)}
-    </small>
     </div>
     ${post.text(lang)}
     ${helper.html_pager(post)}
@@ -18,6 +16,7 @@
         ${comments.comment_form(post.permalink(absolute=True), post.title(), post._base_path)}
     % endif
 </div>
+${helper.mathjax_script(post)}
 </%block>
 
 <%block name="sourcelink">

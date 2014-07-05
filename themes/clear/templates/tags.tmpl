@@ -3,6 +3,7 @@
 <%block name="content">
     <h1>${title}</h1>
     % if cat_items:
+    <div class="postbox indexbox">
         <h2>${messages("Categories")}</h2>
         <ul class="unstyled bricks">
         % for text, link in cat_items:
@@ -11,15 +12,16 @@
             % endif
         % endfor
         </ul>
-        % if items:
-            <h2>${messages("Tags")}</h2>
-        % endif
-    %endif
+    </div>
+    % endif
     % if items:
+    <div class="indexbox">
+        <h2>${messages("Tags")}</h2>
         <ul class="unstyled bricks">
         % for text, link in items:
-            <li><a class="reference" href="${link}">${text}</a></li>
+            <li><a class="badge reference" href="${link}">${text}</a></li>
         % endfor
         </ul>
+    </div>
     % endif
 </%block>
