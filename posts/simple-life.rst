@@ -2,6 +2,9 @@
 .. slug: simple-life
 .. date: 2013/02/20 10:18:45
 .. tags: poetry
+.. category: life
+
+An interesting poem:
 
 | Life is like sand, 
 |   Passing through my hand;

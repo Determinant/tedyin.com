@@ -13,7 +13,7 @@
             </small>
         </h1>
     </div>
-    ${post.text(lang, index_teasers)}
+    ${post.text(teaser_only=True)}
     ${comments.comment_link(post.permalink(), post._base_path)}
 </div>
 % endfor

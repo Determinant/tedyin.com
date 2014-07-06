@@ -4,6 +4,7 @@
 .. tags: secret 
 .. link: 
 .. description: To my love.
+.. category: life
 
 | 在黑夜裏夢想着光
 | 心中覆蓋悲傷

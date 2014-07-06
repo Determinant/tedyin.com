@@ -49,20 +49,17 @@ img {
 
 .footerbox {
     padding: 15px; 
-    font-family: 'Throw', sans-serif, 'Helvetica';
+    font-family: 'Throw', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     text-align: center; 
     margin-bottom: 15px;
     bottom: 0;
 }
 
 .post_preamble {
-    font-family: 'Quikhand', sans-serif, 'Helvetica';
+    font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     margin-top: 20px;
     margin-bottom: 40px;
 }
-
-* :last-child { margin-bottom: 0 !important; } 
-* :first-child { margin-top: 0 !important; } 
 
 a:focus {
     outline: thin dotted #333;
@@ -107,7 +104,7 @@ a:active {
 body {
     padding-top: 60px;
     margin: 0;
-    font-family: 'Droid Sans', sans-serif, 'Helvetica';
+    font-family: 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     font-size: 18px;
     color: #dddddd;
     background-color: #0c0c0c;
@@ -161,7 +158,6 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Throw', sans-serif, 'Helvetica';
     margin: 20px 0;
     font-family: inherit;
     font-weight: normal;
@@ -175,7 +171,6 @@ h3 small,
 h4 small,
 h5 small,
 h6 small {
-    font-family: 'Throw', sans-serif, 'Helvetica';
     font-weight: normal;
     line-height: 1;
     color: #adafae;
@@ -238,7 +233,7 @@ li {
 }
 ul.unstyled,
 ol.unstyled {
-    font-family: 'Quikhand', 'Droid Sans', sans-serif, 'Helvetica';
+    font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     margin-left: 0;
     list-style: none;
 }
@@ -332,7 +327,7 @@ pre code {
 }
 
 .msg_box .msg_text {
-    font-family: 'Quikhand', sans-serif, 'Helvetica';
+    font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     display: block;
     font-size: 16px;
     padding-top: 10px;
@@ -340,7 +335,7 @@ pre code {
 }
 
 .msg_box .date {
-    font-family: 'Quikhand', sans-serif, 'Helvetica';
+    font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     display: block;
     padding-bottom: 3px;
     text-align: right;
@@ -354,7 +349,7 @@ pre code {
     list-style: none;
 }
 .nav > li > a {
-    font-family: 'Throw', sans-serif, 'Helvetica';
+    font-family: 'Throw', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     display: block;
     -webkit-border-radius: 0.3em;
     -moz-border-radius: 0.3em;
@@ -387,7 +382,7 @@ pre code {
 
 .navbar-fixed-left .brand {
     font-size: 70px;
-    font-family: 'Quikhand', 'Droid Sans', sans-serif, 'Helvetica';
+    font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     line-height: 50px;
     color: #00FF7F;
     text-shadow: 0 0 20px rgba(0, 255, 127, 0.75);
@@ -395,7 +390,7 @@ pre code {
 
 .navbar-fixed-left .descr {
     font-size: 20px;
-    font-family: 'Quikhand', 'Droid Sans', sans-serif, 'Helvetica';
+    font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     text-align: right;
     color: #FF9C1A;
     text-shadow: 0 0 5px rgba(255, 156, 26, 0.99);
@@ -455,13 +450,22 @@ pager li > a,
 }
 
 .post_title {
+    font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     margin-bottom: 20px;
 }
 
-.badge {
+ul.tags {
+    display: inline-block;
+}
+
+ul.tags > li {
+    display: inline-block;
+}
+
+.tag {
     display: inline-block;
     padding: 4px 4px;
-    font-family: 'Quikhand', 'Droid Sans', sans-serif, 'Helvetica';
+    font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     font-size: 14px;
     font-weight: bold;
     line-height: 14px;
@@ -508,7 +512,7 @@ div.section {
 }
 
 .gist-meta{
-    font-family:Helvetica,Arial,sans-serif;font-size:13px !important;
+    font-family:Helvetica,Arial,'Microsoft YaHei', 'SimHei', sans-serif;font-size:13px !important;
 }
 .gist-meta a {
     color:#26a !important;
@@ -517,3 +521,7 @@ div.section {
 .gist-meta a:hover {
     color:#0e4071 !important;
 }
+
+:last-child { margin-bottom: 0 !important; } 
+:first-child { margin-top: 0 !important; } 
+

@@ -2,6 +2,7 @@
 .. slug: si-shi
 .. date: 2013/01/16 10:46:27
 .. tags: 悟, SJTU, UPGRADE
+.. category: life
 
 ------
 初

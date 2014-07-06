@@ -2,6 +2,7 @@
 .. slug: mayday-in-a-may-day
 .. date: 2013/05/27 15:22:33
 .. tags: love, UPGRADE
+.. category: life
 .. link: 
 .. description: What a rainy day...
 

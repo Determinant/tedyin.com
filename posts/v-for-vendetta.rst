@@ -1,6 +1,7 @@
 .. title: V for Vendetta
 .. slug: v-for-vendetta
 .. date: 2012/12/16 13:17:44
+.. category: life
 .. tags: 評
 
 最近央視於CCTV-6播出了 *V for Vendetta* （中文片名《V字別動隊》，又譯《V字仇殺隊》），據各新聞網站說是引發了熱議。

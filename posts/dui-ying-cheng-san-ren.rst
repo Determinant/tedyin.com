@@ -2,6 +2,7 @@
 .. slug: dui-ying-cheng-san-ren
 .. date: 2013/06/15 16:39:16
 .. tags: fiction, 村上春樹, 超現實
+.. category: life
 .. link: 
 .. description: My first fiction writing attempt.
 
