@@ -1,0 +1,7 @@
+话说自从发现w3m下可以登录wordpress后台，就开始被迫用它。直到昨天我才发现。。 原来在w3m和firefox下的不同是Semisecure
+Login is not enable和Semisecure Login is enabled. 罪魁祸首是Semisecure Login插件！
+该插件本来作用是将输入的密码加密后传输以加强安全性
+但是它需要依靠JavaScript的支持才行。。而在Firefox的JavaScript支持下ms有问题（不兼容?编码问题?）
+而w3m默认不支持JavaScript 所以Semisecure Login未被开启以致能正常登录
+所以只需要在Firefox中暂时去掉JavaScript支持，登录后再勾上就行了
+

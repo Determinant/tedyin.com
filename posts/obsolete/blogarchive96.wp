@@ -1,0 +1,15 @@
+ophcrack是一个针LM and NTLM hashes的破解软件（说不专业点就是可以破Windows密码）。。可以在windows\linux\Mac
+OS等操作系统上运行，甚至还可以制作成开机引导盘不一靠硬盘上的OS而自己启动于运行。至于LM hash具体是什么。。我觉得应该是IBM发明的存储用户密码的方
+式：将需要加密的明文中所有的小写改为大写，然后转为16进制。。补足0直到为14个字节，然后切分成两个7字节。。分别通过计算扩到8字节（自己可以百度上查），然
+后分别与"KGS!@#$%"进行标准DES加密再把密文拼接起就行了。。
+那么。。搞过OI的人知道。。可以通过穷举的办法来进行密码猜解。。尤其密码加密是分段的。所以可以每七位每七位猜。 OI里面有个很牛的方法叫“跑表”（交表），o
+phcrack就是如此。。由可敬的某些人生成庞大的密码猜解表（也叫彩虹表rainbow_table）然后就可以很快的猜解出密码来～哈哈
+（我爸的电脑用了5分钟跑出密码来了，用的免费表，就是要慢些。。但是跑表时特有感觉。。尤其看到那个进度条） ophcrack提供免费的XP free fast
+(703MB) XP free small (380MB) 和Vista free
+(461MB)下载。。如此大的表，也难怪破解出密码的神速了。令人瞠目的是还有收费的XP special (7.5GB) Vista special
+(8.0GB)支持特殊符号，也就是说，那几张免费表是不支持特殊符号的。。如果密码有特殊符号的话，就无能为力了～
+更牛的是。。居然网上还有120GB的巨表下载。。 好咯。。给个网址。不要做坏事哈～乖～ [http://ophcrack.sourceforge.net/d
+ownload.php](http://ophcrack.sourceforge.net/download.php)（LiveCD是可以自启动的） [htt
+p://ophcrack.sourceforge.net/tables.php](http://ophcrack.sourceforge.net/table
+s.php)（这里是彩虹表）
+

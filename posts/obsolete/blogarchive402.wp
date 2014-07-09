@@ -1,0 +1,456 @@
+闲话不说。 第一题：
+
+水题一道，怎麽做都可以，当然我觉得最方便最快捷的就是用队列模拟了。
+
+因为0 < N <= 1000,0 < M <= 100
+所以直接读数，读进来以后看看是不是在队列中，若不在就把它加入其中并把答案加一。并且随时保持队列长度不超过M（一旦加入元素后队长超过M就将头指针右移）
+
+第二题：
+
+注意乌龟棋子只有1-4四种所以很容易想到四维状态的DP，即用f[a][b][c][d]表示用去 a张1 , b张2 , c张3 , d张4
+所能得到最大分数(不包含起始位置的分数)。很明显这是满足最优子问题的。我们还发现，无论卡片的使用顺序如何，最终用完abcd后，乌龟会停在a + b * 2
++ c * 3 + d *4 + 1 这个位置上。也就是说f[a][b][c][d] 能唯一确定乌龟停在位置，这个状态是完整的。
+
+所以转移方程是：
+
+f[a][b][c][d] =  max{f[a - 1][b][c][d] (a > 0),
+
+f[a][b - 1][c][d] (b > 0),
+
+f[a][b][c - 1][d] (c > 0),
+
+f[a][b][c][d - 1] (d > 0)} + Score[a + b * 2 + c * 3 + d * 4 + 1]
+
+最后答案为：f[C[1]][C[2]][C[3]][C[4]] + Score[1]
+
+(Score[i] 表示 i 位置上的分数 C[i]表示卡片i有多少张)
+
+第三题：
+
+题意是说把点分成两个集合，然后使得两个集合各自内部的最大边尽量小
+
+因为是跟最大边直接的关系，我们可以想到，如果整个图中的最大边不被“架在”两个集合之间被删掉的话，最大值就一定是它了。答案要求最大边尽量小，因此它的两个端点必
+须在两个不同的集合中。这样才能保证最大值至多不是它的值那么大。那么依此类推，我再找剩下边中的最大边，然后把两端结点放在不同集合中。但是这样下去可能出现矛盾，
+例如1-4，2-4 , 1-2。1和4不在一个集合中，2和4也不在一个集合中，那么1,2一定在同一个集合中，于是和1-2产生矛盾。
+
+我们是先处理1-4,2-4，它们边权都比1-2大，所以此时要保证逻辑正常，必须舍弃1-2边,不删除1-2,把1-2放在同集合中。假设我们偏要采用1-2,即删
+去1-2边，那么1-4,2-4中必须放弃某一条，无论放弃哪一条都会导致答案更差（答案直接变成我们放弃删除的那条边权值）。
+
+那么如何检测这种矛盾呢？例如我们开始可能并不知道1-2,3-4，1和3是否在一个集合，直到出现1-3 或者 1-4 ，才能得以确定。
+
+我们可以先选择逃避。
+
+反过来想，如果给定一个答案Ans，我们可以知道至少要删除>= Ans的所有边，于是可以看看这些被删的边是否能够组成一个二分图，如果能，则Ans是可以办到的。
+所以我们不妨进行二分，二分那个答案，如果不能成立，就向大于那个答案的方向继续二分，反之向更小的方向二分。（先排序再二分，注意答案为0的情况！）于是我们得到了
+一个O(MlogM + MlogM) -> O(MlogM)的算法。
+
+鲁迅曾说：“真的勇士，敢于直面惨淡的人生，敢于正视淋漓的鲜血”。从正面思考，我们可以采用并查集（类似NOI2001食物链）的方法来处理。
+
+令a -> b 表示a到b的关系，0表示a,b同属于一个题中的集合，1表示a,b不属于同一集合。如果用基于模2的运算的话
+
+该关系恰似向量的运算法则：
+
+a ->  c = a -> b + b -> c （mod 2）
+
+a -> b = - (b -> a)  (mod 2)
+
+我们令Relate[a] 表示a到a的父亲的关系
+
+那么我们就可以维护一个关系森林 （其实就是并查集）
+
+对于接受一个新关系R的树的合并：
+
+father(x) = S1,father(y) = S2
+
+将S1并到S2上去
+
+那么Relate[S1] = (Relate[y]  - Relate[x] + R + 2) mod 2
+
+[![因增加关系而合并树](http://www.tedyin.com/blog/wp-
+content/imgs/noip2010_1.png)](http://www.tedyin.com/blog/wp-
+content/imgs/noip2010_1.png)
+
+于是我们可以通过查询两个点到公共祖先各自的Relate来计算它们相对的关系，如果还没有公共祖先说明他们还没有确定关系，通过“并”来添加新关系
+
+复杂度为O(MlogM + M * alpha(M))，可以认为是 O(MlogM)，
+其实要比二分法更理想，因为二分法判断二分图时常数较大（尤其是清空数组的时间代价较大）
+
+至此问题有了令人满意的解决方案
+
+第四题：
+
+题目大意是说，在第一行选择一些点，然后从这些点放水从高到低流，能把最后一行流满。
+
+对问题进行简化。我们考察每个(1,i) 看能流到哪些 (n,j)，并建立一个二分图，如样例：
+
+[![问题的转化示意](http://tedyin.com/blog/wp-
+content/imgs/noip2010_2.png)](http://tedyin.com/blog/wp-
+content/imgs/noip2010_2.png)
+
+题目转化为在一个二分图的“上边”选择一些点，然后用这些点的所有边把另一边的点全部盖住。
+
+如果一个点它连的对面的点是连续的，也许就可以直接DP了，但是可能出现如下情况：
+
+3 5 3
+
+2 6 2
+
+1 1 1
+
+(从5出发，中间的1无法流到)
+
+似乎这个问题非裸搜或者状态压缩DP不能解决（像是NP的），但是肯定是不现实的。
+
+这里就陷入了一个分析的僵局（我临场的时候也是卡在这儿了，最后选择裸搜）。
+
+如果我们再仔细分析一下那些导致不连续的反例，我们会惊奇地发现，那些虽然存在，但是他们都是属于题中的无法覆盖完的情况！
+
+我们猜想：一个能按规则覆盖完的二分图每个“上边”的点对应相连的点一定是连续的区域。
+
+证明：反证，如果存在不连续的区域，也就是出现空缺，那么空缺的必然至少要其他点的边能够到，那么在原地图中从那个旁边点过来的路线一定会和原点的某路径交叉，也就是
+说从原点是可以流到那个空缺处的，与假设矛盾。
+
+[![连续性的证明](http://tedyin.com/blog/wp-
+content/imgs/noip2010_3.png)](http://tedyin.com/blog/wp-
+content/imgs/noip2010_3.png)
+
+于是此题就转化为求每个“上边”点在“下边”的管辖区域，然后选择尽量少的区域将整个1..m覆盖，可以DP：
+
+f[i]表示1..i覆盖完需要的最少区域数
+
+因此有f[i] = min(f[st[j] - 1]) + 1  (1 <= j <= m 且st[j] <= i <= ed[j])
+
+预处理每个(1,i)流到的点(n,j)时如果直接裸搜 需要O(N * M ^ 2) 难以接受
+
+因为只需要知道最左端和最右端，可以分两次来计算。
+
+从(n,j)取反推上游，逆流触及的(1,i)的st值就为j
+因为j单增，所以如果在某次反推时碰到已经走过的结点，没有必要继续沿老路了，因为这样带给(1,i)的st要比目前的st大
+
+类似地可以算出ed[i]。
+
+至此，问题解决，时间复杂度为O(M(N + M))
+
+Code:
+
+    
+    
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    
+    
+    #define MAXQ 2000
+    
+    
+    
+    int Que[MAXQ],N,M,Ans;
+    
+    
+    
+    int main() {
+    
+    
+    
+    	freopen("translate.in","r",stdin);
+    
+    	freopen("translate.out","w",stdout);
+    
+    
+    
+    	scanf("%d %d",&M,&N);
+    
+    	
+    
+    	for (int l = 0,r = -1,i = 1,tmp; i = M) l++;
+    
+    	}
+    
+    	printf("%d\n",Ans);
+    
+    	return 0;
+    
+    }
+    
+    
+    
+    
+    
+    //并查集
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    
+    
+    #define MAXN 20001
+    
+    #define MAXM 100001
+    
+    
+    
+    struct Edge {
+    
+    
+    
+    	int st,ed,c;
+    
+    } Edges[MAXM];
+    
+    
+    
+    int cmp(const void *a,const void *b) {
+    
+    
+    
+    	return ((Edge*)b) -> c - ((Edge*)a) -> c;
+    
+    }
+    
+    
+    
+    int F[MAXN],Rank[MAXN],Relate[MAXN],N,M;
+    
+    
+    
+    int Father(int x) {
+    
+    
+    
+    	int Res = x,tmp,tmp2,R = 0;
+    
+    	while (F[Res] != Res) {R += Relate[Res]; Res = F[Res];}
+    
+    	while (x != Res)
+    
+    	{
+    
+    		tmp = F[x]; tmp2 = Relate[x];
+    
+    		F[x] = Res; Relate[x] = R &= 1;
+    
+    		x = tmp; R = R - tmp2 + 2;
+    
+    	}
+    
+    	return Res;
+    
+    }
+    
+    
+    
+    void Union(int x,int y,int R) {
+    
+    
+    
+    	int S1 = Father(x),S2 = Father(y);
+    
+    	R = (Relate[y] - Relate[x] + R + 2) & 1;
+    
+    	if (Rank[S1]  Ans) Ans = Now.c;
+    
+    		}
+    
+    		else
+    
+    			Union(Now.st,Now.ed,1);
+    
+    	}
+    
+    	printf("%d\n",Ans);
+    
+    	return 0;
+    
+    }
+    
+    
+    
+    
+    
+    //二分
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    
+    
+    #define MAXN 20001
+    
+    #define MAXM 200001
+    
+    
+    
+    struct Edge {
+    
+    
+    
+    	int st,ed,c,Id1,Id2;
+    
+    } Edges[MAXM];
+    
+    
+    
+    int fir[MAXN],next[MAXM],end[MAXM],ECnt,col[MAXN],N,M;
+    
+    bool conn[MAXM];
+    
+    
+    
+    int AddEdge(int st,int ed) {
+    
+    
+    
+    	next[++ECnt] = fir[st];
+    
+    	fir[st] = ECnt;
+    
+    	end[ECnt] = ed;
+    
+    	return ECnt;
+    
+    }
+    
+    
+    
+    int cmp(const void *a,const void *b) {
+    
+    
+    
+    	return ((Edge*)a) -> c - ((Edge*)b) -> c;
+    
+    }
+    
+    
+    
+    bool succ;
+    
+    
+    
+    void check(int pos,bool c) {
+    
+    
+    
+    	if (col[pos] != -1)
+    
+    	{
+    
+    		if (col[pos] != c) succ = 0;
+    
+    		return;
+    
+    	}
+    
+    	col[pos] = c;
+    
+    
+    
+    	for (int now = fir[pos]; now; now = next[now])
+    
+    		if (conn[now]) check(end[now],c ^ 1);
+    
+    }
+    
+    
+    
+    
+    
+    int main() {
+    
+    
+    
+    	freopen("prison.in","r",stdin);
+    
+    	freopen("prison.out","w",stdout);
+    
+    	
+    
+    	scanf("%d %d",&N,&M);
+    
+    	for (int i = 1; i  1;)
+    
+    	{
+    
+    		int Mid = (l + r) >> 1;
+    
+    		memset(col,-1,sizeof(col));
+    
+    		for (int i = Mid + 1; i 
+    
+    
+    
+    
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    
+    
+    #define MAXN 600
+    
+    #define MAXM 600
+    
+    
+    
+    int N,M,H[MAXN][MAXM],dp[MAXM],Ans0;
+    
+    bool vis[MAXN][MAXM];
+    
+    
+    
+    struct Seg {
+    
+    
+    
+    	int st,ed;
+    
+    } Range[MAXM];
+    
+    
+    
+    const int Det[4][2] = {{-1,0},{0,-1},{0,1},{1,0}};
+    
+    
+    
+    #define IN_RANGE(x,y) (1  H[x][y])
+    
+    			Mark(nx,ny,src,Type);
+    
+    	}
+    
+    }
+    
+    
+    
+    int main() {
+    
+    
+    
+    	freopen("flow.in","r",stdin);
+    
+    	freopen("flow.out","w",stdout);
+    
+    
+    
+    	scanf("%d %d",&N,&M);
+    
+    	for (int i = 1; i = 1; i--) Mark(N,i,i,1);
+    
+    		memset(dp,127,sizeof(dp));
+    
+    		dp[0] = 0;
+    
+    		for (int i = 1; i 
+

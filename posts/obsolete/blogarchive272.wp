@@ -1,0 +1,52 @@
+线性素数筛法。。记得是某年某月某日RGT神牛虐我时提起的。 思路及证明如下：
+
+如果已找出的素数prime[j]能够整除现在的倍数因子i （j从1开始单增）
+
+i = prime[j] * k 可以断定prime[j] 为i的最小素因子（因为j在单增，如果不是最小，说明存在更小的prime能整除i，则矛盾）
+
+再证明对于prime[j'] * i没有必要标记：(j' > j)
+
+因为 存在prime[j'] * i = (prime[j] * k) * prime[j'] = (prime[j'] * k) * prime[j] =
+i' * prime[j]
+
+i' > i 说明在 i'  时，prime[j'] * i 会被标记 ，而且 prime[j] 是 prime[j'] * i 的最小素因子
+
+即，对于任意一个素数，只会标记以它为最小素因子的合数。
+
+而对于任意一个合数，它的最小素因子只有一个
+
+故任意一个合数只会被标记一次
+
+    
+    
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    
+    
+    #define MAXP 100000
+    
+    
+    
+    using namespace std;
+    
+    
+    
+    bool isp[MAXP];
+    
+    int prime[MAXP],cp = 0;
+    
+    
+    
+    void sprime(int Limit) {
+    
+    
+    
+    	memset(isp,255,sizeof(isp));
+    
+    	for (int i = 2; i 
+

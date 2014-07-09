@@ -1,0 +1,93 @@
+应fyd神牛要求。。贴出network.cpp
+
+    
+    
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    
+    
+    #define MAXN 1002
+    
+    #define MAXS 1002
+    
+    #define MAXQ 5001
+    
+    #define MAXM 30000
+    
+    #define INF 0x7fffffff
+    
+    
+    
+    using namespace std;
+    
+    
+    
+    int arc[MAXM],cap[MAXM],fir[MAXN],next[MAXM],w[MAXM],Count = 0; //arc list
+    
+    int d[MAXN]; // dist
+    
+    int stack[MAXS],low[MAXS],top; //stack
+    
+    int cur[MAXN],cnt[MAXN]; //optimize
+    
+    
+    
+    int maxflow(int S,int T,int N) {
+    
+    
+    
+    	int u,va;
+    
+    	int ans = 0;
+    
+    
+    
+    	top = 0; stack[0] = S; low[0] = INF; //stack init
+    
+    	for (int i = 1; i  b
+    
+    	arc[++Count] = b;
+    
+    	next[Count] = fir[a];
+    
+    	cap[Count] = c;
+    
+    	w[Count] = ww;
+    
+    	fir[a] = Count;
+    
+    }
+    
+    
+    
+    int a,b,c,ww,S,T,M,N,K;
+    
+    int que[MAXQ][3],dist[MAXN][2];
+    
+    
+    
+    
+    
+    int spfa(int S,int T) {
+    
+    
+    
+    	memset(dist,127,sizeof(dist));
+    
+    	dist[S][0] = 0; dist[S][1] = 0; que[0][0] = S; que[0][1] = 0;
+    
+    	int l = 0,r = 1,u,v;
+    
+    
+    
+    /*
+    
+    	for (int i = 1; i 
+

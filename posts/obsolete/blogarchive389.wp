@@ -1,0 +1,140 @@
+很久没有更新日志了。在这期间发生了许多，感觉这几周就像几个月一样漫长。 首先是s说她有bf了。。祝福他们吧。。我已没什么说的了。。
+然后是我开始停课了，准确的是同丁神一起进行停课申请书的大练笔兼大练字之后。我足足写了6篇申请书，而且有4篇是有中英文对照版的。最后终于似乎被接受了 X X
+(申请书AC率极低) 其实最后Accept没有也不清楚 第一次：Compilation  Error 第二次 ： Presentation Error
+第三次 ： Running... 在淘宝网上淘到Mastering Regular Expressions 原价折合RMB300多，二手的80。8错8错。。
+只是拿到以后才发现书脊的白乳胶全部脱落了，昨天才去找了个图文店求固定方法。因为封面用了布固定所以如果重新过胶破坏会有点大，因此他们最后用气枪很给力地从两面打
+了钉钉，书就弄得很稳固了 TedyYin.com 准备搬家到 Dreahost，域名正在转出到 GoDaddy。主页增加了Codes链接，我ws地在sour
+ceforge.net上弄了一个工程，其实就是利用hg来同步我本地的代码。这样不仅有了备份，而且走到哪儿都可以把代码同步下来。 来膜拜Yo总神代码，
+题目简述：求把正整数N分成一些正整数和的方案数，若两个方案只是交换了加数的顺序，则认为是一种方案 （n <= 3690） 方法：DP
+贴出Yo总（Theodore Yo）神代码 (如果用register 优化t <del>然后弄一个register long long q& = num[i
++ 1]会更快</del>)
+
+    
+    
+    
+    #include 
+    
+    #include 
+    
+     
+    
+    class Int
+    
+    {
+    
+    	public:
+    
+    		Int();
+    
+    		void operator=(const int&);
+    
+    		void operator+=(const Int&);
+    
+    		void output();
+    
+    	private:
+    
+    		static const int maxn = 5;
+    
+    		static const long long N = 1000000000000000000ll;
+    
+    		int dig;
+    
+    		long long num[maxn];
+    
+    };
+    
+     
+    
+    Int::Int() : dig(1)
+    
+    {
+    
+    	// This should typically be done, but in this problem, we don't have to do this.
+    
+    	//memset(num, 0, sizeof num);
+    
+    }
+    
+     
+    
+    void Int::operator=(const int& x)
+    
+    {
+    
+    	dig = 1;
+    
+    	num[0] = x;
+    
+    }
+    
+     
+    
+     
+    
+    void Int::output()
+    
+    {
+    
+    	printf("%lld", num[dig - 1]);
+    
+    	for (int i = dig - 2; i >= 0; --i)
+    
+    		printf("%018lld", num[i]);
+    
+    	printf("\n");
+    
+    }
+    
+     
+    
+    void Int::operator+=(const Int& x)
+    
+    {
+    
+    	if (x.dig > dig)
+    
+    		dig = x.dig;
+    
+    	for (int i = 0; i = N)
+    
+    		{
+    
+    			++num[i + 1];
+    
+    			t -= N;
+    
+    		}
+    
+    	}
+    
+    	if (num[dig])
+    
+    		++dig;
+    
+    }
+    
+     
+    
+    const int maxn(3713);
+    
+    int n;
+    
+    Int f[maxn];
+    
+     
+    
+    int main()
+    
+    {
+    
+    	freopen("divide.in", "r", stdin);
+    
+    	freopen("divide.out", "w", stdout);
+    
+    	scanf("%d", &n);
+    
+    	f[0] = 1;
+    
+    	for (int i = 1; i 
+

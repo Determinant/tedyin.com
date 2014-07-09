@@ -1,0 +1,83 @@
+我住的地方搬了。。目前在的位置： N 30°40'25.03" E 104°06'32.43" 我的网站09年底搬至Tedyin.com..
+已经很久没有写日志了。。今天写写看看最近颓废的生活是否有所转变。 春晚。。我看到了点自由的东西。。至少某些年前不可能的东西被搬上舞台。
+韩寒的《春天的故事》似乎我心中某些不快泄出。。 不过还是的。。不要迷恋gcd 它毕竟是个传说 传说在继续。。
+春晚两次提及曾轶可的《狮子座》。我对她了解不深。但是就她坚持的原创来说。确实是好样的
+（对于有人指出的抄袭。。在有充分证据前不要妄加相信。有一个争议不能代表全部） 批评的人可以自己想想。 许多人从来不缺创造 只缺善待宽容的一刻心 不缺竞争
+只缺在名利嫉妒和跟风前的一丝冷静 一群骂着中国无创新无自由的人。。问问他们自己算不算中国的 他们不给别人自由和尊重 又怎能被看起 一个人的时候
+不是不想写日志 一个人的时候 只是怕上网 一个人的时候 如果看到大片和谐内容 才不会学你把它丢一边。 贴出一天的颓废成果。。最大流标号法代码：
+
+    
+    /*
+    
+     *$File: maxflow_sap.cpp
+    
+     *$Date: Mon Feb 15 22:05:44 2010 CST
+    
+     *$Author: ymfoi
+    
+     *$OI: maxflow SAP version // GAP + LIST + CUR
+    
+    */
+    
+    
+    
+    #include 
+    
+    #include 
+    
+    #include 
+    
+    
+    
+    #define MAXV 100
+    
+    #define MAXE 500
+    
+    #define MAXS 1000
+    
+    #define INF 0x7FFFFFFF
+    
+    
+    
+    using namespace std;
+    
+    
+    
+    int N,E,Count = 0,S,T;
+    
+    
+    
+    //
+    
+    int fir[MAXV],next[MAXE],arc[MAXE],c[MAXE];//arc list
+    
+    int stack[MAXS],low[MAXS],top = 0;//stack
+    
+    int d[MAXV]; //dist d[T] = 0;
+    
+    int cur[MAXV],cnt[MAXV]; //current arc && cnt
+    
+    //
+    
+    
+    
+    int maxflow() {
+    
+    	
+    
+    	int res = 0;
+    
+    	top = 0; stack[0] = S; low[0] = INF;
+    
+    	memset(d,0,sizeof(d));
+    
+    	memset(cnt,0,sizeof(cnt));
+    
+    	for (int i = 1; i  c[va]?c[va]:low[top - 1]; //flow!
+    
+    			if (v == T) 
+    
+    			{
+    
+    				for (int i = 0; i 
+

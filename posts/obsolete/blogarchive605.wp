@@ -1,0 +1,17 @@
+不打算同步到sf上了，于是研究了一下如何在虚拟空间里面搞个代码仓库。 成果总算有了~[
+http://www.tedyin.com/webrepo/](http://www.tedyin.com/webrepo/)   介绍：
+
+Git是一个版本控制系统(Version Control System)，和SVN以及Mercurial类似。简单地说就是一个可以同步和管理代码的工具。比如
+开发一个工程，如果没有版本控制系统，那么就很难协调几个成员同时对这个工程的开发。所以为了让工程的开发更加透明和易于管理，一般在一个大家都能访问的服务器上设置
+一个仓库（Repository），然后这个服务器上运行着一个接受对于仓库请求的服务。对于开发人员，可以用客户端连接到服务器进行工程副本的获取和修改同步等等操
+作。Git就是这样的一个软件，由Linus Torvalds亲自操刀编写，为的是更好地维护日益暴涨的Linux内核代码。不过由于它简单快捷，所以就风靡了。
+
+我在网站的空间里面用一个[目录](http://www.tedyin.com/misc.git/)来放置Repository，为了让仓库可以从Web界面浏览
+，使用了一个轻量级Git的Web前端——[CGIT](http://hjemli.net/git/cgit/)。这样就可以从网页上浏览仓库里的文件了。
+
+  Update 20111009:
+
+搞定了语法高亮。自己配了个颜色，感觉不错。详见[这里](http://repo.tedyin.com/misc/tree/scripts/custom_ch
+eck.sh)
+
+

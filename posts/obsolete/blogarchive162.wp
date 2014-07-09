@@ -1,0 +1,6 @@
+虽然说Mathematica 5.0在Linux下wine中直接模拟要崩溃。。
+但是意外地发现Mathematica的计算内核是可以在wine上成功跑的（好激动！） 截图如下：（秒杀2^1000） [caption id=""
+align="alignnone" width="528"
+caption="Wine中的Mathematica!"][![Wine中的Mathematica!](../../wp-
+content/imgs/math.jpg)](../../wp-content/imgs/math.jpg)[/caption]
+
