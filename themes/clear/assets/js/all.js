@@ -11,14 +11,15 @@ function adjust() {
         'left': -$(this).scrollLeft() + 50
     });
 }
-
+/*
 $(window).scroll(adjust);
 $(window).resize(adjust);
 $(window).load(adjust);
+*/
 if (!window.console) console = {log: function() {}};
 var posts = [];
 var lasttime = 0;
-var max_entries = 5;
+var max_entries = 20;
 //var server_addr = '192.168.248.130';
 var server_addr = 'tedyin.com';
 

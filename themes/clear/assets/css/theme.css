@@ -23,8 +23,9 @@ html {
 #container {
     width: 600px;
     margin-top: 0;
-    margin-left: 350px;
+/*    margin-left: 350px;*/
     position: relative;
+    float: left;
 }
 
 #post_body {
@@ -110,7 +111,7 @@ a:active {
 body {
     padding-top: 60px;
     margin: 0;
-    font-family: 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
+    font-family: 'Geneva', 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     font-size: 18px;
     color: #dddddd;
     background-color: #0c0c0c;
@@ -379,14 +380,15 @@ pre code {
 }
 
 .navbar-fixed-left {
-    position: fixed;
+/*    position: fixed;
     top: 70px;
-    left: 50px;
-    height: auto;
+    left: 50px; */
     width: 250px;
     background-image: url("images/ekg4.png");
     background-repeat: no-repeat;
     background-position: -80px -40px;
+    margin-right: 50px;
+    float: left;
 }
 
 .navbar-fixed-left .brand {
@@ -538,3 +540,8 @@ div.section {
 
 p:last-child { margin-bottom: 0 !important; } 
 p:first-child { margin-top: 0 !important; } 
+
+#global_container {
+    width: 900px;
+    margin: 0 auto;
+}
