@@ -2,44 +2,45 @@
 <%namespace file="base_helper.tmpl" import="*"/>
 <!DOCTYPE html>
 <html lang="${lang}">
-<head>
-${html_head()}
-<%block name="extra_head">
-</%block>
-</head>
-<body>
-<div id="global_container">
-<!-- Menubar -->
-<div class="navbar-fixed-left">
-    <div>
-    <a class="brand" href="${abs_link('/')}">
-        ${blog_title}
-    </a>
-    </div>
-    <a class="descr">
-        ${description}
-    </a>
-    <ul class="nav">
-        ${html_sidebar_links()}
-    </ul>
-    <ul id="pushy_box" class="nav">
-    </ul>
-    %if search_form:
-    ${search_form}
-    %endif
-</div>
-<!-- End of Menubar -->
-<div class="container" id="container">
-    <div id="post_body">
-    <!--Body content-->
-    <%block name="content"></%block>
-    <!--End of body content-->
-    </div>
-    <div class="pager">
-        <div class="footerbox">
-        ${content_footer}
+    <head>
+        ${html_head()}
+        <%block name="extra_head">
+        </%block>
+    </head>
+    <body>
+        <div id="global_container">
+            <!-- Menubar -->
+            <div class="navbar-fixed-left">
+                <div>
+                    <a class="brand" href="${abs_link('/')}">
+                        ${blog_title}
+                    </a>
+                </div>
+                <a class="descr">
+                    ${description}
+                </a>
+                <ul class="nav">
+                    ${html_sidebar_links()}
+                </ul>
+                <ul id="pushy_box" class="nav">
+                </ul>
+                %if search_form:
+                ${search_form}
+                %endif
+            </div>
+            <!-- End of Menubar -->
+            <div class="container" id="container">
+                <div id="post_body">
+                    <!--Body content-->
+                    <%block name="content"></%block>
+                    <!--End of body content-->
+                </div>
+            </div>
+            <div class="pager">
+                <div class="footerbox">
+                    ${content_footer}
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-</body>
+    </body>
 </html>

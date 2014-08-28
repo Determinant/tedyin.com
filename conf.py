@@ -378,7 +378,7 @@ INDEX_TEASERS = True
 # {read_more}   The string “Read more” in the current language.
 # {{            A literal { (U+007B LEFT CURLY BRACKET)
 # }}            A literal } (U+007D RIGHT CURLY BRACKET)
-INDEX_READ_MORE_LINK = '<p class="more" style="text-align:right"><a href="{link}">{read_more}…</a></p>'
+INDEX_READ_MORE_LINK = '<p class="more" style="text-align:right"><a href="{link}">{read_more}...</a></p>'
 
 # A HTML fragment describing the license, for the sidebar.
 LICENSE = """
@@ -395,7 +395,7 @@ src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a></div>"""
 # src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>"""
 
 # A small copyright notice for the page footer (in HTML).
-CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         {license}'
+CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a>  Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         {license}'
 CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
                                        author=BLOG_AUTHOR,
                                        date=time.gmtime().tm_year,
