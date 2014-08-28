@@ -9,7 +9,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Ted Yin"
-BLOG_TITLE = "Teddy's World"
+BLOG_TITLE = "Ted's EKG"
 # This is the main URL for your site. It will be used
 # in a prominent link
 SITE_URL = "http://tedyin.com/"
@@ -17,7 +17,7 @@ SITE_URL = "http://tedyin.com/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://getnikola.com/"
 BLOG_EMAIL = "ted.sybil@gmail.com"
-BLOG_DESCRIPTION = "An IT enthusiast, GNU/Linux-lover and arty idiot."
+BLOG_DESCRIPTION = "Blog of an IT enthusiast, GNU/Linux-lover and arty idiot."
 
 # Nikola is multilingual!
 #
@@ -378,7 +378,7 @@ INDEX_TEASERS = True
 # {read_more}   The string “Read more” in the current language.
 # {{            A literal { (U+007B LEFT CURLY BRACKET)
 # }}            A literal } (U+007D RIGHT CURLY BRACKET)
-# READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}…</a></p>'
+READ_MORE_LINK = '<p class="more" style="text-align:right"><a href="{link}">{read_more}…</a></p>'
 
 # A HTML fragment describing the license, for the sidebar.
 LICENSE = """

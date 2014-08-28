@@ -86,9 +86,11 @@ a:active {
 
 .indexbox {
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     border-color: #333333;
-    padding: 30px;
+    background-color: #1a1a1a;
+    padding: 15px;
+/*    padding-bottom: 10px;*/
     -webkit-border-radius: 1em;
     -moz-border-radius: 1em;
     border-radius: 1em;
@@ -101,6 +103,10 @@ a:active {
     transition: 0.2s;
 }
 
+.post_text {
+    margin-bottom: 20px;
+}
+
 body {
     padding-top: 60px;
     margin: 0;
@@ -110,14 +116,15 @@ body {
     background-color: #0c0c0c;
 
     min-height: 100%;
+    background-color: #060606;
     background-color: #121417;
     background-image: -moz-linear-gradient(top, #060606, #252a30);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#060606), to(#252a30));
     background-image: -webkit-linear-gradient(top, #060606, #252a30);
     background-image: -o-linear-gradient(top, #060606, #252a30);
     background-image: linear-gradient(to bottom, #060606, #252a30);
-    background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff060606', endColorstr='#ff252a30', GradientType=0);
+    background-repeat: repeat-x;
 }
 
 a {
@@ -377,6 +384,9 @@ pre code {
     left: 50px;
     height: auto;
     width: 250px;
+    background-image: url("images/ekg4.png");
+    background-repeat: no-repeat;
+    background-position: -80px -40px;
 }
 
 .navbar-fixed-left .brand {
@@ -450,6 +460,7 @@ pager li > a,
 
 .post_title {
     font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
+    margin-top: -5px;
     margin-bottom: 20px;
 }
 
@@ -525,5 +536,5 @@ div.section {
     font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
 }
 
-:last-child { margin-bottom: 0 !important; } 
-:first-child { margin-top: 0 !important; } 
+p:last-child { margin-bottom: 0 !important; } 
+p:first-child { margin-top: 0 !important; } 

@@ -4,24 +4,28 @@
 <!--    <h1>${title}</h1> -->
     % if cat_items:
     <div class="postbox indexbox">
-        <h2>${messages("Categories")}</h2>
-        <ul class="unstyled bricks">
-        % for text, link in cat_items:
-            % if text:
-                <li><h3><a class="reference" href="${link}">${text}</a></h3></li>
-            % endif
-        % endfor
-        </ul>
+        <div class="post_title">
+            <h2>${messages("Categories")}</h2>
+            <ul class="unstyled bricks">
+            % for text, link in cat_items:
+                % if text:
+                    <li><h3><a class="reference" href="${link}">${text}</a></h3></li>
+                % endif
+            % endfor
+            </ul>
+        </div>
     </div>
     % endif
     % if items:
     <div class="indexbox">
-        <h2>${messages("Tags")}</h2>
-        <ul class="unstyled bricks">
-        % for text, link in items:
-            <li><a class="tag reference" href="${link}">${text}</a></li>
-        % endfor
-        </ul>
+        <div class="post_title">
+            <h2>${messages("Tags")}</h2>
+            <ul class="unstyled bricks">
+            % for text, link in items:
+                <li><a class="tag reference" href="${link}">${text}</a></li>
+            % endfor
+            </ul>
+        </div>
     </div>
     % endif
 </%block>
