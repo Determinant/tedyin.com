@@ -426,7 +426,7 @@ pager li > a,
 }
 
 .pager {
-    margin: 40px 0px 60px 0px;
+    margin: 60px 0px 0px 0px;
     font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     list-style: none;
     text-align: center;
@@ -536,10 +536,20 @@ div.section {
 p:last-child { margin-bottom: 0 !important; } 
 p:first-child { margin-top: 0 !important; } 
 
+#global_container, .footerbox {
+    margin: 0 auto;
+}
+
 #global_container {
     width: 900px;
 }
 
-#global_container, .footerbox {
-    margin: 0 auto;
+#global_container:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.footerbox {
+    clear: both;
 }

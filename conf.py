@@ -382,7 +382,7 @@ INDEX_READ_MORE_LINK = '<p class="more" style="text-align:right"><a href="{link}
 
 # A HTML fragment describing the license, for the sidebar.
 LICENSE = """
-<div style="margin-top: 10px;"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<div style="margin-top: 10px;"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">
 <img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
 src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a></div>"""
