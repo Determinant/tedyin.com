@@ -438,6 +438,7 @@ pager li > a,
     display: table;
     content: "";
     line-height: 0;
+    clear: both;
 }
 
 .pager li {
@@ -552,8 +553,4 @@ p:first-child { margin-top: 0 !important; }
 
 .footerbox {
     clear: both;
-}
-
-.lilypond > svg {
-    color: #aaaaaa;
 }
