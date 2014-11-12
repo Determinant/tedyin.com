@@ -10,6 +10,7 @@
 Test music score:
 
 .. image:: /static/lilypond/lesson_in_a_minor.svg
+   :class: music-score
 
 Test syntax highlight for Python:
 

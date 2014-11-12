@@ -554,3 +554,7 @@ p:first-child { margin-top: 0 !important; }
 .footerbox {
     clear: both;
 }
+
+object.music-score {
+    width: 100%;
+}
