@@ -379,9 +379,10 @@ pre code {
     top: 70px;
     left: 50px; */
     width: 250px;
-    background-image: url("images/ekg4.png");
+    background-image: url("images/ekg.svg");
     background-repeat: no-repeat;
-    background-position: -80px -40px;
+    background-position: 45px 30px;
+    background-size: 80%;
     margin-right: 50px;
     float: left;
 }

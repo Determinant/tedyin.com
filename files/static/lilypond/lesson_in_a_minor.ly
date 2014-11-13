@@ -4,18 +4,24 @@
   title = "Lesson In A Minor"
   arranger = "arr. Ted Yin"
 }
+#(set! paper-alist (cons '("my size" . (cons (* 140 mm) (* 200 mm))) paper-alist))
 
 \paper{
-  indent=0\mm
+  #(set-paper-size "my size")
   line-width=120\mm
-  oddFooterMarkup=##f
+  tagline=##f
+  left-margin=5\mm
+  right-margin=5\mm
+  indent=0\mm
+  bottom-margin=0\mm
+  top-margin=0\mm
 %  oddHeaderMarkup=##f
 %  bookTitleMarkup = ##t
 %  scoreTitleMarkup = ##t
 }
-
+%\with {midiInstrument = #"acoustic grand"}
 \score {
-  \new Staff \with {midiInstrument = #"acoustic grand"} {
+  \new Staff  {
     \transposition c
     \key a \minor
     \time 4/4
@@ -92,6 +98,6 @@
       >>
     }
   }
-  \midi {}
+  %\midi {}
   \layout {}
 }
