@@ -383,11 +383,25 @@ pre code {
     float: left;
 }
 
-.logo {
+.headline {
+    /*
     background-image: url("images/ekg.svg");
     background-repeat: no-repeat;
     background-position: 45px 30px;
     background-size: 80% auto;
+    */
+    top: -120px;
+    height: 80px;
+    position: relative;
+}
+
+.logo {
+    text-align: right;
+    height: 120px;
+}
+
+.logo > object {
+    height: 120px;
 }
 
 .navbar-fixed-left .brand {
