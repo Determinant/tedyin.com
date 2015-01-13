@@ -105,7 +105,6 @@ a:active {
 
 body {
     padding-top: 60px;
-    margin: 0;
     font-family: 'Geneva', 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     font-size: 16px;
     color: #dddddd;
@@ -120,7 +119,9 @@ body {
     background-image: -o-linear-gradient(top, #060606, #252a30);
     background-image: linear-gradient(to bottom, #060606, #252a30);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff060606', endColorstr='#ff252a30', GradientType=0);
-    background-repeat: repeat-x;
+    background-repeat: no-repeat;
+    margin: auto;
+    width: 1200px;
 }
 
 a {
