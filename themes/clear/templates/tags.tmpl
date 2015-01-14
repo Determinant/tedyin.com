@@ -6,7 +6,7 @@
     <div class="postbox indexbox">
         <div class="post_title">
             <h2>${messages("Categories")}</h2>
-            <ul class="unstyled bricks">
+            <ul class="unstyled">
             % for text, link in cat_items:
                 % if text:
                     <li><h3><a class="reference" href="${link}">${text}</a></h3></li>
@@ -20,7 +20,7 @@
     <div class="indexbox">
         <div class="post_title">
             <h2>${messages("Tags")}</h2>
-            <ul class="unstyled bricks">
+            <ul class="unstyled">
             % for text, link in items:
                 <li><a class="tag reference" href="${link}">${text}</a></li>
             % endfor

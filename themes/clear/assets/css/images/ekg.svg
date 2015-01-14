@@ -93,11 +93,11 @@
     <linearGradient
        id="linearGradient3909">
       <stop
-         style="stop-color:#00e2c5;stop-opacity:1"
+         style="stop-color:#95ded4;stop-opacity:1"
          offset="0"
          id="stop3911" />
       <stop
-         style="stop-color:#00e2c5;stop-opacity:0;"
+         style="stop-color:#95ded4;stop-opacity:0;"
          offset="1"
          id="stop3913" />
     </linearGradient>
@@ -178,7 +178,7 @@
      id="path2990"
      inkscape:connector-curvature="0" />
   <path
-     style="fill:#00e2c5;fill-opacity:0;stroke:#00e2c5;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     style="fill:#95ded4;fill-opacity:0;stroke:#95ded4;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
      d="m 157.97216,58.590281 c -9.45951,-7.154268 -23.80088,-13.734151 -33.42971,-33.129737 -9.82326,-19.7872485 4.15263,-31.8494815 11.45097,-32.6517925 14.48815,-1.592774 23.35965,12.739231 22.56327,12.739231 0,0 6.50393,-14.168034 20.4072,-12.967985 9.68827,0.836336 23.08831,13.549288 14.64137,31.4045035 -11.5515,20.11633 -25.34962,27.376508 -34.90956,34.407285"
      id="path3004"
      inkscape:connector-curvature="0"
@@ -210,7 +210,7 @@
     <animate
        id="beat"
        attributeName="stroke"
-       values="#00e2c5; #00f3d6; #00e2c5"
+       values="#95ded4; #00f3d6; #95ded4"
        dur="0.5s"
        begin="pulse.end" />
   </path>
@@ -220,7 +220,7 @@
      style="overflow:visible"
      transform="translate(0, 0)">
     <circle
-       style="fill:#00e2c5;fill-opacity:1;stroke:none"
+       style="fill:#95ded4;fill-opacity:1;stroke:none"
        r="5"
        cx="0"
        cy="0"

@@ -1,14 +1,14 @@
 ## -*- coding: utf-8 -*-
 <%inherit file="base.tmpl"/>
 <%block name="content">
-        <!--Body content-->
-        <div class="postbox">
-        <h1 class="post_title">${title}</h1>
-        <ul class="unstyled">
-        % for text, link in items:
-            <li><a href="${link}">${text}</a>
-        % endfor
-        </ul>
+    <div class="postbox indexbox">
+        <div class="post_title">
+            <h2>${title}</h2>
         </div>
-        <!--End of body content-->
+        <ul class="unstyled">
+            % for text, link in items:
+                <li><a href="${link}">${text}</a></li>
+            % endfor
+        </ul>
+    </div>
 </%block>

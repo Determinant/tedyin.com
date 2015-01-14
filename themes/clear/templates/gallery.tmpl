@@ -1,6 +1,6 @@
 ## -*- coding: utf-8 -*-
 <%inherit file="base.tmpl"/>
-<%namespace name="disqus" file="comments_helper.tmpl"/>
+<%namespace name="comments" file="helpers/comments_helper_disqus.tmpl"/>
 <%block name="sourcelink"></%block>
 
 <%block name="content">
@@ -10,14 +10,14 @@
         % endfor
     </ul>
     %if text:
-    <p>
-        ${text}
-    </p>
+        <p>
+            ${text}
+        </p>
     %endif
     <ul>
-    % for folder in folders:
-        <li><a href="${folder}"><i class="icon-folder-open"></i>&nbsp;${folder}</a></li>
-    % endfor
+        % for folder in folders:
+            <li><a href="${folder}"><i class="icon-folder-open"></i>&nbsp;${folder}</a></li>
+        % endfor
     </ul>
     <ul class="thumbnails">
         %for image in images:
@@ -25,7 +25,7 @@
                 <img src="${image[1]}" /></a></li>
         %endfor
     </ul>
-%if enable_comments:
-    ${disqus.comment_form(None, permalink, title)}
-%endif
+    %if enable_comments:
+        ${comments.comment_form(None, permalink, title)}
+    %endif
 </%block>

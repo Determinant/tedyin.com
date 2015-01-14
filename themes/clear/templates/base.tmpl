@@ -1,5 +1,5 @@
 ## -*- coding: utf-8 -*-
-<%namespace file="base_helper.tmpl" import="*"/>
+<%namespace file="helpers/base_helper.tmpl" import="*"/>
 <!DOCTYPE html>
 <html lang="${lang}">
     <head>
@@ -8,43 +8,40 @@
         </%block>
     </head>
     <body>
-        <div id="global_container">
-            <!-- Menubar -->
-            <div class="navbar-fixed-left">
-                <div class="logo">
-                    <object type="image/svg+xml" data="/assets/css/images/ekg.svg">
-                    </object>
+        <div class="container" id="global_container">
+            <div class="row">
+                <div class="col-md-4 col-xs-4">
+                    <div class="navbar_left">
+                        <div class="logo">
+                            <object type="image/svg+xml" data="/assets/css/images/ekg.svg">
+                            </object>
+                        </div>
+                        <div class="headline">
+                            <a class="brand" href="${abs_link('/')}">
+                                ${blog_title}
+                            </a>
+                            <br />
+                            <a class="descr">
+                                ${description}
+                            </a>
+                        </div>
+                        <ul class="nav">
+                            ${html_navigation_links()}
+                        </ul>
+                        <ul id="pushy_box" class="nav">
+                        </ul>
+                    </div>
                 </div>
-                <div class="headline">
-                    <a class="brand" href="${abs_link('/')}">
-                        ${blog_title}
-                    </a>
-                    <br />
-                    <a class="descr">
-                        ${description}
-                    </a>
-                </div>
-                <ul class="nav">
-                    ${html_sidebar_links()}
-                </ul>
-                <ul id="pushy_box" class="nav">
-                </ul>
-                %if search_form:
-                ${search_form}
-                %endif
-            </div>
-            <!-- End of Menubar -->
-            <div class="container" id="container">
-                <div id="post_body">
-                    <!--Body content-->
-                    <%block name="content"></%block>
-                    <!--End of body content-->
+                <div class="col-md-8 col-xs-8">
+                    <div class="contentcolumn">
+                        <%block name="content"></%block>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="pager">
-            <div class="footerbox">
-                ${content_footer}
+            <div class="row">
+                <div class="footerbox col-md-12 col-xs-12">
+                    ${content_footer}
+                </div>
             </div>
         </div>
     </body>
