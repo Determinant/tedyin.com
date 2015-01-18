@@ -251,33 +251,36 @@ pre.code {
 }
 
 .navbar_left {
-    width: 250px;
     margin-right: 50px;
     overflow: visible;
+}
+
+.navbar_left .logo {
+    width: 250px;
 }
 
 .headline {
     margin-left: 2px;
 }
 
-.logo {
+.logo_img {
     top: 0;
     position: absolute;
     pointer-events: none;
 }
 
-.no-svg .logo {
+.no-svg .logo_img {
     width: 255px;
     height: 120px;
     background: url('images/ekg.png') no-repeat right center;
 }
 
-.logo > object {
+.logo_img > object {
     width: 255px;
     height: 120px;
 }
 
-.no-svg .logo > object {
+.no-svg .logo_img > object {
     display: none;
 }
 
