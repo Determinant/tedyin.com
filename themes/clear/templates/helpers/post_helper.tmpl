@@ -1,15 +1,5 @@
 ## -*- coding: utf-8 -*-
 
-<%def name="meta_translations(post)">
-    %if len(translations) > 1:
-        %for langname in translations.keys():
-            %if langname != lang and post.is_translation_available(langname):
-                <link rel="alternate" hreflang="${langname}" href="${post.permalink(langname)}">
-            %endif
-        %endfor
-    %endif
-</%def>
-
 <%def name="html_tags(post)">
     %if post.tags:
         <ul itemprop="keywords" class="tags">

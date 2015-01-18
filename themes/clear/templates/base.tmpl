@@ -4,26 +4,21 @@
 <html lang="${lang}">
     <head>
         ${html_head()}
-        <%block name="extra_head">
-        </%block>
     </head>
     <body>
-        <div class="container" id="global_container">
+        <div class="container global_container">
             <div class="row">
                 <div class="col-md-4 col-xs-4">
                     <div class="navbar_left">
+                        <div class="headline">
+                            <a class="brand" href="${abs_link('/')}">
+                                <p>${blog_title}</p>
+                            </a>
+                            <p class="descr">${description}</p>
+                        </div>
                         <div class="logo">
                             <object type="image/svg+xml" data="/assets/css/images/ekg.svg">
                             </object>
-                        </div>
-                        <div class="headline">
-                            <a class="brand" href="${abs_link('/')}">
-                                ${blog_title}
-                            </a>
-                            <br />
-                            <a class="descr">
-                                ${description}
-                            </a>
                         </div>
                         <ul class="nav">
                             ${html_navigation_links()}

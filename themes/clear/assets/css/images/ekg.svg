@@ -11,11 +11,11 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="100%"
    height="100%"
-   viewBox="0 -15 210 120"
+   viewBox="0 -15 255.65584 97.724537"
    id="svg3034"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="e.svg">
+   sodipodi:docname="ekg.svg">
   <metadata
      id="metadata3043">
     <rdf:RDF>
@@ -41,9 +41,9 @@
      inkscape:window-height="612"
      id="namedview3041"
      showgrid="true"
-     inkscape:zoom="2.56"
-     inkscape:cx="99.773877"
-     inkscape:cy="50.067597"
+     inkscape:zoom="1.28"
+     inkscape:cx="191.09616"
+     inkscape:cy="12.166196"
      inkscape:window-x="398"
      inkscape:window-y="335"
      inkscape:window-maximized="0"
@@ -65,8 +65,8 @@
        visible="true"
        enabled="true"
        snapvisiblegridlinesonly="true"
-       originx="0.55062398px"
-       originy="27.049919px" />
+       originx="49.533873px"
+       originy="9.7847334px" />
   </sodipodi:namedview>
   <defs
      id="defs3036">
@@ -93,11 +93,11 @@
     <linearGradient
        id="linearGradient3909">
       <stop
-         style="stop-color:#95ded4;stop-opacity:1"
+         style="stop-color:#c6f3ec;stop-opacity:0.5"
          offset="0"
          id="stop3911" />
       <stop
-         style="stop-color:#95ded4;stop-opacity:0;"
+         style="stop-color:#c6f3ec;stop-opacity:0.2;"
          offset="1"
          id="stop3913" />
     </linearGradient>
@@ -110,7 +110,7 @@
        x2="66.122803"
        y2="166.42064"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-71.493646,-137.80357)" />
+       gradientTransform="translate(-22.510397,-142.81385)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient5219"
@@ -161,7 +161,7 @@
        xlink:href="#linearGradient3909"
        id="linearGradient3014"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-71.493646,-137.80357)"
+       gradientTransform="translate(-22.510397,-142.81385)"
        x1="275.89792"
        y1="166.55431"
        x2="66.122803"
@@ -169,17 +169,18 @@
   </defs>
   <path
      style="fill:none;stroke:url(#linearGradient3014);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     d="m 2.5006241,57.554931 c 2.790229,2.1891 2.139337,6.959 3.14579,10.486003 1.238003,-11.773503 3.4295988,-18.690603 4.1943898,-30.409403 1.5728971,14.135 3.1457931,15.604 4.7186901,19.3991 l 9.306306,0 c 3.326754,5.4926 2.665255,7.7946 3.801164,11.534603 0.666301,-4.150703 0.217751,-9.193303 3.1458,-11.534603 l 4.19439,0 c 3.86623,-5.9207 3.40982,-16.7202 3.45292,-25.3517 0.82052,24.9021 6.19335,27.1759 7.34018,40.371005 0.53669,-5.417805 1.82676,-10.650205 4.41157,-16.067905 l 7.34018,0 c 1.13598,-3.497 2.27196,-7.6729 2.62149,-13.6318 1.15139,4.2869 1.15398,8.1909 4.1944,13.1075 l 11.93711,0.032 c 2.30337,4.009 3.42227,8.018 4.054,12.0271 1.64714,-7.5483 5.158,-17.624 7.47512,-69.8216995 2.37821,19.0361995 1.84934,46.3325995 8.4299,58.1598995 l 10.440996,0.1272 c 2.16022,8.1216 3.31248,17.038905 4.36273,28.990005 1.20972,-10.1689 1.84248,-21.201005 4.26573,-28.724005 l 36.97462,-0.0017"
+     d="m 2.6557475,50.591528 c 2.040735,0.188759 30.2003725,-0.407506 41.7669085,-0.03689 3.382514,0.108382 3.447281,-0.518555 5.539133,1.031439 2.215827,1.641855 4.30987,10.189996 4.667874,11.444581 1.238003,-11.773503 3.429598,-18.690603 4.194389,-30.409403 1.572898,14.135 2.881428,14.351223 4.454325,18.146323 l 9.180047,0.0809 c 3.326754,5.4926 3.05588,8.966475 4.191789,12.706478 0.666301,-4.150703 0.413064,-10.377026 3.341113,-12.718326 l 5.044693,-0.04536 c 3.86623,-5.9207 3.926704,-15.491119 3.969804,-24.122619 0.82052,24.9021 4.63085,27.1759 5.77768,40.371005 0.53669,-5.417805 1.82676,-10.650205 4.41157,-16.067905 l 7.340177,0 c 1.13598,-3.497 2.27196,-7.6729 2.62149,-13.6318 1.15139,4.2869 1.15398,8.1909 4.1944,13.1075 l 11.93711,0.032 c 2.30337,4.009 3.42227,8.018 4.054,12.0271 1.64714,-7.5483 5.158,-17.624 7.47512,-69.8216994 2.37821,19.0361994 1.84934,46.3325994 8.4299,58.1598994 l 10.441,0.1272 c 2.16022,8.1216 3.31248,17.038905 4.36273,28.990005 1.20972,-10.1689 1.84248,-21.201005 4.26573,-28.724005 l 36.97462,-0.0017"
      id="path3006"
-     inkscape:connector-curvature="0" />
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cssccccccccccccccccccccc" />
   <path
      style="fill:none;stroke:url(#linearGradient3915);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     d="m 163.57851,56.243348 40.56692,0.199134"
+     d="m 212.56176,51.23307 40.56692,0.199134"
      id="path2990"
      inkscape:connector-curvature="0" />
   <path
-     style="fill:#95ded4;fill-opacity:0;stroke:#95ded4;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     d="m 157.97216,58.590281 c -9.45951,-7.154268 -23.80088,-13.734151 -33.42971,-33.129737 -9.82326,-19.7872485 4.15263,-31.8494815 11.45097,-32.6517925 14.48815,-1.592774 23.35965,12.739231 22.56327,12.739231 0,0 6.50393,-14.168034 20.4072,-12.967985 9.68827,0.836336 23.08831,13.549288 14.64137,31.4045035 -11.5515,20.11633 -25.34962,27.376508 -34.90956,34.407285"
+     style="fill:#c6f3ec;fill-opacity:0;stroke:#c6f3ec;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.8;stroke-dasharray:none"
+     d="M 206.95541,53.580003 C 197.4959,46.425735 183.15453,39.845852 173.5257,20.450266 c -9.82326,-19.7872484 4.15263,-31.849481 11.45097,-32.651792 14.48815,-1.592774 23.35965,12.7392306 22.56327,12.7392306 0,0 6.50393,-14.1680336 20.4072,-12.9679846 9.68827,0.836336 23.08831,13.5492876 14.64137,31.404503 -11.5515,20.11633 -25.34962,27.376508 -34.90956,34.407285"
      id="path3004"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="csscccc">
@@ -210,7 +211,7 @@
     <animate
        id="beat"
        attributeName="stroke"
-       values="#95ded4; #00f3d6; #95ded4"
+       values="#c6f3ec; #fecfd4; #c6f3ec"
        dur="0.5s"
        begin="pulse.end" />
   </path>
@@ -220,7 +221,7 @@
      style="overflow:visible"
      transform="translate(0, 0)">
     <circle
-       style="fill:#95ded4;fill-opacity:1;stroke:none"
+       style="fill:#c6f3ec;fill-opacity:1;stroke:none"
        r="5"
        cx="0"
        cy="0"
