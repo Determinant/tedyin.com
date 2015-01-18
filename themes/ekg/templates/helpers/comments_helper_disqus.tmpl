@@ -1,0 +1,72 @@
+## -*- coding: utf-8 -*-
+<%!
+    import json
+    translations = {
+        'es': 'es_ES',
+    }
+%>
+
+<%def name="comment_form(url, title, identifier)">
+    %if comment_system_id:
+    <div id="disqus_thread" class="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname ="${comment_system_id}";
+        %if url:
+            var disqus_url="${url}";
+        %endif
+        var disqus_title=${json.dumps(title)},
+            disqus_identifier="${identifier}",
+            disqus_config = function () {
+            this.language = "${translations.get(lang, lang)}";
+        };
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        /*
+        function get_disqus_script() {
+            $.ajax({
+                url: 'http://' + disqus_shortname + '.disqus.com/embed.js',
+                type: 'GET',
+                cache: false,
+                dataType: 'script',
+                timeout: 5000,
+                sucesss: function (resp) {
+                },
+                error: function (a, b, c) {
+                    console.log(b);
+                    setTimeout(get_disqus_script, 5000);
+                }
+                });
+        }
+        get_disqus_script();
+        */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            //dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            dsq.src = '/assets/js/disqus-min.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    %endif
+</%def>
+
+<%def name="comment_link(link, identifier)">
+    %if comment_system_id:
+    <a class="comments" href="${link}#disqus_thread" data-disqus-identifier="${identifier}">Comments</a>
+    %endif
+</%def>
+
+
+<%def name="comment_link_script()">
+    %if comment_system_id:
+        <script>
+            var disqus_shortname="${comment_system_id}";
+            (function(){var a=document.createElement("script");
+            a.async=true;
+           /* a.src="//"+disqus_shortname+".disqus.com/count.js"; */
+            a.src = '/assets/js/disqus-count-min.js';
+            (document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());
+        </script>
+    %endif
+</%def>

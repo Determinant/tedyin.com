@@ -7,7 +7,7 @@
 <div class="postbox">
     ${pheader.html_title()}
     <div class="post_preamble">
-        ${messages[lang]["Posted"]}: ${post.date.strftime(date_format)}
+        <h4 style="inline-block">${messages[lang]["Posted"]}: ${post.date.strftime(date_format)}</h4>
         ${pheader.html_translations(post)}
         ${helper.html_tags(post)}
     </div>

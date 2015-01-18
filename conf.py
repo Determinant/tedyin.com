@@ -136,7 +136,7 @@ NAVIGATION_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "clear"
+THEME = "ekg"
 
 # Below this point, everything is optional
 

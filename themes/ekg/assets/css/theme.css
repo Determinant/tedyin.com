@@ -16,6 +16,11 @@ img {
     max-width: 90%;
 }
 
+.container {
+/*    margin-top: 50px; */
+    padding-top: 50px;
+}
+
 .contentcolumn {
     min-height: 600px;
 }
@@ -262,26 +267,32 @@ pre.code {
 }
 
 .no-svg .logo {
-    width: 250px;
-    height: 100px;
-    background-image: url('images/ekg.png');
-    background-repeat: no-repeat;
-    background-size: contain;
+    width: 255px;
+    height: 120px;
+    background: url('images/ekg.png') no-repeat right center;
 }
 
 .logo > object {
-    width: 250px;
+    width: 255px;
+    height: 120px;
 }
 
 .no-svg .logo > object {
     display: none;
 }
 
+.navbar_left .brand > a {
+    color: #6083bf;
+}
+
+.navbar_left .brand > a:hover {
+    color: #ffffff;
+}
+
 .navbar_left .brand {
     font-size: 70px;
     font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     line-height: 50px;
-    color: #6083bf;
     text-shadow: 0 0 20px rgba(198, 243, 236, 0.75);
     /* IE 8 */
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
@@ -293,6 +304,7 @@ pre.code {
     -khtml-opacity: 0.8;
     /* Good browsers */
     opacity: 0.8;
+    margin-top: 10px;
 }
 
 .navbar_left .descr {
@@ -336,11 +348,18 @@ pre.code {
 .pager li > span {
     display: inline-block;
     padding: 5px 14px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #ccc;
+    color: #333;
+    border: 0;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px;
+}
+
+.pager li > a:hover,
+.pager li > span:hover {
+    background-color: #e37222;
+    color: #fff;
 }
 
 .pager {
@@ -362,13 +381,11 @@ pre.code {
 .pager .next > a,
 .pager .next > span {
     float: right;
-    color: #000;
     line-height: 20px;
 }
 .pager .previous > a,
 .pager .previous > span {
     float: left;
-    color: #000;
     line-height: 20px;
 }
 
@@ -417,11 +434,6 @@ div.section {
     margin-top: 40px;
 }
 
-.global_container {
-    margin-top: 60px;
-    width: 1000px;
-}
-
 object.music-score {
     width: 100%;
 }
@@ -461,3 +473,4 @@ p:first-child { margin-top: 0 !important; }
 .disqus_thread {
     margin-top: 60px;
 }
+

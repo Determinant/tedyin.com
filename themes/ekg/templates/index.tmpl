@@ -23,6 +23,6 @@
     ${comments.comment_link_script()}
     ${helper.mathjax_script(posts)}
     % if not post.meta('nocomments'):
-        ${comments.comment_form(False, post.title(), 'index')}
+        ${comments.comment_form(False, 'Home Page', 'index')}
     % endif
 </%block>
