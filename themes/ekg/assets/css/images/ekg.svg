@@ -216,33 +216,37 @@
        begin="pulse.end" />
   </path>
   <symbol
-     id="path3795"
+     id="spot"
      overflow="visible"
+     visibility="hidden"
      style="overflow:visible"
      transform="translate(0, 0)">
     <circle
+       id="spot_circle"
        style="fill:#c6f3ec;fill-opacity:1;stroke:none"
        r="5"
-       cx="0"
-       cy="0"
-       id="circle13"
+       cx="2.6557475"
+       cy="50.591528"
        d="M 5,0 C 5,2.7614237 2.7614237,5 0,5 -2.7614237,5 -5,2.7614237 -5,0 c 0,-2.7614237 2.2385763,-5 5,-5 2.7614237,0 5,2.2385763 5,5 z"
        sodipodi:cx="0"
        sodipodi:cy="0"
        sodipodi:rx="5"
-       sodipodi:ry="5" />
+       sodipodi:ry="5" >
+       </circle>
+       <set attributeName="visibility" to="visible" dur="3s" begin="pulse.begin"/>
+       <set attributeName="visibility" to="visible" dur="0.3s" begin="pulse2.begin"/>
   </symbol>
+
   <use
-     xlink:href="#path3795"
-     x="0"
-     y="0"
+     xlink:href="#spot"
+     x="-2.6557475"
+     y="-50.591528"
      width="203.18855"
      height="97.429291"
      style="fill:none;stroke:none;filter:url(#filter5281)"
      id="use24">
     <animateMotion
        id="pulse"
-       begin="0s; pulse2.end"
        dur="3s"
        style="stroke:url(#linearGradient5227);fill-opacity:1;fill:url(#linearGradient5243)">
       <mpath

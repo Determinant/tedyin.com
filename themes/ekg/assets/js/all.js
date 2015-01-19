@@ -88,3 +88,23 @@ function post(mesg) {
 }
 
 long_polling();
+
+var svg_doc = null;
+var svg_animation_ongoing = true;
+function svg_onload(e) {
+    svg_doc = e.contentDocument;
+    svg_doc.getElementById("pulse2").setAttribute("onend", "svg_animation_end();");
+    svg_doc.svg_animation_end = svg_animation_end;
+}
+function trigger_pulse() {
+    if (!svg_animation_ongoing)
+    {
+        svg_animation_ongoing = true;
+        svg_doc.getElementById("pulse").beginElement();
+    }
+}
+
+function svg_animation_end() {
+    svg_animation_ongoing = false;
+}
+

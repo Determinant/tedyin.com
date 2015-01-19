@@ -18,7 +18,12 @@ img {
 
 .container {
 /*    margin-top: 50px; */
-    padding-top: 50px;
+    padding-top: 50px; /* IE compatibility */
+    background-color: #000;
+    background-image: url('images/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: -100px -47px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bg.jpg', sizingMethod='scale')";
 }
 
 .contentcolumn {
@@ -54,7 +59,8 @@ img {
 }
 
 .indexbox:hover {
-    background-color: #222222;
+    background-color: rgb(34, 34, 34);
+    background-color: rgba(34, 34, 34, .85);
     -webkit-transition: 0.2s;
     -moz-transition: 0.2s;
     -ms-transition: 0.2s;
@@ -69,7 +75,8 @@ img {
     border-style: solid;
     border-width: 1px;
     border-color: #333333;
-    background-color: #1a1a1a;
+    background-color: rgb(26, 26, 26);
+    background-color: rgba(26, 26, 26, .75);
     -webkit-border-radius: 1em;
     -moz-border-radius: 1em;
     border-radius: 1em;
@@ -87,8 +94,8 @@ body {
     font-family: 'Geneva', 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     font-size: 16px;
     height: 100%;
-    background-color: #0c0c0c;
     color: #dddddd;
+    background-color: #000;
 }
 
 a {
@@ -255,6 +262,40 @@ pre.code {
     overflow: visible;
 }
 
+@media (max-width: 992px) {
+    .navbar_left {
+        margin-right: 0;
+    }
+    .container {
+        background-size: 100% auto;
+        background-position: initial;
+    }
+}
+
+@media (max-width: 750px) {
+    .container {
+        background-position: 0px 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        background-position: 0px 100px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        background-position: 0px 150px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        background-position: -20px 200px;
+    }
+}
+
 .navbar_left .logo {
     width: 250px;
 }
@@ -307,7 +348,7 @@ pre.code {
     -khtml-opacity: 0.8;
     /* Good browsers */
     opacity: 0.8;
-    margin-top: 10px;
+    padding-top: 10px;
 }
 
 .navbar_left .descr {
@@ -343,7 +384,8 @@ pre.code {
 
 .navbar_left .nav > li > a:hover {
     text-decoration: none;
-    background-color: #e37222;
+    background-color: rgb(227, 114, 34);
+    background-color: rgba(227, 114, 34, 0.5);
     color: #fff;
 }
 
