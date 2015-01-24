@@ -51,6 +51,10 @@ img {
     margin-bottom: 40px;
 }
 
+.post_preamble h4 {
+    display: inline;
+}
+
 .footerbox {
     font-family: 'Throw', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     text-align: center; 
