@@ -18,10 +18,10 @@ function long_polling() {
             for (var i = 0; i < resp.length; i++)
             {
                 resp[i]['dom'] = $(
-                '<div class="msg_box">' + 
-                    '<span class="msg_text">' + resp[i]['text'] + '</span>' +
+                '<div class="msgbox">' + 
+                    '<span class="msg-text">' + resp[i]['text'] + '</span>' +
                     '<span class="date">' + resp[i]['date'] + '</span>' +
-                '</div>').prependTo('#pushy_box').hide();
+                '</div>').prependTo('#pushybox').hide();
                 posts.push(resp[i]);
                 if (posts.length > max_entries)
                 {

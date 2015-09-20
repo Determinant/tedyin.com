@@ -13,7 +13,92 @@
         url('../../Throw.woff') format('woff');
 }
 
+/* headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 20px 0;
+    font-family: inherit;
+    font-weight: normal;
+    color: #ffffff;
+    text-rendering: optimizelegibility;
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+    font-weight: normal;
+    line-height: 1;
+    color: #adafae;
+}
+
+h1 {
+    font-size: 60px;
+    line-height: 65px;
+}
+
+h2 {
+    font-size: 31.5px;
+    line-height: 33px;
+}
+
+h3 {
+    font-size: 24.5px;
+    line-height: 24.5px;
+}
+
+h4 {
+    font-size: 17.5px;
+    line-height: 17.5px;
+}
+
+h5 {
+    font-size: 14px;
+    line-height: 14px;
+}
+
+h6 {
+    font-size: 11.9px;
+    line-height: 11.9px;
+}
+
+h1 small {
+    font-size: 20px;
+}
+
+h2 small {
+    font-size: 17.5px;
+}
+
+h3 small {
+    font-size: 14px;
+}
+
+h4 small {
+    font-size: 14px;
+}
+
 /* generic style of elements */
+
+body {
+    font-family: 'Geneva', 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
+    font-size: 16px;
+    height: 100%;
+    color: #dddddd;
+    background-color: #232526;
+    background: -webkit-linear-gradient(90deg, #232526 10%, #414345 90%); /* Chrome 10+, Saf5.1+ */
+    background:    -moz-linear-gradient(90deg, #232526 10%, #414345 90%); /* FF3.6+ */
+    background:     -ms-linear-gradient(90deg, #232526 10%, #414345 90%); /* IE10 */
+    background:      -o-linear-gradient(90deg, #232526 10%, #414345 90%); /* Opera 11.10+ */
+    background:         linear-gradient(90deg, #232526 10%, #414345 90%); /* W3C */
+}
+
 img {
     max-width: 90%;
 }
@@ -47,18 +132,9 @@ a:hover {
     transition: 0.5s;
 }
 
-body {
-    font-family: 'Geneva', 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
-    font-size: 16px;
-    height: 100%;
-    color: #dddddd;
-    background-color: #232526;
-    background: -webkit-linear-gradient(90deg, #232526 10%, #414345 90%); /* Chrome 10+, Saf5.1+ */
-    background:    -moz-linear-gradient(90deg, #232526 10%, #414345 90%); /* FF3.6+ */
-    background:     -ms-linear-gradient(90deg, #232526 10%, #414345 90%); /* IE10 */
-    background:      -o-linear-gradient(90deg, #232526 10%, #414345 90%); /* Opera 11.10+ */
-    background:         linear-gradient(90deg, #232526 10%, #414345 90%); /* W3C */
-}
+p { margin-bottom: 10px; }
+p:last-child { margin-bottom: 0 !important; }
+p:first-child { margin-top: 0 !important; }
 
 strong {
     font-weight: bold;
@@ -66,67 +142,6 @@ strong {
 
 em {
     font-style: italic;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 20px 0;
-    font-family: inherit;
-    font-weight: normal;
-    color: #ffffff;
-    text-rendering: optimizelegibility;
-}
-
-h1 small,
-h2 small,
-h3 small,
-h4 small,
-h5 small,
-h6 small {
-    font-weight: normal;
-    line-height: 1;
-    color: #adafae;
-}
-
-h1 {
-    font-size: 60px;
-    line-height: 65px;
-}
-h2 {
-    font-size: 31.5px;
-    line-height: 33px;
-}
-h3 {
-    font-size: 24.5px;
-    line-height: 24.5px;
-}
-h4 {
-    font-size: 17.5px;
-    line-height: 17.5px;
-}
-h5 {
-    font-size: 14px;
-    line-height: 14px;
-}
-h6 {
-    font-size: 11.9px;
-    line-height: 11.9px;
-}
-h1 small {
-    font-size: 20px;
-}
-h2 small {
-    font-size: 17.5px;
-}
-h3 small {
-    font-size: 14px;
-}
-h4 small {
-    font-size: 14px;
 }
 
 blockquote {
@@ -568,9 +583,6 @@ div.section {
 object.music-score {
     width: 100%;
 }
-
-p:last-child { margin-bottom: 0 !important; }
-p:first-child { margin-top: 0 !important; }
 
 .comments, .more {
     font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
