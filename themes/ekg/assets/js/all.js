@@ -1,26 +1,8 @@
-function adjust() {
-
-    bar=$('.navbar-fixed-left');
-/*
-    $('#container').css({
-        'margin-left': bar.width() + 50 + $(window).width() * 0.1
-    });
-    */
-
-    bar.css({
-        'left': -$(this).scrollLeft() + 50
-    });
-}
-/*
-$(window).scroll(adjust);
-$(window).resize(adjust);
-$(window).load(adjust);
-*/
 if (!window.console) console = {log: function() {}};
+
 var posts = [];
 var lasttime = 0;
 var max_entries = 20;
-//var server_addr = '192.168.248.130';
 var server_addr = 'tedyin.com';
 
 function long_polling() {
@@ -91,11 +73,13 @@ long_polling();
 
 var svg_doc = null;
 var svg_animation_ongoing = true;
+
 function svg_onload(e) {
     svg_doc = e.contentDocument;
     svg_doc.getElementById("pulse2").setAttribute("onend", "svg_animation_end();");
     svg_doc.svg_animation_end = svg_animation_end;
 }
+
 function trigger_pulse() {
     if (!svg_animation_ongoing)
     {
@@ -108,3 +92,46 @@ function svg_animation_end() {
     svg_animation_ongoing = false;
 }
 
+function code_box(bid, data) {
+    var div = document.getElementById("codebox_" + bid);
+    document.getElementById("cbjs_" + bid).remove();
+    div.className = "code";
+    div.style.display = "block";
+    var lineno = document.createElement('div');
+    var text = document.createElement('div');
+    var wrapper = document.createElement('div');
+    lineno.className = "lineno";
+    text.className = "text scroll-pane horizontal-only";
+    wrapper.className = "wrapper";
+    var linenos = [];
+    for (var i = 0; i < data.length; i++)
+    {
+        var line = document.createElement('span');
+        var ldiv = document.createElement('div');
+        ldiv.className = "line";
+        line.innerHTML = data[i] ;
+        ldiv.appendChild(line);
+        text.appendChild(ldiv);
+        linenos.push(i + 1);
+    }
+    lineno.innerHTML = linenos.join('\n');
+    div.appendChild(lineno);
+    wrapper.appendChild(text);
+    div.appendChild(wrapper);
+}
+
+$(function() {
+    $('.scroll-pane').each(function() {
+            $(this).jScrollPane({showArrows: $(this).is('.arrow')});
+            var api = $(this).data('jsp');
+            var throttleTimeout;
+            $(window).bind('resize', function() {
+                if (!throttleTimeout) {
+                    throttleTimeout = setTimeout(function() {
+                            api.reinitialise();
+                            throttleTimeout = null;
+                        }, 50);
+                }
+            });
+        });
+});

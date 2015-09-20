@@ -1,6 +1,6 @@
 .. title: 幸福
 .. slug: xing-fu
-.. date: 2015-01-10 00:15:20 UTC+08:00
+.. date: 2015-08-22 00:00:03 UTC+08:00
 .. tags: 幸福, 妹子, 僞詩, pseudo-poem
 .. link:
 .. description:
@@ -15,3 +15,14 @@
 | 說了聽不清什麼的話
 | 相視一笑
 | 這便是幸福
+
+.. TEASER_END
+.. raw:: html
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <a onclick="alert('Happy Birthday, Carol! :)');" style="color:#000">
+        I guess that I've found that girl.
+    </a>

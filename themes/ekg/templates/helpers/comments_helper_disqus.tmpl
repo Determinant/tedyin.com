@@ -42,8 +42,8 @@
         */
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            //dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            dsq.src = '/assets/js/disqus-min.js';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            /* dsq.src = '/assets/js/disqus-min.js'; */
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     </script>
@@ -64,8 +64,8 @@
             var disqus_shortname="${comment_system_id}";
             (function(){var a=document.createElement("script");
             a.async=true;
-           /* a.src="//"+disqus_shortname+".disqus.com/count.js"; */
-            a.src = '/assets/js/disqus-count-min.js';
+            a.src="//"+disqus_shortname+".disqus.com/count.js";
+            /* a.src = '/assets/js/disqus-count-min.js'; */
             (document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());
         </script>
     %endif

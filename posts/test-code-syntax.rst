@@ -13,20 +13,20 @@ Test music score:
    :class: music-score
 
 Test syntax highlight for Python:
-
-.. code:: python
+    
+.. ccode:: python
    :number-lines: 1
 
    def f(x):
        if (x < 10):
            print "Less than 10"
        else
-           print "Greater than 10"
+           print "Greater than 10"        # this is a long long long long inline comment
    f(10)
-    
+
 Test syntax highlight for C++:
 
-.. code:: cpp
+.. ccode:: cpp
    :number-lines: 1
 
    class Num {

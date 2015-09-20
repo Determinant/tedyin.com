@@ -22,7 +22,7 @@ img {
     background-color: #000;
     background-image: url('images/bg.jpg');
     background-repeat: no-repeat;
-    background-position: -100px -47px;
+    background-position: -50px -47px;
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bg.jpg', sizingMethod='scale')";
 }
 
@@ -103,7 +103,7 @@ body {
 }
 
 a {
-    color: #47756f;
+    color: #67756f;
     text-decoration: none;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
@@ -112,13 +112,13 @@ a {
     transition: 0.5s;
 }
 
-a:focus {
+a:focus, a:hover, a:active {
     outline: none;
+    text-decoration: none;
 }
 
-a:hover,
-a:active {
-    outline: 0;
+a:focus {
+    color: #78756f;
 }
 
 a:hover {
@@ -207,7 +207,7 @@ blockquote {
 
     padding: 10px 10px 10px 15px;
     margin: 10px 0; 
-    border-left: 5px solid #33b5b5;
+    border-left: 5px solid #78756f;
     background: #333333
 }
 
@@ -219,12 +219,48 @@ blockquote:after {
 pre.code {
     word-break: break-all;
     word-wrap: break-word;
-    white-space: pre-wrap;
+    white-space: pre;
     margin: 0;
     margin-top: 10px;
     margin-bottom: 10px;
+    padding: 0px;
     overflow: hidden;
     border: 0;
+}
+
+pre.code .lineno, pre.code .wrapper {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+pre.code .lineno {
+    float: left;
+    text-align: right;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-right: 2px solid #78756f;
+    margin-right: 10px;
+    min-width: 30px;
+    background-color: #3e4071;
+}
+
+pre.code .text {
+    outline: none;
+    overflow-x: auto;
+    cursor: text;
+}
+
+pre.code .wrapper {
+    padding-right: 5px;
+    overflow-x: hidden;
+}
+
+pre.code .text .line span {
+    display: inline-block;
+}
+
+pre.code .text .line:hover {
+    /* background-color: #333; */
 }
 
 .msg_box {
@@ -386,7 +422,12 @@ pre.code {
     color: #aaa;
 }
 
-.navbar_left .nav > li > a:hover {
+.navbar_left .nav a:focus {
+    text-decoration: none;
+    background: none;
+}
+
+.navbar_left .nav a:hover {
     text-decoration: none;
     background-color: rgb(227, 114, 34);
     background-color: rgba(227, 114, 34, 0.5);
@@ -523,3 +564,36 @@ p:first-child { margin-top: 0 !important; }
     margin-top: 60px;
 }
 
+.jspDrag {
+    background: #aaa;
+}
+
+.jspTrack {
+    background: #333;
+}
+
+pre.code .text .jspHorizontalBar {
+    opacity: 0;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+pre.code .text:hover .jspHorizontalBar {
+    opacity: 0.5;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+/*
+.scroll-pane{width: 100% !important;overflow: auto;}
+.jspContainer{overflow:hidden;position:relative;width: 100%!important;}
+.jspPane{position:absolute;width: 100%!important;}
+*/
+.jspHorizontalBar, .jspVerticalBar {
+    background: none;
+}
