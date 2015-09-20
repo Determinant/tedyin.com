@@ -87,7 +87,7 @@ h4 small {
 /* generic style of elements */
 
 body {
-    font-family: 'Geneva', 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
+    font-family: "Open Sans", Calibri, Candara, Arial, sans-serif; /* 'Geneva', 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif; */
     font-size: 16px;
     height: 100%;
     color: #dddddd;
@@ -590,6 +590,7 @@ object.music-score {
 
 .disqus-thread {
     margin-top: 60px;
+    font-family: "Open Sans", Calibri, Candara, Arial, sans-serif;
 }
 
 .jspDrag {
