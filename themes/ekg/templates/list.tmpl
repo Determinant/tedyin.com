@@ -1,14 +1,22 @@
 ## -*- coding: utf-8 -*-
 <%inherit file="base.tmpl"/>
+
 <%block name="content">
-    <div class="postbox indexbox">
-        <div class="post_title">
-            <h2>${title}</h2>
-        </div>
-        <ul class="unstyled">
-            % for text, link in items:
-                <li><a href="${link}">${text}</a></li>
-            % endfor
-        </ul>
+<div class="postbox indexbox">
+    <div class="post_title">
+        <h1>${title|h}</h1>
     </div>
+    %if items:
+    <ul class="unstyled">
+    % for text, link, count in items:
+        <li><a href="${link}">${text|h}</a>
+        % if count:
+            (${count})
+        % endif
+    % endfor
+    </ul>
+    %else:
+    <p>${messages("Nothing found.")}</p>
+    %endif
+</div>
 </%block>

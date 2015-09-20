@@ -92,9 +92,13 @@ function svg_animation_end() {
     svg_animation_ongoing = false;
 }
 
+function remove_element(e) {
+    e && e.parentNode && e.parentNode.removeChild(e);
+}
+
 function code_box(bid, data) {
     var div = document.getElementById("codebox_" + bid);
-    document.getElementById("cbjs_" + bid).remove();
+    remove_element(document.getElementById("cbjs_" + bid));
     div.className = "code";
     div.style.display = "block";
     var lineno = document.createElement('div');

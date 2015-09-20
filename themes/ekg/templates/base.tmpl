@@ -11,6 +11,10 @@
                 <div class="col-md-4 col-xs-12">
                     <div class="navbar_left">
                         <div class="logo" onmouseover="trigger_pulse();">
+                            <div class="logo_img">
+                                <object id="svg_obj" type="image/svg+xml" data="/assets/css/images/ekg.svg" onload="svg_onload(this);">
+                                </object>
+                            </div>
                             <div class="headline">
                                 <div class="brand">
                                     <a href="${abs_link('/')}">
@@ -18,10 +22,6 @@
                                     </a>
                                 </div>
                                 <p class="descr">${description}</p>
-                            </div>
-                            <div class="logo_img">
-                                <object id="svg_obj" type="image/svg+xml" data="/assets/css/images/ekg.svg" onload="svg_onload(this);">
-                                </object>
                             </div>
                         </div>
                         <ul class="nav">
