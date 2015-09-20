@@ -1,31 +1,41 @@
 ## -*- coding: utf-8 -*-
 <%inherit file="base.tmpl"/>
-<%namespace name="comments" file="helpers/comments_helper_disqus.tmpl"/>
+<%namespace name="comments" file="comments_helper.tmpl"/>
+<%namespace name="ui" file="crumbs.tmpl" import="bar"/>
 <%block name="sourcelink"></%block>
 
 <%block name="content">
-    <ul class="breadcrumb">
-        % for link, crumb in crumbs:
-            <li><a href="${link}">/ ${crumb}</a></li>
-        % endfor
-    </ul>
-    %if text:
-        <p>
-            ${text}
-        </p>
+    ${ui.bar(crumbs)}
+    %if title:
+    <h1>${title|h}</h1>
     %endif
+    %if post:
+    <p>
+        ${post.text()}
+    </p>
+    %endif
+    %if folders:
     <ul>
-        % for folder in folders:
-            <li><a href="${folder}"><i class="icon-folder-open"></i>&nbsp;${folder}</a></li>
-        % endfor
+    % for folder, ftitle in folders:
+        <li><a href="${folder|u}"><i
+        class="icon-folder-open"></i>&nbsp;${ftitle|h}</a></li>
+    % endfor
     </ul>
+    %endif
+    %if photo_array:
     <ul class="thumbnails">
-        %for image in images:
-            <li><a href="${image[0]}" class="thumbnail image-reference" ${image[2]}>
-                <img src="${image[1]}" /></a></li>
+        %for image in photo_array:
+            <li><a href="${image['url']}" class="thumbnail image-reference" title="${image['title']}">
+                <img src="${image['url_thumb']}" alt="${image['title']|h}" /></a>
         %endfor
     </ul>
-    %if enable_comments:
-        ${comments.comment_form(None, permalink, title)}
     %endif
+%if site_has_comments and enable_comments:
+    ${comments.comment_form(None, permalink, title)}
+%endif
+</%block>
+
+<%block name="extra_head">
+${parent.extra_head()}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 </%block>

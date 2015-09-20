@@ -9,13 +9,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-xs-12">
-                    <div class="navbar_left">
+                    <div class="navbar">
                         <div class="logo" onmouseover="trigger_pulse();">
-                            <div class="logo_img">
+                            <div class="logo-img">
                                 <object id="svg_obj" type="image/svg+xml" data="/assets/css/images/ekg.svg" onload="svg_onload(this);">
                                 </object>
                             </div>
-                            <div class="headline">
+                            <div class="logo-text">
                                 <div class="brand">
                                     <a href="${abs_link('/')}">
                                         <p>${blog_title}</p>
@@ -27,12 +27,12 @@
                         <ul class="nav">
                             ${html_navigation_links()}
                         </ul>
-                        <ul id="pushy_box" class="nav">
+                        <ul id="pushybox" class="nav">
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-8 col-xs-12">
-                    <div class="contentcolumn">
+                    <div class="content-column">
                         <%block name="content"></%block>
                     </div>
                 </div>

@@ -3,7 +3,7 @@
 <%block name="content">
     % if cat_items:
     <div class="postbox indexbox">
-        <div class="post_title">
+        <div class="post-title">
             <h2>${messages("Categories")}</h2>
             <ul class="unstyled">
             % for text, link in cat_items:
@@ -17,7 +17,7 @@
     % endif
     % if items:
     <div class="indexbox">
-        <div class="post_title">
+        <div class="post-title">
             <h2>${messages("Tags")}</h2>
             <ul class="unstyled">
             % for text, link in items:

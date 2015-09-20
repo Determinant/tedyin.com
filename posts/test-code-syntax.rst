@@ -1,7 +1,7 @@
 .. title: Code Syntax Highlight
 .. slug: test-code-syntax
 .. date: 2014/07/06 06:07:44
-.. tags: 
+.. tags: mathjax
 .. link: 
 .. category: coding
 .. description: 
@@ -46,3 +46,9 @@ Test syntax highlight for C++:
            virtual void print() = 0;
            virtual ~Num() {}
    };
+
+Test LaTeX:
+
+.. math::
+
+   e^{ix} = \cos x + i\sin x

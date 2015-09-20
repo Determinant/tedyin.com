@@ -1,0 +1,9 @@
+[Core]
+Name = rest_clisting
+Module = custom_code
+
+[Documentation]
+Author = Ted Yin
+Version = 0.1
+Website = http://tedyin.com
+Description = Extension for code box
