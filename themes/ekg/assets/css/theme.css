@@ -358,11 +358,6 @@ pre.code .text:hover .jspHorizontalBar {
     list-style: none;
 }
 
-.navbar {
-    margin-right: 50px;
-    overflow: visible;
-}
-
 .navbar .logo {
     width: 250px;
 }
