@@ -313,7 +313,7 @@ pre.code .text:hover .jspHorizontalBar {
 .navbar .brand {
     font-size: 70px;
     font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
-    line-height: 50px;
+    line-height: 70px;
     text-shadow: 0 0 20px rgba(198, 243, 236, 0.75);
     overflow: visible;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /* IE 8 */
