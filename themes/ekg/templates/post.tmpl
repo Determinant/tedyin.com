@@ -7,7 +7,7 @@
 <div class="postbox">
     ${pheader.html_title()}
     <div class="post-preamble">
-        <h4>${messages[lang]["Posted"]}: ${post.date.strftime(date_format)}</h4>
+        ${post.date.strftime(date_format)} @ ${post.meta('location') or 'Earth'}
         ${pheader.html_translations(post)}
         ${helper.html_tags(post)}
     </div>

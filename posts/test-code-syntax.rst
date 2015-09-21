@@ -2,10 +2,11 @@
 .. slug: test-code-syntax
 .. date: 2014/07/06 06:07:44
 .. tags: mathjax
-.. link: 
+.. link:
 .. category: coding
-.. description: 
+.. description:
 .. type: text
+.. location: Singapore
 
 Test music score:
 
