@@ -1,5 +1,6 @@
 ## -*- coding: utf-8 -*-
 <%namespace name="helper" file="helpers/index_helper.tmpl"/>
+<%namespace name="post_helper" file="helpers/post_helper.tmpl"/>
 <%namespace name="comments" file="helpers/comments_helper_disqus.tmpl"/>
 <%inherit file="base.tmpl"/>
 <%block name="content">
@@ -9,6 +10,7 @@
                 <h2>
                     <a href="${post.permalink(lang)}">${post.title(lang)}</a>
                 </h2>
+                ${post_helper.html_tags(post)}
             </div>
             <div class="post-date">
                 ${post.date.strftime(date_format)} @ ${post.meta('location') or 'Earth'}

@@ -6,10 +6,13 @@
 <%block name="content">
 <div class="postbox">
     ${pheader.html_title()}
-    <div class="post-preamble">
-        ${post.date.strftime(date_format)} @ ${post.meta('location') or 'Earth'}
-        ${pheader.html_translations(post)}
-        ${helper.html_tags(post)}
+    <div class="post-preamble row">
+        <div class="col-md-5 col-xs-12">
+            ${post.date.strftime(date_format)} @ ${post.meta('location') or 'Earth'}
+        </div>
+        <div class="col-md-7 col-xs-12">
+            ${helper.html_tags(post)}
+        </div>
     </div>
     ${post.text()}
     ${helper.html_pager(post)}

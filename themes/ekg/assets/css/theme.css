@@ -1,7 +1,7 @@
 /* generic style of elements */
 
 body {
-    font-family: "Open Sans", Calibri, Candara, Arial, sans-serif; /* 'Geneva', 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif; */
+    font-family: "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, 'Microsoft YaHei', 'SimHei', sans-serif;
     font-size: 16px;
     height: 100%;
     color: #dddddd;
@@ -266,6 +266,7 @@ pre.code .text:hover .jspHorizontalBar {
 .logo-text {
     margin-left: 2px;
     padding-top: 8px;
+    overflow: visible;
 }
 
 .logo-img {
@@ -298,6 +299,7 @@ pre.code .text:hover .jspHorizontalBar {
 
 .navbar .logo {
     width: 250px;
+    overflow: visible;
 }
 
 .navbar .brand a {
@@ -313,7 +315,7 @@ pre.code .text:hover .jspHorizontalBar {
     font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     line-height: 50px;
     text-shadow: 0 0 20px rgba(198, 243, 236, 0.75);
-
+    overflow: visible;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /* IE 8 */
     filter: alpha(opacity=80); /* IE 5-7 */
     -moz-opacity: 0.8; /* Netscape */
@@ -488,6 +490,8 @@ p.tags {
 
 ul.tags {
     display: inline-block;
+    padding-left: 0px;
+    margin-left: 0px;
     margin-bottom: 0;
     line-height: 14px;
     vertical-align: top;
@@ -509,6 +513,7 @@ ul.tags > li {
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     padding-left: 9px;
     padding-right: 9px;
+    background-color: #867c6f;
     background-color: rgba(134, 124, 111, 0.6);
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
