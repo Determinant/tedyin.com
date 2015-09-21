@@ -1,18 +1,3 @@
-/* define all custom fonts */
-@font-face {
-    font-family: Quikhand;
-    src: url('../../Quikhand.eot');
-    src: url('../../Quikhand.eot?#iefix') format('embedded-opentype'),
-        url('../../Quikhand.woff') format('woff');
-}
-
-@font-face {
-    font-family: Throw;
-    src: url('../../Throw.eot');
-    src: url('../../Throw.eot?#iefix') format('embedded-opentype'),
-        url('../../Throw.woff') format('woff');
-}
-
 /* headings */
 h1,
 h2,
