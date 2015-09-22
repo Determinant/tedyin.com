@@ -17,7 +17,7 @@ $(function() {
                 throttleTimeout = setTimeout(function() {
                         api.reinitialise();
                         throttleTimeout = null;
-                    }, 50);
+                    }, 100);
             }
         });
     });
@@ -26,14 +26,17 @@ $(function() {
         $(this).jScrollPane({showArrows: $(this).is('.arrow'),
                             disableHorizontal: true});
         var api = $(this).data('jsp');
-        console.log(api);
+        var e = $(this);
+        e.find('.jspContainer').css('height', '100%');
+        api.reinitialise();
         var throttleTimeout;
         $(window).bind('resize', function() {
             if (!throttleTimeout) {
                 throttleTimeout = setTimeout(function() {
+                        e.find('.jspContainer').css('height', '100%');
                         api.reinitialise();
                         throttleTimeout = null;
-                    }, 50);
+                    }, 100);
             }
         });
     });

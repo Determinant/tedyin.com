@@ -116,7 +116,7 @@ blockquote:after {
 }
 
 .content-column > div {
-    margin-top: 50px;
+    padding-top: 50px;
     max-width: 700px;
 }
 
@@ -287,11 +287,15 @@ pre.code .text .line:hover {
 }
 
 /* logo */
+
+.logo {
+    position: relative;
+}
+
 .logo-text {
     margin-left: 2px;
     padding-top: 8px;
     overflow: visible;
-    position: relative;
 }
 
 .logo-img {
@@ -338,10 +342,10 @@ pre.code .text .line:hover {
 .leftbar {
     float: right;
     width: 280px;
-    margin-top: 50px;
+    height: 100%;
+    padding-top: 50px;
     overflow: visible;
-    position: relative;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 div.navbar-collapse {
@@ -585,9 +589,44 @@ object.music-score {
 }
 
 #pushybox-container {
-    height: 400px;
-    width: 280px;
     overflow: hidden;
+}
+
+@media (min-width: 992px) {
+    .leftbar {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -ms-flex-flow: column;
+        -webkit-flex-flow: column;
+        flex-flow: column;
+    }
+
+    #navs {
+        display: -webkit-box !important;
+        display: -moz-box !important;
+        display: -ms-flexbox !important;
+        display: -webkit-flex !important;
+        display: flex !important;
+        -ms-flex-flow: column;
+        -webkit-flex-flow: column;
+        flex-flow: column;
+        -webkit-box-flex: 2;
+        -moz-box-flex: 2;
+        -webkit-flex: 2;
+        -ms-flex: 2;
+        flex: 2;
+    }
+
+    #pushybox-container {
+        -webkit-box-flex: 2;
+        -moz-box-flex: 2;
+        -webkit-flex: 2;
+        -ms-flex: 2;
+        flex: 2;
+    }
 }
 
 @media (max-width: 992px) {
@@ -617,6 +656,10 @@ object.music-score {
 
     #pushybox, #pushybox-container {
         width: auto;
+    }
+
+    #pushybox-container {
+        height: 400px;
     }
 
     .inner-container {
