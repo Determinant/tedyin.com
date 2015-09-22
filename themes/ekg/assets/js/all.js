@@ -75,8 +75,6 @@ function long_polling() {
                 }
             }
     
-            var api = $("#pushybox-container").data('jsp');
-            if (api) api.reinitialise();
             var slide = function (msg_idx) {
                 if (msg_idx == posts.length) return;
                 posts[msg_idx]['dom'].slideDown("slow", function () { slide(msg_idx + 1);});
@@ -92,6 +90,9 @@ function long_polling() {
                 lasttime = posts[posts.length - 1]['time'];
                 console.log("New last time: " + lasttime);
             }
+
+            var api = $("#pushybox-container").data('jsp');
+            if (api) api.reinitialise();
             long_polling();
         },
         dataType: 'json',
