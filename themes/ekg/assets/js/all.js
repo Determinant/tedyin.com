@@ -3,8 +3,6 @@ if (!window.console) console = {log: function() {}};
 var posts = [];
 var lasttime = 0;
 var max_entries = 20;
-var server_addr = 'tedyin.com';
-
 
 $(function() {
     $('.hscroll-pane').each(function() {
@@ -27,13 +25,13 @@ $(function() {
                             disableHorizontal: true});
         var api = $(this).data('jsp');
         var e = $(this);
-        e.find('.jspContainer').css('height', '100%');
-        api.reinitialise();
+        var ec = e.find('.jspContainer');
         var throttleTimeout;
         $(window).bind('resize', function() {
             if (!throttleTimeout) {
                 throttleTimeout = setTimeout(function() {
-                        e.find('.jspContainer').css('height', '100%');
+                        ec.css('height', '0px');
+                        ec.css('height', e.innerHeight() + 'px');
                         api.reinitialise();
                         throttleTimeout = null;
                     }, 100);
@@ -44,10 +42,12 @@ $(function() {
     $('#navs').on('shown.bs.collapse', function () {
         $("#pushybox-container").data('jsp').reinitialise();
     });
+
+    long_polling(); /* load the pushybox after the layout is setup */
 });
 
 function long_polling() {
-    var req_url = 'http://' + server_addr + '/ajax?action=fetch&lasttime=' +
+    var req_url = '/ajax?action=fetch&lasttime=' +
         lasttime + '&id=' + Math.random();
     console.log("last time: " + lasttime + req_url);
     $.ajax({
@@ -59,10 +59,10 @@ function long_polling() {
             for (var i = 0; i < resp.length; i++)
             {
                 resp[i]['dom'] = $(
-                '<div class="msgbox">' + 
+                '<li><div class="msgbox">' + 
                     '<span class="msg-text">' + resp[i]['text'] + '</span>' +
                     '<span class="date">' + resp[i]['date'] + '</span>' +
-                '</div>').prependTo('#pushybox').hide();
+                '</div></li>').prependTo('#pushybox').hide();
                 posts.push(resp[i]);
                 if (posts.length > max_entries)
                 {
@@ -104,7 +104,7 @@ function long_polling() {
 }
 
 function post(mesg) {
-    var req_url = 'http://' + server_addr + '/ajax?action=post&message=' + encodeURIComponent(mesg);
+    var req_url = '/ajax?action=post&message=' + encodeURIComponent(mesg);
     console.log();
     $.ajax({
         url: req_url,
@@ -114,7 +114,6 @@ function post(mesg) {
     });
 }
 
-long_polling();
 
 var svg_doc = null;
 var svg_animation_ongoing = true;
