@@ -83,7 +83,7 @@ blockquote:after {
     height: 100%;
     width: 100%;
     margin: 0px;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .container {
@@ -365,6 +365,7 @@ pre.code .text:hover .jspHorizontalBar {
 div.navbar-collapse {
     border-top: none;
     box-shadow: none;
+    padding: 0;
 }
 
 .leftbar .logo {
@@ -439,84 +440,6 @@ div.navbar-collapse {
     color: #fff;
 }
 
-@media (max-width: 992px) {
-    .leftbar {
-        margin-right: 0;
-        width: auto;
-        float: none;
-    }
-
-    .container {
-        background-size: 100% auto;
-        background-position: initial;
-        height: auto;
-    }
-
-    .content-column {
-    }
-
-    .content-column > div {
-        margin-top: 0px;
-        max-width: none;
-    }
-}
-
-@media (max-width: 750px) {
-    .container {
-        background-position: 0px 50px;
-    }
-}
-
-@media (max-width: 600px) {
-    .container {
-        background-position: 0px 100px;
-    }
-
-    .indexbox {
-        padding: 0px;
-        background: none;
-        -webkit-border-radius: none;
-        -moz-border-radius: none;
-        border-radius: none;
-        -webkit-transition: 0.2s;
-        -moz-transition: 0.2s;
-        -ms-transition: 0.2s;
-        -o-transition: 0.2s;
-        transition: 0.2s;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-    }
-
-    .indexbox:hover {
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-    }
-
-    .indexbox .post-date, .post-single .post-date {
-        font-size: 90%;
-        color: #fff;
-        background-color: #4c5846;
-        margin-bottom: 10px;
-        margin-left: 0px;
-        margin-right: 0px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-}
-
-@media (max-width: 500px) {
-    .container {
-        background-position: 0px 150px;
-    }
-}
-
-@media (max-width: 400px) {
-    .container {
-        background-position: -20px 200px;
-    }
-}
 
 /* pager */
 .pager li > a,
@@ -647,4 +570,121 @@ object.music-score {
 
 .jspHorizontalBar, .jspVerticalBar {
     background: none;
+}
+
+#pushybox, #pushybox-container {
+    /*
+    overflow-x: hidden;
+    overflow-y: auto;
+    */
+    height: 400px;
+    width: 280px;
+}
+
+#pushybox-container {
+    /* border: 5px solid purple; */
+    position: relative;
+    overflow: hidden;
+}
+
+.inner-container {
+    position: absolute;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.inner-container::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .leftbar {
+        margin-right: 0;
+        width: auto;
+        float: none;
+    }
+
+    .container {
+        background-size: 100% auto;
+        background-position: initial;
+        height: auto;
+    }
+
+    .content-column {
+    }
+
+    .content-column > div {
+        margin-top: 0px;
+        max-width: none;
+    }
+
+    .container > .row {
+        overflow: visible;
+    }
+
+    #pushybox, #pushybox-container {
+        width: auto;
+    }
+
+    .inner-container {
+        position: relative;
+    }
+}
+
+@media (max-width: 750px) {
+    .container {
+        background-position: 0px 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        background-position: 0px 100px;
+    }
+
+    .indexbox {
+        padding: 0px;
+        background: none;
+        -webkit-border-radius: none;
+        -moz-border-radius: none;
+        border-radius: none;
+        -webkit-transition: 0.2s;
+        -moz-transition: 0.2s;
+        -ms-transition: 0.2s;
+        -o-transition: 0.2s;
+        transition: 0.2s;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .indexbox:hover {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .indexbox .post-date, .post-single .post-date {
+        font-size: 90%;
+        color: #fff;
+        background-color: #4c5846;
+        margin-bottom: 10px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        background-position: 0px 150px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        background-position: -20px 200px;
+    }
 }
