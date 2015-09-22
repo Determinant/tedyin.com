@@ -104,10 +104,15 @@ blockquote:after {
     */
 }
 
-.content-column {
+.content-column, .leftbar-column {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+.leftbar-column {
+    overflow-y: hidden;
+    /* don't want to show bar :( */
 }
 
 .content-column > div {
@@ -128,7 +133,7 @@ blockquote:after {
 }
 
 .post-title {
-    font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
+    font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', source-han-sans-traditional, 'Microsoft YaHei', 'SimHei', sans-serif;
     margin-top: 15px;
 }
 
@@ -252,34 +257,6 @@ pre.code .text .line:hover {
     /* background-color: #333; */
 }
 
-pre.code .text .jspHorizontalBar {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
-    filter: alpha(opacity=0); /* IE 5-7 */
-    -moz-opacity: 0; /* Netscape */
-    -khtml-opacity: 0; /* Safari 1.x */
-    opacity: 0; /* Good browsers */
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
-    zoom: 1; /* IE 8 trick */
-}
-
-pre.code .text:hover .jspHorizontalBar {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
-    filter: alpha(opacity=50); /* IE 5-7 */
-    -moz-opacity: 0.5; /* Netscape */
-    -khtml-opacity: 0.5; /* Safari 1.x */
-    opacity: 0.5; /* Good browsers */
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
-    zoom: 1; /* IE 8 trick */
-}
-
 /* msgbox */
 .msgbox {
     margin: 10px 0;
@@ -346,6 +323,7 @@ pre.code .text:hover .jspHorizontalBar {
 }
 
 .navs-toggle .navbar-toggle {
+    margin-right: 0px;
     background-color: #333;
 }
 
@@ -576,30 +554,40 @@ object.music-score {
     background: none;
 }
 
-#pushybox, #pushybox-container {
-    /*
-    overflow-x: hidden;
-    overflow-y: auto;
-    */
-    height: 400px;
-    width: 280px;
+.jspScrollable .jspHorizontalBar,
+.jspScrollable .jspVerticalBar {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+    filter: alpha(opacity=0); /* IE 5-7 */
+    -moz-opacity: 0; /* Netscape */
+    -khtml-opacity: 0; /* Safari 1.x */
+    opacity: 0; /* Good browsers */
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    zoom: 1; /* IE 8 trick */
+}
+
+.jspScrollable:hover .jspHorizontalBar,
+.jspScrollable:hover .jspVerticalBar{
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
+    filter: alpha(opacity=50); /* IE 5-7 */
+    -moz-opacity: 0.5; /* Netscape */
+    -khtml-opacity: 0.5; /* Safari 1.x */
+    opacity: 0.5; /* Good browsers */
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    zoom: 1; /* IE 8 trick */
 }
 
 #pushybox-container {
-    /* border: 5px solid purple; */
-    position: relative;
+    height: 400px;
+    width: 280px;
     overflow: hidden;
-}
-
-.inner-container {
-    position: absolute;
-    left: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-
-.inner-container::-webkit-scrollbar {
-    display: none;
 }
 
 @media (max-width: 992px) {

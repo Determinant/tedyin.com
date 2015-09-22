@@ -5,6 +5,44 @@ var lasttime = 0;
 var max_entries = 20;
 var server_addr = 'tedyin.com';
 
+
+$(function() {
+    $('.hscroll-pane').each(function() {
+        $(this).jScrollPane({showArrows: $(this).is('.arrow'),
+                            disableVertical: true});
+        var api = $(this).data('jsp');
+        var throttleTimeout;
+        $(window).bind('resize', function() {
+            if (!throttleTimeout) {
+                throttleTimeout = setTimeout(function() {
+                        api.reinitialise();
+                        throttleTimeout = null;
+                    }, 50);
+            }
+        });
+    });
+
+    $('.vscroll-pane').each(function() {
+        $(this).jScrollPane({showArrows: $(this).is('.arrow'),
+                            disableHorizontal: true});
+        var api = $(this).data('jsp');
+        console.log(api);
+        var throttleTimeout;
+        $(window).bind('resize', function() {
+            if (!throttleTimeout) {
+                throttleTimeout = setTimeout(function() {
+                        api.reinitialise();
+                        throttleTimeout = null;
+                    }, 50);
+            }
+        });
+    });
+
+    $('#navs').on('shown.bs.collapse', function () {
+        $("#pushybox-container").data('jsp').reinitialise();
+    });
+});
+
 function long_polling() {
     var req_url = 'http://' + server_addr + '/ajax?action=fetch&lasttime=' +
         lasttime + '&id=' + Math.random();
@@ -33,6 +71,9 @@ function long_polling() {
                     posts.splice(0, 1);
                 }
             }
+    
+            var api = $("#pushybox-container").data('jsp');
+            if (api) api.reinitialise();
             var slide = function (msg_idx) {
                 if (msg_idx == posts.length) return;
                 posts[msg_idx]['dom'].slideDown("slow", function () { slide(msg_idx + 1);});
@@ -105,7 +146,7 @@ function code_box(bid, data) {
     var text = document.createElement('div');
     var wrapper = document.createElement('div');
     lineno.className = "lineno";
-    text.className = "text scroll-pane horizontal-only";
+    text.className = "text hscroll-pane";
     wrapper.className = "wrapper";
     var linenos = [];
     for (var i = 0; i < data.length; i++)
@@ -123,19 +164,3 @@ function code_box(bid, data) {
     wrapper.appendChild(text);
     div.appendChild(wrapper);
 }
-
-$(function() {
-    $('.scroll-pane').each(function() {
-            $(this).jScrollPane({showArrows: $(this).is('.arrow')});
-            var api = $(this).data('jsp');
-            var throttleTimeout;
-            $(window).bind('resize', function() {
-                if (!throttleTimeout) {
-                    throttleTimeout = setTimeout(function() {
-                            api.reinitialise();
-                            throttleTimeout = null;
-                        }, 50);
-                }
-            });
-        });
-});
