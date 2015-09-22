@@ -19,9 +19,9 @@
     <div class="indexbox">
         <div class="post-title">
             <h2>${messages("Tags")}</h2>
-            <p class="tags">
+            <ul class="tags">
             % for text, link in items:
-                <a class="tag reference" href="${link}">${text}</a>
+                <li><a class="tag reference" href="${link}">${text}</a></li>
             % endfor
             </p>
             </ul>

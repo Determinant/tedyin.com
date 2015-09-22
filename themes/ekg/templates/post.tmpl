@@ -4,17 +4,19 @@
 <%namespace name="pheader" file="helpers/post_header.tmpl"/>
 <%inherit file="base.tmpl"/>
 <%block name="content">
-<div class="postbox">
+<div class="postbox post-single">
     ${pheader.html_title()}
-    <div class="post-preamble row">
-        <div class="col-md-5 col-xs-12">
-            ${post.date.strftime(date_format)} @ ${post.meta('location') or 'Earth'}
-        </div>
-        <div class="col-md-7 col-xs-12">
+    <div class="post-preamble">
+        <div class="post-tags">
             ${helper.html_tags(post)}
         </div>
+        <div class="post-date">
+                ${post.date.strftime(date_format)} @ ${post.meta('location') or 'Earth'}
+        </div>
     </div>
+    <div class="post-text">
     ${post.text()}
+    </div>
     ${helper.html_pager(post)}
     % if not post.meta('nocomments'):
         ${comments.comment_form(post.permalink(absolute=True), post.title(), post._base_path)}
