@@ -507,6 +507,7 @@ ul.tags {
 
 ul.tags > li {
     display: inline-block;
+    vertical-align: middle;
 }
 
 .tag {
@@ -515,7 +516,6 @@ ul.tags > li {
     line-height: 1.5;
     font-family: 'Quikhand', 'Droid Sans', Arial, 'Helvetica', 'Microsoft YaHei', 'SimHei', sans-serif;
     color: #ffffff;
-    /* vertical-align: middle; */
     white-space: nowrap;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     padding-left: 9px;
