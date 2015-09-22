@@ -94,7 +94,7 @@ blockquote:after {
     margin: 0px;
     padding: 0px;
     height: 100%;
-    width: 100%;
+    width: 100% !important;
     /*
     background-color: #000;
     background-image: url('images/bg.jpg');
@@ -193,9 +193,11 @@ blockquote:after {
 .indexbox {
     border: none;
     background-color: #2f3131;
+/*
     -webkit-border-radius: 1em;
     -moz-border-radius: 1em;
     border-radius: 1em;
+*/
     -webkit-transition: 0.2s;
     -moz-transition: 0.2s;
     -ms-transition: 0.2s;
@@ -283,7 +285,7 @@ pre.code .text .line:hover {
     padding-bottom: 3px;
     text-align: right;
     font-size: 12px;
-    color: #666666;
+    color: #aaa;
 }
 
 /* logo */
@@ -373,11 +375,9 @@ div.navbar-collapse {
     line-height: 70px;
     text-shadow: 0 0 20px rgba(198, 243, 236, 0.75);
     overflow: visible;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /* IE 8 */
     filter: alpha(opacity=80); /* IE 5-7 */
-    -moz-opacity: 0.8; /* Netscape */
-    -khtml-opacity: 0.8; /* Safari 1.x */
     opacity: 0.8; /* Good browsers */
+    zoom: 1; /* IE layout trick */
 }
 
 .leftbar .descr {
@@ -564,37 +564,51 @@ object.music-score {
 
 .jspScrollable .jspHorizontalBar,
 .jspScrollable .jspVerticalBar {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
     filter: alpha(opacity=0); /* IE 5-7 */
-    -moz-opacity: 0; /* Netscape */
-    -khtml-opacity: 0; /* Safari 1.x */
     opacity: 0; /* Good browsers */
+    zoom: 1; /* IE layout trick */
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
-    zoom: 1; /* IE 8 trick */
 }
+
+.jspScrollable .jspTrack { filter: inherit; /* IE 5-7 */ }
+.jspScrollable .jspDrag { filter: inherit; /* IE 5-7 */ }
 
 .jspScrollable:hover .jspHorizontalBar,
 .jspScrollable:hover .jspVerticalBar{
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
     filter: alpha(opacity=50); /* IE 5-7 */
-    -moz-opacity: 0.5; /* Netscape */
-    -khtml-opacity: 0.5; /* Safari 1.x */
     opacity: 0.5; /* Good browsers */
+    zoom: 1; /* IE layout trick */
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
-    zoom: 1; /* IE 8 trick */
 }
+
+.jspScrollable:hover .jspTrack { filter: inherit; /* IE 5-7 */ }
+.jspScrollable:hover .jspDrag { filter: inherit; /* IE 5-7 */ }
 
 #pushybox-container {
     overflow: hidden;
 }
+
+#pushybox {
+    list-style: none;
+}
+
+ul#pushybox {
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+#pushybox:first-child { margin-top: 0; }
+#pushybox:last-child { margin-bottom: 0; }
+
+#pushybox-container .jspPane { width: 100% !important; }
 
 @media (min-width: 992px) {
     .flexbox .leftbar {
@@ -630,6 +644,14 @@ object.music-score {
         -webkit-flex: 2;
         -ms-flex: 2;
         flex: 2;
+    }
+
+    #pushybox > li {
+        background-color: #5f4b4f;
+    }
+
+    .msgbox .date {
+        color: #897176
     }
 }
 
@@ -722,6 +744,14 @@ object.music-score {
         margin-right: 0px;
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    #pushybox > li {
+        background-color: #5f4b4f;
+    }
+
+    .msgbox .date {
+        color: #897176
     }
 }
 

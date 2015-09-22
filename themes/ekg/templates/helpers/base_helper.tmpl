@@ -24,12 +24,14 @@
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" data-cfasync="false" type="text/javascript" ></script>
     <script src="https://use.typekit.net/nmc8png.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.min.js" type="text/javascript"></script>
+    <script src="assets/js/respond.min.js" type="text/javascript"></script>
+    <![endif]-->
+
     %if permalink:
         <link rel="canonical" href="${abs_link(permalink)}">
     %endif
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-    <![endif]-->
     %if rss_link:
         ${rss_link}
     %else:
