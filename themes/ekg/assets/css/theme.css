@@ -534,7 +534,11 @@ div.section:first-child {
 }
 
 object.music-score {
+    display: block;
+    width: 90%;
     max-width: 550px;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
 .comments, .more {
@@ -593,7 +597,7 @@ object.music-score {
 }
 
 @media (min-width: 992px) {
-    .leftbar {
+    .flexbox .leftbar {
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -604,7 +608,7 @@ object.music-score {
         flex-flow: column;
     }
 
-    #navs {
+    .flexbox #navs {
         display: -webkit-box !important;
         display: -moz-box !important;
         display: -ms-flexbox !important;
@@ -620,7 +624,7 @@ object.music-score {
         flex: 2;
     }
 
-    #pushybox-container {
+    .flexbox #pushybox-container {
         -webkit-box-flex: 2;
         -moz-box-flex: 2;
         -webkit-flex: 2;
@@ -632,6 +636,7 @@ object.music-score {
 @media (max-width: 992px) {
     .leftbar {
         margin-right: 0;
+        height: auto;
         width: auto;
         float: none;
     }
@@ -659,7 +664,15 @@ object.music-score {
     }
 
     #pushybox-container {
-        height: 400px;
+        /* height: 400px; */
+    }
+
+    #pushybox-container .jspContainer {
+        height: auto !important;
+    }
+
+    #pushybox-container .jspPane {
+        position: static;
     }
 
     .inner-container {
