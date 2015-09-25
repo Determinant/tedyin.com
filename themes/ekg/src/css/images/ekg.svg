@@ -168,13 +168,13 @@
        y2="166.42064" />
   </defs>
   <path
-     style="fill:none;stroke:#7db95c;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     style="fill:none;stroke:#b39fa1;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
      d="m 2.6557475,50.591528 c 2.040735,0.188759 30.2003725,-0.407506 41.7669085,-0.03689 3.382514,0.108382 3.447281,-0.518555 5.539133,1.031439 2.215827,1.641855 4.30987,10.189996 4.667874,11.444581 1.238003,-11.773503 3.429598,-18.690603 4.194389,-30.409403 1.572898,14.135 2.881428,14.351223 4.454325,18.146323 l 9.180047,0.0809 c 3.326754,5.4926 3.05588,8.966475 4.191789,12.706478 0.666301,-4.150703 0.413064,-10.377026 3.341113,-12.718326 l 5.044693,-0.04536 c 3.86623,-5.9207 3.926704,-15.491119 3.969804,-24.122619 0.82052,24.9021 4.63085,27.1759 5.77768,40.371005 0.53669,-5.417805 1.82676,-10.650205 4.41157,-16.067905 l 7.340177,0 c 1.13598,-3.497 2.27196,-7.6729 2.62149,-13.6318 1.15139,4.2869 1.15398,8.1909 4.1944,13.1075 l 11.93711,0.032 c 2.30337,4.009 3.42227,8.018 4.054,12.0271 1.64714,-7.5483 5.158,-17.624 7.47512,-69.8216994 2.37821,19.0361994 1.84934,46.3325994 8.4299,58.1598994 l 10.441,0.1272 c 2.16022,8.1216 3.31248,17.038905 4.36273,28.990005 1.20972,-10.1689 1.84248,-21.201005 4.26573,-28.724005 l 36.97462,-0.0017"
      id="path3006"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cssccccccccccccccccccccc" />
   <path
-     style="fill:none;stroke:#7db95c;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     style="fill:none;stroke:#b39fa1;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
      d="m 212.56176,51.23307 40.56692,0.199134"
      id="path2990"
      inkscape:connector-curvature="0" />
@@ -218,10 +218,8 @@
     <circle
        id="spot_circle"
        visibility="hidden"
-       style="fill:#aede94;fill-opacity:1;stroke:none"
+       style="fill:#b39fa1;fill-opacity:1;stroke:none"
        r="5"
-       cx=""
-       cy=""
        d="M 5,0 C 5,2.7614237 2.7614237,5 0,5 -2.7614237,5 -5,2.7614237 -5,0 c 0,-2.7614237 2.2385763,-5 5,-5 2.7614237,0 5,2.2385763 5,5 z">
         <animateMotion
            id="pulse"

@@ -12,7 +12,8 @@ root = etree.fromstring("""
 </head>
 <body></body>
 </html>""")
-svg = etree.parse("lesson_in_a_minor.svg").getroot()
+fname = "../../../output/assets/css/images/160.svg"
+svg = etree.parse(fname).getroot()
 svg.set("id", "score")
 svg.set("onLoad", "show();")
 root[1].append(svg)

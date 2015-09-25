@@ -19,7 +19,16 @@ $(function() {
             }
         });
     });
-
+    if (!Modernizr.flexbox)
+    {
+        var flexer = function() {
+            var flex_height = $('.leftbar').height() - ($('.nav').outerHeight(true) +
+                                                        $('.logo').outerHeight(true));
+            $('#pushybox-container').css('height', flex_height);
+        }
+        $(flexer);
+        $(window).bind('resize', flexer);
+    }
     $('.vscroll-pane').each(function() {
         $(this).jScrollPane({showArrows: $(this).is('.arrow'),
                             disableHorizontal: true});
@@ -39,8 +48,9 @@ $(function() {
         });
     });
 
-    $('#navs').on('shown.bs.collapse', function () {
-        $("#pushybox-container").data('jsp').reinitialise();
+    $('#navs').on('show.bs.collapse', function () {
+        $("#pushybox-container").css('width', 'auto');
+        $("#pushybox-container .jspContainer").css('width', 'auto');
     });
 
     long_polling(); /* load the pushybox after the layout is setup */
