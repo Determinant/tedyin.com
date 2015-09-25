@@ -236,7 +236,7 @@ pre.code {
   margin-right: -15px; }
   .navs-toggle .navbar-toggle {
     margin-right: 0px;
-    background-color: #40373d; }
+    background-color: #42393f; }
   .navs-toggle .icon-bar {
     background-color: #cfc8c1; }
 
@@ -259,7 +259,7 @@ pre.code {
   background-size: auto 1000px;
   background-color: #251e2a;
   */
-  background-color: #342f33;
+  background-color: #433a40;
   background-image: repeating-radial-gradient(circle at 100% 0%, rgba(31, 31, 31, 0.2), rgba(31, 31, 31, 0.2) 24px, rgba(31, 31, 31, 0.1) 24px, rgba(31, 31, 31, 0.1) 48px); }
   .leftbar .logo {
     width: 250px;
@@ -290,7 +290,7 @@ pre.code {
     margin-right: -20px;
     padding: 5px 20px 5px 20px;
     font-size: 95%;
-    background-color: #40373d;
+    background-color: #42393f;
     background-color: rgba(67, 58, 64, 0.8); }
   .leftbar .nav {
     /* > li:nth-child(1) a { */
@@ -488,8 +488,8 @@ object.music-score {
 
 @media (min-width: 992px) {
   #pushybox .msgbox {
-    background-color: #5b484c;
-    background-color: rgba(95, 75, 79, 0.8); } }
+    background-color: #4d4044;
+    background-color: rgba(95, 75, 79, 0.5); } }
 @media (max-width: 991px) {
   .leftbar {
     margin-right: 0;
@@ -516,8 +516,8 @@ object.music-score {
     height: auto !important; }
 
   #pushybox {
-    background-color: #5b484c;
-    background-color: rgba(95, 75, 79, 0.8); } }
+    background-color: #4d4044;
+    background-color: rgba(95, 75, 79, 0.5); } }
 @media (max-width: 750px) {
   .container {
     background-position: 0px 50px; } }
