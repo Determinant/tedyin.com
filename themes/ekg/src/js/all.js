@@ -5,6 +5,7 @@ var lasttime = 0;
 var max_entries = 20;
 
 $(function() {
+    /*
     $('.hscroll-pane').each(function() {
         $(this).jScrollPane({showArrows: $(this).is('.arrow'),
                             disableVertical: true});
@@ -19,16 +20,21 @@ $(function() {
             }
         });
     });
-    if (!Modernizr.flexbox)
+    */
+    if (true) //(!Modernizr.flexbox)
     {
         var flexer = function() {
             var flex_height = $('.leftbar').height() - ($('.nav').outerHeight(true) +
-                                                        $('.logo').outerHeight(true));
+                                                        $('.logo').outerHeight(true) +
+                                                       $('.descr').outerHeight(true));
             $('#pushybox-container').css('height', flex_height);
         }
         $(flexer);
         $(window).bind('resize', flexer);
     }
+    $('.vscroll-pane').mCustomScrollbar({ axis: 'y', theme: 'rounded' });
+    $('.hscroll-pane').mCustomScrollbar({ axis: 'x', theme: 'rounded' });
+    /*
     $('.vscroll-pane').each(function() {
         $(this).jScrollPane({showArrows: $(this).is('.arrow'),
                             disableHorizontal: true});
@@ -47,12 +53,13 @@ $(function() {
             }
         });
     });
-
+    */
+    /*
     $('#navs').on('show.bs.collapse', function () {
         $("#pushybox-container").css('width', 'auto');
         $("#pushybox-container .jspContainer").css('width', 'auto');
     });
-
+    */
     long_polling(); /* load the pushybox after the layout is setup */
 });
 
@@ -165,11 +172,11 @@ function code_box(bid, data) {
     for (var i = 0; i < data.length; i++)
     {
         var line = document.createElement('span');
-        var ldiv = document.createElement('div');
-        ldiv.className = "line";
+        var br = document.createElement('br');
+        line.className = "line";
         line.innerHTML = data[i] ;
-        ldiv.appendChild(line);
-        text.appendChild(ldiv);
+        text.appendChild(line);
+        text.appendChild(br);
         linenos.push(i + 1);
     }
     lineno.innerHTML = linenos.join('\n');
