@@ -21,7 +21,7 @@ module.exports = function(grunt) {
         });
         return mapping;
     }
-    var css_flist = ['code.css', 'gist.css', 'theme.css'];
+    var css_flist = ['normalize.css', 'pocketgrid.css', 'code.css', 'gist.css', 'theme.css'];
     var js_flist = ['all.js', 'jquery.mCustomScrollbar.js'];
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),

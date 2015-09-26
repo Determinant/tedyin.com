@@ -5,22 +5,6 @@ var lasttime = 0;
 var max_entries = 20;
 
 $(function() {
-    /*
-    $('.hscroll-pane').each(function() {
-        $(this).jScrollPane({showArrows: $(this).is('.arrow'),
-                            disableVertical: true});
-        var api = $(this).data('jsp');
-        var throttleTimeout;
-        $(window).bind('resize', function() {
-            if (!throttleTimeout) {
-                throttleTimeout = setTimeout(function() {
-                        api.reinitialise();
-                        throttleTimeout = null;
-                    }, 100);
-            }
-        });
-    });
-    */
     if (true) //(!Modernizr.flexbox)
     {
         var flexer = function() {
@@ -34,33 +18,65 @@ $(function() {
     }
     $('.vscroll-pane').mCustomScrollbar({ axis: 'y', theme: 'rounded' });
     $('.hscroll-pane').mCustomScrollbar({ axis: 'x', theme: 'rounded' });
-    /*
-    $('.vscroll-pane').each(function() {
-        $(this).jScrollPane({showArrows: $(this).is('.arrow'),
-                            disableHorizontal: true});
-        var api = $(this).data('jsp');
+    long_polling();
+    $('.navbar-toggle').each(function () {
         var e = $(this);
-        var ec = e.find('.jspContainer');
-        var throttleTimeout;
-        $(window).bind('resize', function() {
-            if (!throttleTimeout) {
-                throttleTimeout = setTimeout(function() {
-                        ec.css('height', '0px');
-                        ec.css('height', e.innerHeight() + 'px');
-                        api.reinitialise();
-                        throttleTimeout = null;
-                    }, 100);
-            }
+        var pane = $(e.attr('data-target'));
+        var duration = 500;
+        pane.css('overflow', 'hidden')
+            .css('transition', 'height ' + duration + 'ms ease');
+        function css_trans_slide_down() {
+            pane.toggleClass('collapsed');
+            pane.css('height', 'auto')
+                .data('height', pane.innerHeight())
+                .css('height', '0px');
+            setTimeout(function () {
+                pane.css('height', pane.data('height')+'px');
+            }, 1);
+        }
+
+        function css_trans_slide_up() {
+            setTimeout(function () {
+                pane.css('height', '0px');
+                setTimeout(function () {
+                    pane.toggleClass('collapsed');
+                    pane.css('height', 'auto');
+                }, duration);
+            }, 1);
+        }
+
+        function js_slide_down() {
+            pane.stop().slideDown(duration, function () {
+                pane.css('display', '');
+                pane.toggleClass('collapsed');
+            });
+        }
+
+        function js_slide_up() {
+            pane.stop().slideUp(duration, function () {
+                pane.css('display', '');
+                pane.toggleClass('collapsed');
+            });
+        }
+
+        var slide_down, slide_up;
+        if (Modernizr.csstransitions)
+        {
+            slide_down = css_trans_slide_down;
+            slide_up = css_trans_slide_up;
+        }
+        else
+        {
+            slide_down = js_slide_down;
+            slide_up = js_slide_up;
+        }
+        e.on('click', function () {
+            if (pane.hasClass('collapsed'))
+                slide_down();
+            else
+                slide_up();
         });
     });
-    */
-    /*
-    $('#navs').on('show.bs.collapse', function () {
-        $("#pushybox-container").css('width', 'auto');
-        $("#pushybox-container .jspContainer").css('width', 'auto');
-    });
-    */
-    long_polling(); /* load the pushybox after the layout is setup */
 });
 
 function long_polling() {
