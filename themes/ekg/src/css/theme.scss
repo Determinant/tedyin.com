@@ -779,8 +779,11 @@ object.music-score {
         background-position: 0px 100px;
     }
 
-    .indexbox {
+    .postbox {
         padding: 0px;
+    }
+
+    .indexbox {
         background: none;
         -webkit-border-radius: none;
         -moz-border-radius: none;
@@ -796,7 +799,7 @@ object.music-score {
         }
     }
 
-    .indexbox, .post-single {
+    .indexbox {
         .post-date {
             @include font-size($font-size-body-smaller);
             margin-bottom: 10px;
