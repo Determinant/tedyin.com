@@ -6,6 +6,7 @@
 .. link: 
 .. description: 
 .. type: text
+.. location: Singapore
 
 I'm applying for the PhD programs starting from Fall 2016.
 
