@@ -1,0 +1,20 @@
+.gphotos {
+  width: 100%; }
+
+.gphotos div {
+  cursor: pointer; }
+
+.gphotos .item {
+  border-radius: 3px;
+  color: #333;
+  border: none;
+  width: 200px;
+  /* position: absolute; */
+  overflow: hidden; }
+
+.gphotos img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin: 0px;
+  padding: 0px; }

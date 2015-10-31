@@ -294,8 +294,7 @@ pre.code {
 
 /* leftbar */
 .nav {
-  margin-left: 0;
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
   list-style: none;
   overflow: hidden;
   /* clear float */ }
@@ -384,6 +383,8 @@ pre.code {
     /* > li:nth-child(5) a { */ }
     .leftbar .nav a {
       font-family: "Quikhand", "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif;
+      font-size: 14.4px;
+      font-size: 1.44rem;
       text-align: right;
       margin-right: 0;
       padding: 5px 10px;
@@ -430,7 +431,7 @@ pre.code {
       width: 228.488px;
       background-color: #8d878b; }
       .leftbar .nav > li:first-child + li + li + li + li a:hover {
-        width: 320px; }
+        width: 304px; }
 
 .no-csstransitions .leftbar .nav {
   /* > li:nth-child(1) a { */

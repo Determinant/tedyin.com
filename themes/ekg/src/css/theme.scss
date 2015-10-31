@@ -403,8 +403,7 @@ pre.code {
 
 /* leftbar */
 .nav {
-    margin-left: 0;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
     list-style: none;
     overflow: hidden; /* clear float */
 }
@@ -495,6 +494,7 @@ pre.code {
     .nav {
         a {
             font-family: $art-sans-font-stack;
+            @include font-size($font-size-body-smaller);
             text-align: right;
             margin-right: 0;
             padding: 5px 10px;
@@ -524,7 +524,7 @@ pre.code {
                 width: $child-width;
                 background-color: nth($nav-child-bgs, $i);
                 &:hover {
-                    width: min($leftbar-width, $child-width * $nav-child-hover-factor);
+                    width: min($leftbar-width * 0.95, $child-width * $nav-child-hover-factor);
                 }
             }
             $child-width: $child-width * $nav-child-inc-factor;

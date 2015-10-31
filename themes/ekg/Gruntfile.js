@@ -22,7 +22,8 @@ module.exports = function(grunt) {
         return mapping;
     }
     var css_flist = ['normalize.css', 'pocketgrid.css', 'code.css', 'gist.css', 'theme.css'];
-    var js_flist = ['all.js', 'jquery.mCustomScrollbar.js'];
+    var gphotos_css_flist = ['photoswipe.css', 'photoswipe-skin.css', 'gphotos.css'];
+    var js_flist = ['all.js', 'jquery.mCustomScrollbar.js', 'gphotos.js', 'freewall.js'];
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         sass: {
@@ -31,7 +32,8 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    'src/css/theme.css': 'src/css/theme.scss'
+                    'src/css/theme.css': 'src/css/theme.scss',
+                    'src/css/gphotos.css': 'src/css/gphotos.scss'
                 }
             }
         },
@@ -43,13 +45,17 @@ module.exports = function(grunt) {
         concat: {
             css: {
                 files: {
-                    'build/css/all.min.css': gen_filename(build_dir + '/css', '.min.css', get_basename(css_flist))
+                    'build/css/all.min.css': gen_filename(build_dir + '/css', '.min.css', get_basename(css_flist)),
+                    'build/css/gphotos_all.min.css': gen_filename(build_dir + '/css', '.min.css', get_basename(gphotos_css_flist))
                 }
             }
         },
         cssmin: {
             fonts: {
                 files: {'build/fonts/fonts.min.css': 'src/fonts/fonts.css'}
+            },
+            gphotos: {
+                files: gen_mapping('css', '.css', '.min.css', get_basename(gphotos_css_flist))
             },
             build: {
                 files: gen_mapping('css', '.css', '.min.css', get_basename(css_flist))

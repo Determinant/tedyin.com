@@ -128,6 +128,7 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ('/categories/index.html', '% Tags'),
+        ('/stories/cooking/', '" Cooking'),
         ('/archive.html', '# Archives'),
         ('/rss.xml', '/* RSS */'),
         ('https://500px.com/Determinant', '// 500px')

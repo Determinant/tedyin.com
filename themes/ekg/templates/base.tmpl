@@ -1,9 +1,10 @@
 ## -*- coding: utf-8 -*-
 <%namespace file="helpers/base_helper.tmpl" import="*"/>
 <!DOCTYPE html>
+<%def name="extra_head()"></%def>
 <html lang="${lang}">
     <head>
-        ${html_head()}
+        ${html_head(self.extra_head)}
     </head>
     <body>
         <div class="container">
