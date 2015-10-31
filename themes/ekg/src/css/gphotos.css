@@ -18,3 +18,22 @@
   display: block;
   margin: 0px;
   padding: 0px; }
+
+div.blocked {
+  opacity: 0.6;
+  pointer-events: none; }
+
+div.blocknote {
+  width: 200px;
+  height: 50px;
+  margin: auto;
+  /* position: absolute; */
+  text-align: center;
+  font-size: 18px; }
+
+div.blockoverlay {
+  /*    position: absolute; */ }
+
+span.blocknotetext {
+  color: #fff;
+  /* margin-left: 10px; */ }
