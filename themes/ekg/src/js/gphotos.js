@@ -113,6 +113,8 @@ function unblock_element_and_finish(selector) {
     }
 }
 
+//var provider = "http://picasaweb.google.com";
+var provider = "http://tedyin.com/picasa";
 var google_uid = "108853535017808641401";
 var google_aid = "6211742483741396737";
 var column_width = 200;
@@ -120,7 +122,7 @@ var max_results = 999;
 
 $(function () {
     block_element_and_wait($('#gphotos'));
-    $.ajax({url: "http://picasaweb.google.com/data/feed/api/user/" + google_uid +
+    $.ajax({url: provider + "/data/feed/api/user/" + google_uid +
            "/albumid/" + google_aid +
                "?imgmax=1600" +
                "&max-results=" + max_results +
