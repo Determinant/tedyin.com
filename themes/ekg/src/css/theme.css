@@ -577,11 +577,8 @@ object.music-score {
   #pushybox .msgbox {
     background-color: #4d4044;
     background-color: rgba(95, 75, 79, 0.5); } }
-@media (min-width: 768px) {
+@media (min-width: 751px) {
   .navs-toggle {
-    display: none; } }
-@media (max-width: 769px) {
-  div.navbar-collapse.collapsed {
     display: none; } }
 @media (max-width: 991px) {
   .leftbar-column {
@@ -619,7 +616,10 @@ object.music-score {
     background-color: rgba(95, 75, 79, 0.5); } }
 @media (max-width: 750px) {
   .container {
-    background-position: 0px 50px; } }
+    background-position: 0px 50px; }
+
+  div.navbar-collapse.collapsed {
+    display: none; } }
 @media (max-width: 600px) {
   .container {
     background-position: 0px 100px; }

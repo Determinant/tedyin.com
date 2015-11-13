@@ -712,14 +712,8 @@ object.music-score {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 751px) {
     .navs-toggle {
-        display: none;
-    }
-}
-
-@media (max-width: 769px) {
-    div.navbar-collapse.collapsed {
         display: none;
     }
 }
@@ -771,6 +765,10 @@ object.music-score {
 @media (max-width: 750px) {
     .container {
         background-position: 0px 50px;
+    }
+
+    div.navbar-collapse.collapsed {
+        display: none;
     }
 }
 
