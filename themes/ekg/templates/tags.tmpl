@@ -2,30 +2,30 @@
 <%inherit file="base.tmpl"/>
 <%block name="content">
     % if cat_items:
-    <div class="postbox indexbox">
-        <div class="post-title">
-            <h2>${messages("Categories")}</h2>
-            <ul class="unstyled">
+        <div class="postbox indexbox">
+            <div class="post-title">
+                <h2>${messages("Categories")}</h2>
+            </div>
+            <ul>
             % for text, link in cat_items:
                 % if text:
-                    <li><h3><a class="reference" href="${link}">${text}</a></h3></li>
+                    <li><a class="reference" href="${link}">${text}</a></li>
                 % endif
             % endfor
             </ul>
         </div>
-    </div>
     % endif
     % if items:
-    <div class="indexbox">
-        <div class="post-title">
-            <h2>${messages("Tags")}</h2>
+        <div class="indexbox">
+            <div class="post-title">
+                <h2>${messages("Tags")}</h2>
+            </div>
             <ul class="tags">
-            % for text, link in items:
-                <li><a class="tag reference" href="${link}">${text}</a></li>
-            % endfor
+                % for text, link in items:
+                    <li><a class="tag reference" href="${link}">${text}</a></li>
+                % endfor
             </p>
-            </ul>
-        </div>
+        </ul>
     </div>
-    % endif
+% endif
 </%block>

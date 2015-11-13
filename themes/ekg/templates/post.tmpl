@@ -1,19 +1,12 @@
 ## -*- coding: utf-8 -*-
-<%namespace name="helper" file="helpers/post_helper.tmpl"/>
-<%namespace name="comments" file="helpers/comments_helper_disqus.tmpl"/>
-<%namespace name="pheader" file="helpers/post_header.tmpl"/>
+<%namespace name="helper" file="post_helper.tmpl"/>
+<%namespace name="comments" file="comments_helper_disqus.tmpl"/>
+<%namespace name="pheader" file="post_header.tmpl"/>
 <%inherit file="base.tmpl"/>
 <%block name="content">
 <div class="postbox post-single">
     ${pheader.html_title()}
-    <div class="post-preamble">
-        <div class="post-tags">
-            ${helper.html_tags(post)}
-        </div>
-        <div class="post-date">
-                ${post.date.strftime(date_format)} @ ${post.meta('location') or 'Earth'}
-        </div>
-    </div>
+    ${pheader.html_post_preamble()}
     <div class="post-text">
     ${post.text()}
     </div>
