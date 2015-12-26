@@ -21,7 +21,7 @@ Test syntax highlight for Python:
    def f(x):
        if (x < 10):
            print "Less than 10"
-       else
+       else:
            print "Greater than 10"        # this is a long long long long inline comment
    f(10)
 

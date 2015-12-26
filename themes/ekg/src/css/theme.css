@@ -224,7 +224,7 @@ div.line-block div.line-block {
 /* codebox */
 pre.code {
   word-break: break-all;
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
   white-space: pre;
   margin-left: 0;
   margin-right: 0;

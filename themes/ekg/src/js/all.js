@@ -185,16 +185,29 @@ function code_box(bid, data) {
     text.className = "text hscroll-pane";
     wrapper.className = "wrapper";
     var linenos = [];
+    var lines = document.createElement('div');
+    lines.style.display = "inline-block";
     for (var i = 0; i < data.length; i++)
     {
+        /*
         var line = document.createElement('span');
         var br = document.createElement('br');
         line.className = "line";
         line.innerHTML = data[i] ;
         text.appendChild(line);
         text.appendChild(br);
+        */ 
+        var line = document.createElement('div');
+        line.innerHTML = data[i];
+        while (line.firstChild)
+        {
+            var chd = line.firstChild;
+            line.removeChild(chd);
+            lines.appendChild(chd);
+        }
         linenos.push(i + 1);
     }
+    text.appendChild(lines);
     lineno.innerHTML = linenos.join('\n');
     div.appendChild(lineno);
     wrapper.appendChild(text);
