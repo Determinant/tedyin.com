@@ -17,7 +17,7 @@ $(function() {
         $(window).bind('resize', flexer);
     }
     $('.vscroll-pane').mCustomScrollbar({ axis: 'y', theme: 'rounded' });
-    $('.hscroll-pane').mCustomScrollbar({ axis: 'x', theme: 'rounded' });
+    $('.hscroll-pane').mCustomScrollbar({ axis: 'x', theme: 'rounded', mousewheel: { enable: true, axis: 'x' }});
     long_polling();
     $('.navbar-toggle').each(function () {
         var e = $(this);

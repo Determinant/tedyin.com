@@ -7,7 +7,7 @@
 .. description: 
 .. type: text
 .. location: Singapore
-.. sticky: yes
+.. priority: 999
 
 - I'm applying for the PhD programs starting from Fall 2016.
 - Checkout my latest [`CV <http://tedyin.com/archive/cv_eng.pdf>`_ (last updated on Dec 22)] if you are interested in me.

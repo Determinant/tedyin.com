@@ -101,6 +101,17 @@ $color-brand-glow:                      $color17;
     @include to_rem(font-size, $sizeValue);
 }
 
+@mixin word-wrap() {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -786,6 +797,7 @@ object.music-score {
 
     .postbox {
         padding: 0px;
+        @include word-wrap();
     }
 
     .indexbox {
