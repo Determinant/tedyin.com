@@ -7,9 +7,10 @@
 .. description: 
 .. type: text
 .. location: Singapore
+.. sticky: yes
 
 - I'm applying for the PhD programs starting from Fall 2016.
-- Checkout my latest [`CV <http://tedyin.com/archive/cv_eng.pdf>`_] if you are interested in me.
+- Checkout my latest [`CV <http://tedyin.com/archive/cv_eng.pdf>`_ (last updated on Dec 22)] if you are interested in me.
 - Accounts:
 
   - GitHub: https://github.com/Determinant/
@@ -19,3 +20,4 @@
 
   - http://hackingdistributed.com/2015/10/19/six-degrees-of-alan-turing/
 - This post will be supplemented with more details.
+- UPDATE: my last paper has been accepted by ICASSP 2016!
