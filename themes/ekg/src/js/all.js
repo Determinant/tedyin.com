@@ -8,6 +8,8 @@ $(function() {
     if (true) //(!Modernizr.flexbox)
     {
         var flexer = function() {
+            if ($(window).width() <= 991)
+                return;
             var flex_height = $('.leftbar').height() - ($('.nav').outerHeight(true) +
                                                         $('.logo').outerHeight(true) +
                                                        $('.descr').outerHeight(true));

@@ -728,6 +728,10 @@ object.music-score {
         background-color: $color-msgbox-bg-mix;
         background-color: $color-msgbox-bg;
     }
+
+    #navs {
+        height: auto !important;
+    }
 }
 
 @media (min-width: 751px) {
@@ -762,8 +766,9 @@ object.music-score {
     }
 
     .content-column > div {
-        padding-top: 5px;
+        padding-top: 0px;
         max-width: none;
+        margin-top: 40px;
     }
 
     #pushybox, #pushybox-container {
@@ -771,7 +776,7 @@ object.music-score {
     }
 
     #pushybox-container {
-        height: auto !important;
+        height: 200px !important;
     }
 
     #pushybox {

@@ -584,7 +584,10 @@ object.music-score {
 
   #pushybox .msgbox {
     background-color: #4d4044;
-    background-color: rgba(95, 75, 79, 0.5); } }
+    background-color: rgba(95, 75, 79, 0.5); }
+
+  #navs {
+    height: auto !important; } }
 @media (min-width: 751px) {
   .navs-toggle {
     display: none; } }
@@ -610,14 +613,15 @@ object.music-score {
       overflow: visible; }
 
   .content-column > div {
-    padding-top: 5px;
-    max-width: none; }
+    padding-top: 0px;
+    max-width: none;
+    margin-top: 40px; }
 
   #pushybox, #pushybox-container {
     width: auto; }
 
   #pushybox-container {
-    height: auto !important; }
+    height: 200px !important; }
 
   #pushybox {
     background-color: #4d4044;
