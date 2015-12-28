@@ -136,8 +136,9 @@ function long_polling() {
     });
 }
 
-function post(mesg) {
-    var req_url = '/ajax?action=post&message=' + encodeURIComponent(mesg);
+function post(mesg, pass) {
+    var req_url = '/ajax?action=post&message=' + encodeURIComponent(mesg) +
+                                    '&pass=' + encodeURIComponent(pass);
     console.log();
     $.ajax({
         url: req_url,
