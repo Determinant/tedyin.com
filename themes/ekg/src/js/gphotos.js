@@ -113,8 +113,8 @@ function unblock_element_and_finish(selector) {
     }
 }
 
-//var provider = "http://picasaweb.google.com";
-var provider = "http://tedyin.com/picasa";
+var provider = "http://picasaweb.google.com";
+//var provider = "http://tedyin.com/picasa";
 var google_uid = "108853535017808641401";
 var google_aid = "6211742483741396737";
 var column_width = 200;
@@ -132,6 +132,7 @@ $(function () {
         success: function (resp) {
            var container = document.getElementsByClassName("gphotos")[0];
            var items = [];
+           resp.feed.entry.reverse();
            $.each(resp.feed.entry, function (idx, val) {
                var title = val.title.$t;
                var summary = val.summary.$t;

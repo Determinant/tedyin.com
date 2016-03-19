@@ -3,14 +3,13 @@
 .. date: 2015-10-19 22:25:56 UTC+08:00
 .. tags: me
 .. category: life
-.. link: 
-.. description: 
+.. link:
+.. description:
 .. type: text
 .. location: Singapore
-.. priority: 999
 
 - I'm applying for the PhD programs starting from Fall 2016.
-- Checkout my latest [`CV <http://tedyin.com/archive/cv_eng.pdf>`_ (last updated on Dec 22)] if you are interested in me.
+- Checkout my latest [`CV <http://tedyin.com/archive/cv_eng_min.pdf>`_ (last updated on Jan 06)] if you are interested in me.
 - Accounts:
 
   - GitHub: https://github.com/Determinant/
