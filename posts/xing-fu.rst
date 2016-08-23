@@ -18,12 +18,3 @@
 | 這便是幸福
 
 .. TEASER_END
-.. raw:: html
-
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <a onclick="alert('Happy Birthday, Carol! :)');" style="color:#000">
-        I guess that I've found that girl.
-    </a>

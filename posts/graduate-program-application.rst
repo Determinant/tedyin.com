@@ -8,8 +8,11 @@
 .. type: text
 .. location: Singapore
 
-- I'm applying for the PhD programs starting from Fall 2016.
-- Checkout my latest [`CV <http://tedyin.com/archive/cv_eng_min.pdf>`_ (last updated on Jan 06)] if you are interested in me.
+.. role:: strike
+   :class: strike
+
+- :strike:`I'm applying for the CS PhD programs starting from Fall 2016.` Click `here </archive/cv.pdf>`_ for my CV. I've
+  made my decision: Cornell. Thanks for your attention!
 - Accounts:
 
   - GitHub: https://github.com/Determinant/
