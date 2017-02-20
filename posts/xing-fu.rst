@@ -1,7 +1,7 @@
 .. title: 所謂幸福
 .. slug: xing-fu
 .. date: 2015-08-22 00:00:03 UTC+08:00
-.. tags: 幸福, 妹子, 僞詩, pseudo-poem
+.. tags: 幸福, 妹子, 偽詩, pseudo-poem
 .. category: life
 .. link:
 .. description:

@@ -1,4 +1,3 @@
-from StringIO import StringIO
 import json, uuid
 from docutils import nodes
 import docutils.parsers.rst.directives.body
