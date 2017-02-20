@@ -1,7 +1,7 @@
 .. title: Simple Life
 .. slug: simple-life
 .. date: 2013/02/20 10:18:45
-.. tags: poetry
+.. tags: pseudo-poem, 偽詩
 .. category: life
 
 An interesting poem:
