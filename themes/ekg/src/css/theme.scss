@@ -13,6 +13,7 @@ $letter-spacing-headings: -.1, -.1, -.1, -.08, -.05, 0;
 
 $font-size-body: 1.6;
 $font-size-body-smaller: 0.9 * $font-size-body;
+$font-size-body-ssmaller: 0.8 * $font-size-body;
 $font-size-pre: 1.4;
 $font-size-blockquote: 1.5;
 $main-line-height: 1.45;
@@ -49,13 +50,13 @@ $color-anchor-text-hover:               $color5;
 $color-bquote-border-left:              $color2;
 $color-bquote-bg:                       $color6;
 $color-leftcolumn-bg:                   $color7;
-$color-post-date-text:                  $color9;
-$color-post-date-bg:                    $color8;
+$color-post-date-text:                  $color6;
+$color-post-date-bg:                    $color15-mix;
 $color-indexbox-bg:                     $color9;
 $color-codebox-lineno-border-right:     $color4;
 $color-codebox-lineno-bg:               $color2;
 $color-msgbox-date-text:                $color10;
-$color-leftbar-bg:                      $color-body-bg;
+$color-leftbar-bg:                      $color7;
 $color-leftbar-descr-text:              $color12;
 $color-leftbar-descr-bg-mix:            $color13-mix;
 $color-leftbar-descr-bg:                $color13;
@@ -171,13 +172,13 @@ a {
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     @include to_rem(margin-bottom, 1.2);
-    font-weight: 300;
+    font-weight: 400;
 }
 
 @for $i from 1 through 6 {
     h#{$i} {
-        @include font-size(nth($font-size-headings, $i) * 0.8);
-        @include to_rem(letter-spacing, nth($letter-spacing-headings, $i) * 0.8);
+        @include font-size(nth($font-size-headings, $i) * 0.70);
+        @include to_rem(letter-spacing, nth($letter-spacing-headings, $i) * 0.5);
         line-height: nth($line-height-headings, $i);
     }
 }
@@ -255,11 +256,11 @@ div.line-block div.line-block {
 
 .content-column > div {
     padding-top: 50px;
-    max-width: 700px;
+    max-width: 573px;
 }
 
 .footerbox {
-    font-family: $art-sans-font-stack;
+    font-family: $sans-font-stack;
     text-align: center;
     margin-top: 100px;
     margin-bottom: 5px;
@@ -268,10 +269,23 @@ div.line-block div.line-block {
 /* post */
 .postbox {
     margin-bottom: 40px;
+
+    ul > li {
+        list-style: none;
+    }
+
+    ul > li:before {
+        content: "\e080";
+        font-family: 'Glyphicons Halflings';
+        font-size: 10px;
+        float: left;
+        margin-left: -17px;
+        padding-top: 4px; /* ugly fix */
+    }
 }
 
 .post-title {
-    font-family: $art-sans-font-stack;
+    font-family: $sans-font-stack;
     margin-top: 15px;
 }
 
@@ -302,7 +316,8 @@ div.line-block div.line-block {
 }
 
 .post-preamble {
-    @include font-size($font-size-body-smaller);
+    font-family: $mono-font-stack;
+    @include font-size($font-size-body-ssmaller);
 }
 
 .post-single .post-preamble {
@@ -419,7 +434,7 @@ pre.code {
 
 /* leftbar */
 .nav {
-    margin: 0 0 5px 0;
+    margin: 0 0 15px 0;
     list-style: none;
     overflow: hidden; /* clear float */
 }
@@ -471,7 +486,7 @@ pre.code {
     background-color: #251e2a;
     */
     background-color: $color-leftbar-bg;
-    background-image: repeating-radial-gradient(circle at 100% 0% , rgba(31, 31, 31, 0.2), rgba(31, 31, 31, 0.2) 24px, rgba(31, 31, 31, 0.1) 24px, rgba(31, 31, 31, 0.1) 48px);
+    //background-image: repeating-radial-gradient(circle at 100% 0% , rgba(31, 31, 31, 0.2), rgba(31, 31, 31, 0.2) 24px, rgba(31, 31, 31, 0.1) 24px, rgba(31, 31, 31, 0.1) 48px);
 
     .logo {
         width: 250px;
@@ -626,19 +641,23 @@ ul.tags {
         display: inline-block;
         vertical-align: middle;
     }
+
+    > li:before {
+        content: "";
+    }
 }
 
 .tag {
     display: block;
     padding: 0px 4px;
     line-height: 1.5;
-    font-family: $art-sans-font-stack;
+    font-family: $mono-font-stack;
     white-space: nowrap;
     text-shadow: 1px 2px 0 $color-tag-text-shadow;
     padding-left: 9px;
     padding-right: 9px;
-    background-color: $color15-mix;
-    background-color: $color15;
+    background-color: $color-tag-bg-mix;
+    background-color: $color-tag-bg;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -714,7 +733,7 @@ object.music-score {
 }
 
 #pushybox-container {
-    margin: 0 5px 0;
+    margin: 0 0 0;
     overflow: hidden;
     @include transition(0.2s);
     .jspPane { width: 100% !important; }
@@ -754,6 +773,7 @@ object.music-score {
 
     .leftbar {
         margin-right: 0;
+        padding-bottom: 15px;
         height: auto;
         width: auto;
         float: none;

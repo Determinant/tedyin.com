@@ -113,7 +113,7 @@ function unblock_element_and_finish(selector) {
     }
 }
 
-var provider = "http://picasaweb.google.com";
+var provider = "https://picasaweb.google.com";
 //var provider = "http://tedyin.com/picasa";
 var google_uid = "108853535017808641401";
 var google_aid = "6211742483741396737";

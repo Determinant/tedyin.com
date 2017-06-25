@@ -211,7 +211,7 @@
     <animate
        id="beat"
        attributeName="stroke"
-       values="#a7b5af; #fecfd4; #a7b5af"
+       values="#fff; #fff; #fff"
        dur="0.5s"
        begin="pulse.end" />
   </path>
