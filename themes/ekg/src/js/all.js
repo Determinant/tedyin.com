@@ -3,6 +3,7 @@ if (!window.console) console = {log: function() {}};
 var posts = [];
 var lasttime = 0;
 var max_entries = 20;
+var last_requested = null;
 
 $(function() {
     if (true) //(!Modernizr.flexbox)
@@ -96,6 +97,7 @@ $(function() {
 function long_polling() {
     var req_url = '/ajax?action=fetch&lasttime=' +
         lasttime + '&id=' + Math.random();
+    last_requested = new Date();
     console.log("last time: " + lasttime + req_url);
     $.ajax({
         url: req_url,
@@ -144,8 +146,10 @@ function long_polling() {
         },
         dataType: 'json',
         error: function (a, b, c) {
-            console.log(b);
-            setTimeout('long_polling();', 5000);
+            if (last_requested - (new Date()) > 5)
+                long_polling();
+            else
+                setTimeout('long_polling();', 5000);
         }
     });
 }
