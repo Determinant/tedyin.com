@@ -292,13 +292,12 @@ pre.code {
   margin-right: 13px;
   padding-top: 8px;
   overflow: visible;
-  position: relative; }
+  position: absolute;
+  right: 0; }
 
 .logo-img {
-  position: absolute;
+  float: right;
   pointer-events: none;
-  display: inline-block;
-  margin-left: -254px;
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
