@@ -1,0 +1,15 @@
+
+/* Satisfy */
+@font-face {
+    font-family:  'Satisfy';
+    src:          url('Satisfy-Regular.eot');
+    src:          local('*'),
+                  url('Satisfy-Regular.eot?#iefix') format('embedded-opentype'),
+                  url('Satisfy-Regular.woff') format('woff'),
+                  url('Satisfy-Regular.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  normal;
+    font-stretch: normal;
+    font-variant: normal;
+}
+

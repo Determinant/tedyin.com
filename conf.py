@@ -18,7 +18,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Ted Yin"
-BLOG_TITLE = "Ted's EKG"
+BLOG_TITLE = "EKG&lt;T&gt;"
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "http://tedyin.com/"
@@ -774,7 +774,7 @@ LICENSE = """
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = 'Contents & Theme &copy; {date}   <a href="mailto:{email}">{author}</a>{license}'
+CONTENT_FOOTER = '<small>Contents & Theme &copy; {date}   <a href="mailto:{email}">{author}</a><br/><a href="http://typopro.org/">TypoPro</a> & <a href="https://typekit.com/">Adobe TypeKit</a>{license}</small>'
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will

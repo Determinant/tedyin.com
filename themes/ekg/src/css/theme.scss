@@ -1,6 +1,6 @@
 $sans-font-stack: 'Open Sans', Calibri, Candara, Arial, source-han-sans-traditional, 'Microsoft YaHei', 'SimHei', sans-serif;
-$art-sans-font-stack: 'Quikhand', 'Open Sans', Calibri, Candara, Arial, source-han-sans-traditional, 'Microsoft YaHei', 'SimHei', sans-serif;
-$mono-font-stack: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+$art-sans-font-stack: 'Satisfy', 'Open Sans', Calibri, Candara, Arial, source-han-sans-traditional, 'Microsoft YaHei', 'SimHei', sans-serif;
+$mono-font-stack: 'Fantasque Sans Mono', Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 $nav-child-base-width: 80px;
 $nav-child-inc-factor: 1.3;
 $nav-child-hover-factor: 1.5;
@@ -12,6 +12,7 @@ $line-height-headings: 1.2, 1.25, 1.3, 1.35, 1.5, 1.6;
 $letter-spacing-headings: -.1, -.1, -.1, -.08, -.05, 0;
 
 $font-size-body: 1.6;
+$font-size-body-larger: 1.2 * $font-size-body;
 $font-size-body-smaller: 0.9 * $font-size-body;
 $font-size-body-ssmaller: 0.8 * $font-size-body;
 $font-size-pre: 1.4;
@@ -50,24 +51,24 @@ $color-anchor-text-hover:               $color5;
 $color-bquote-border-left:              $color2;
 $color-bquote-bg:                       $color6;
 $color-leftcolumn-bg:                   $color7;
-$color-post-date-text:                  $color6;
-$color-post-date-bg:                    $color15-mix;
-$color-indexbox-bg:                     $color9;
+$color-post-date-text:                  $color1;
+$color-post-date-bg:                    $color6;
+$color-indexbox-bg:                     $color7;
 $color-codebox-lineno-border-right:     $color4;
 $color-codebox-lineno-bg:               $color2;
 $color-msgbox-date-text:                $color10;
 $color-leftbar-bg:                      $color7;
 $color-leftbar-descr-text:              $color12;
 $color-leftbar-descr-bg-mix:            $color13-mix;
-$color-leftbar-descr-bg:                $color13;
+$color-leftbar-descr-bg:                $color-body-bg;
 $color-navs-toggle-bg:                  $color-leftbar-descr-bg-mix;
 $color-navs-toggle-bar-bg:              $color-leftbar-descr-text;
 $color-pager-bg:                        $color14;
 $color-pager-text:                      $color-body-bg;
 $color-pager-bg-hover:                  $color-indexbox-bg;
 $color-pager-text-hover:                $color-body-text;
-$color-tag-bg-mix:                      $color15-mix;
-$color-tag-bg:                          $color15;
+$color-tag-bg-mix:                      $color16-mix;
+$color-tag-bg:                          $color16;
 $color-tag-text-shadow:                 $color18;
 $color-msgbox-bg-mix:                   $color16-mix;
 $color-msgbox-bg:                       $color16;
@@ -246,7 +247,7 @@ div.line-block div.line-block {
 .leftbar-column {
     background-color: $color-leftcolumn-bg;
     overflow-y: hidden;
-    padding: 0 15px 0;
+    padding: 0;
     /* don't want to show the scroll bar :( */
 }
 
@@ -403,11 +404,12 @@ pre.code {
 /* logo */
 .logo {
     position: relative;
-/*    height: 148px; */
+    height: 148px;
+    text-align: right;
 }
 
 .logo-text {
-    margin-left: 2px;
+    margin-right: 13px;
     padding-top: 8px;
     overflow: visible;
     position: relative;
@@ -416,6 +418,15 @@ pre.code {
 .logo-img {
     position: absolute;
     pointer-events: none;
+    display: inline-block;
+    margin-left: -254px;
+
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
 
     object {
         width: 255px;
@@ -441,13 +452,11 @@ pre.code {
 
 .navs-toggle {
     overflow: hidden;
-    margin-left: -20px;
-    margin-right: -15px;
     .navbar-toggle {
         position: relative;
         float: right;
         padding: 9px 10px;
-        margin: 8px 0;
+        margin: 0 0;
         background-color: $color-navs-toggle-bg;
         background-image: none;
         border: 1px solid transparent;
@@ -465,11 +474,6 @@ pre.code {
     }
 }
 
-#navs {
-    margin-left: -20px;
-    margin-right: -20px;
-}
-
 .leftbar {
     float: right;
     width: $leftbar-width;
@@ -477,8 +481,8 @@ pre.code {
     overflow: visible;
     padding-top: 50px;
     padding-bottom: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 0;
+    padding-right: 0;
     /*
     background-image: url("images/bg.svg");
     background-repeat: no-repeat;
@@ -489,13 +493,13 @@ pre.code {
     //background-image: repeating-radial-gradient(circle at 100% 0% , rgba(31, 31, 31, 0.2), rgba(31, 31, 31, 0.2) 24px, rgba(31, 31, 31, 0.1) 24px, rgba(31, 31, 31, 0.1) 48px);
 
     .logo {
-        width: 250px;
+        background-color: $color-leftbar-bg;
         overflow: visible;
     }
 
 
     .brand {
-        font-size: 70px;
+        font-size: 60px;
         font-family: $art-sans-font-stack;
         line-height: 70px;
         text-shadow: 0 0 20px $color-brand-glow;
@@ -511,22 +515,18 @@ pre.code {
 
     .descr {
         font-family: $art-sans-font-stack;
-        text-align: left;
         color: $color-leftbar-descr-text;
-        margin-top: 5px;
-        margin-left: -20px;
-        margin-right: -20px;
+        margin-bottom: 0;
         padding: 5px 20px 5px 20px;
-        @include font-size($font-size-body-smaller);
-        background-color: $color-leftbar-descr-bg-mix;
+        @include font-size($font-size-body-larger);
+        @include border-radius(16px 0 0 16px);
         background-color: $color-leftbar-descr-bg;
     }
 
     .nav {
         a {
             font-family: $art-sans-font-stack;
-            @include font-size($font-size-body-smaller);
-            text-align: right;
+            @include font-size($font-size-body);
             margin-right: 0;
             padding: 5px 10px;
             margin-bottom: 3px;
@@ -564,6 +564,30 @@ pre.code {
     }
 }
 
+#navs {
+    margin-top: 5px;
+}
+
+.layout-left {
+    text-align: right;
+}
+
+.logo-rounded {
+    background-color: $color-body-bg;
+    div {
+        @include border-radius(0 0 8px 0);
+    }
+}
+
+.descr-rounded {
+    background-color: $color-body-bg;
+    div {
+        height: 15px;
+        background-color: $color-leftbar-bg;
+        @include border-radius(0 8px 0 0);
+    }
+}
+
 .no-csstransitions .leftbar .nav {
     $child-width: $nav-child-base-width;
     $child-prefix: '';
@@ -587,10 +611,7 @@ pre.code {
         height: auto;
         color: $color-pager-text;
         border: 0;
-        -webkit-border-radius: 15px;
-        -moz-border-radius: 15px;
-        border-radius: 15px;
-
+        @include border-radius(15px);
         &:hover {
             background-color: $color-pager-bg-hover;
             color: $color-pager-text-hover;
@@ -658,9 +679,7 @@ ul.tags {
     padding-right: 9px;
     background-color: $color-tag-bg-mix;
     background-color: $color-tag-bg;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+    @include border-radius(3px);
 }
 
 /* misc */
@@ -730,13 +749,31 @@ object.music-score {
         &:first-child { margin-top: 0; }
         &:last-child { margin-bottom: 0; }
     }
+
+    $child-width: $leftbar-width;
+    $child-prefix: '';
+    @for $i from 1 through 20 {
+        /* > li:nth-child(#{$i}) a { */
+        > li:first-child #{$child-prefix} div {
+            display: inline-block;
+            width: $child-width;
+        }
+        $child-width: max($leftbar-width * 0.6, $child-width * 0.99);
+        $child-prefix: $child-prefix + '+ li';
+    }
 }
 
 #pushybox-container {
     margin: 0 0 0;
+    display: inline-block;
     overflow: hidden;
     @include transition(0.2s);
     .jspPane { width: 100% !important; }
+}
+
+#pushybox .msgbox {
+    background-color: $color-msgbox-bg-mix;
+    background-color: $color-msgbox-bg;
 }
 
 
@@ -746,10 +783,6 @@ object.music-score {
     }
     .content-column {
         width: 66.66666%;
-    }
-    #pushybox .msgbox {
-        background-color: $color-msgbox-bg-mix;
-        background-color: $color-msgbox-bg;
     }
 
     #navs {
@@ -773,11 +806,14 @@ object.music-score {
 
     .leftbar {
         margin-right: 0;
-        padding-bottom: 15px;
+        padding-bottom: 10px;
         height: auto;
         width: auto;
         float: none;
         background-size: 100% auto;
+        .descr {
+            margin-left: 20px;
+        }
     }
 
     .container {
@@ -795,18 +831,18 @@ object.music-score {
         margin-top: 40px;
     }
 
-    #pushybox, #pushybox-container {
-        width: auto;
-    }
+    //#pushybox, #pushybox-container {
+    //    width: auto;
+    //}
 
     #pushybox-container {
         height: 200px !important;
     }
 
-    #pushybox {
-        background-color: $color-msgbox-bg-mix;
-        background-color: $color-msgbox-bg;
-    }
+    //#pushybox {
+    //    background-color: $color-msgbox-bg-mix;
+    //    background-color: $color-msgbox-bg;
+    //}
 }
 
 @media (max-width: 750px) {
@@ -831,9 +867,7 @@ object.music-score {
 
     .indexbox {
         background: none;
-        -webkit-border-radius: none;
-        -moz-border-radius: none;
-        border-radius: none;
+        @include border-radius(none);
         @include transition(0.2s);
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
@@ -854,11 +888,6 @@ object.music-score {
             padding-left: 10px;
             padding-right: 10px;
         }
-    }
-
-    .leftbar {
-        margin-left: -20px;
-        margin-right: -20px;
     }
 }
 

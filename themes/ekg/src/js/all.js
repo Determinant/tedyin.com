@@ -18,8 +18,20 @@ $(function() {
         $(flexer);
         $(window).bind('resize', flexer);
     }
-    $('.vscroll-pane').mCustomScrollbar({ axis: 'y', theme: 'rounded' });
-    $('.hscroll-pane').mCustomScrollbar({ axis: 'x', theme: 'rounded', mousewheel: { enable: true, axis: 'x' }});
+    $('.vscroll-pane').mCustomScrollbar({
+        axis: 'y',
+        theme: 'rounded',
+        autoHideScrollbar: true,
+        autoDraggerLength: true,
+        mouseWheel: { enable: true, axis: 'y', scrollAmount: 50}
+    });
+    $('.hscroll-pane').mCustomScrollbar({
+        axis: 'x',
+        theme: 'rounded',
+        autoHideScrollbar: true,
+        autoDraggerLength: true,
+        mousewheel: { enable: true, axis: 'x', scrollAmount: 50}
+    });
     long_polling();
     $('.navbar-toggle').each(function () {
         var e = $(this);

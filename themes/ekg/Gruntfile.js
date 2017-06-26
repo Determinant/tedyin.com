@@ -85,7 +85,7 @@ module.exports = function(grunt) {
                     timestamp: true
                 },
                 cwd: 'src/fonts/',
-                src: '**/*.{svg,eot,ttf,woff}',
+                src: '**/*.{svg,eot,ttf,woff,woff2}',
                 dest: 'build/fonts/',
                 expand: true
             },
@@ -101,7 +101,7 @@ module.exports = function(grunt) {
         },
         watch: {
             fonts: {
-                files: ['src/fonts/**/*.{svg,eot,ttf,woff}'],
+                files: ['src/fonts/**/*.{svg,eot,ttf,woff,woff2}'],
                 tasks: ['copy:fonts']
             }
         }

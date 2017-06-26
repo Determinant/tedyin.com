@@ -1,0 +1,60 @@
+
+/* Fantasque Sans Mono Bold */
+@font-face {
+    font-family:  'Fantasque Sans Mono';
+    src:          url('FantasqueSansMono-Bold.eot');
+    src:          local('*'),
+                  url('FantasqueSansMono-Bold.eot?#iefix') format('embedded-opentype'),
+                  url('FantasqueSansMono-Bold.woff') format('woff'),
+                  url('FantasqueSansMono-Bold.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  bold;
+    font-stretch: normal;
+    font-variant: normal;
+}
+
+
+/* Fantasque Sans Mono Bold Italic */
+@font-face {
+    font-family:  'Fantasque Sans Mono';
+    src:          url('FantasqueSansMono-BoldItalic.eot');
+    src:          local('*'),
+                  url('FantasqueSansMono-BoldItalic.eot?#iefix') format('embedded-opentype'),
+                  url('FantasqueSansMono-BoldItalic.woff') format('woff'),
+                  url('FantasqueSansMono-BoldItalic.ttf') format('truetype');
+    font-style:   italic;
+    font-weight:  bold;
+    font-stretch: normal;
+    font-variant: normal;
+}
+
+
+/* Fantasque Sans Mono Regular */
+@font-face {
+    font-family:  'Fantasque Sans Mono';
+    src:          url('FantasqueSansMono-Regular.eot');
+    src:          local('*'),
+                  url('FantasqueSansMono-Regular.eot?#iefix') format('embedded-opentype'),
+                  url('FantasqueSansMono-Regular.woff') format('woff'),
+                  url('FantasqueSansMono-Regular.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  normal;
+    font-stretch: normal;
+    font-variant: normal;
+}
+
+
+/* Fantasque Sans Mono Regular Italic */
+@font-face {
+    font-family:  'Fantasque Sans Mono';
+    src:          url('FantasqueSansMono-RegularItalic.eot');
+    src:          local('*'),
+                  url('FantasqueSansMono-RegularItalic.eot?#iefix') format('embedded-opentype'),
+                  url('FantasqueSansMono-RegularItalic.woff') format('woff'),
+                  url('FantasqueSansMono-RegularItalic.ttf') format('truetype');
+    font-style:   italic;
+    font-weight:  normal;
+    font-stretch: normal;
+    font-variant: normal;
+}
+

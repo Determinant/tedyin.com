@@ -3,55 +3,61 @@
 <!DOCTYPE html>
 <%def name="extra_head()"></%def>
 <html lang="${lang}">
-    <head>
-        ${html_head(self.extra_head)}
-    </head>
-    <body>
-        <div class="container">
-            <div class="block-group row">
-                <div class="leftbar-column block">
-                    <div class="leftbar">
-                        <div class="logo" onmouseover="trigger_pulse();">
-                            <div class="logo-img">
-                                <object id="svg_obj" type="image/svg+xml" data="/assets/css/images/ekg.svg" onload="svg_onload(this);">
-                                </object>
-                            </div>
-                            <div class="logo-text">
-                                <div class="brand">
-                                    <a href="${abs_link('/')}">
-                                        <span>${blog_title}</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="descr">${description or blog_description}</p>
-                        <div class="navs-toggle">
-                            <button id="navs-toggle" type="button" class="navbar-toggle" data-target="#navs">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        <div id="navs" class="navbar-collapse collapsed">
-                            <ul class="nav">
-                                ${html_navigation_links()}
-                            </ul>
-                            <div id="pushybox-container" class="vscroll-pane">
-                                <ul id="pushybox">
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+  <head>
+    ${html_head(self.extra_head)}
+  </head>
+  <body>
+    <div class="container">
+      <div class="block-group row">
+        <div class="leftbar-column block">
+          <div class="layout-left leftbar">
+            <div class="logo-rounded">
+              <div class="logo" onmouseover="trigger_pulse();">
+                <div class="logo-img">
+                  <object id="svg_obj" type="image/svg+xml" data="/assets/css/images/ekg.svg" onload="svg_onload(this);">
+                  </object>
                 </div>
-                <div class="content-column block">
-                    <div>
-                        <%block name="content"></%block>
-                    </div>
-                    <div class="footerbox">
-                        ${content_footer}
-                    </div>
+                <div class="logo-text">
+                  <div class="brand">
+                    <a href="${abs_link('/')}">
+                      <span>${blog_title}</span>
+                    </a>
+                  </div>
                 </div>
+              </div>
             </div>
+            <p class="layout-left descr">${description or blog_description}</p>
+            <div class="descr-rounded">
+              <div>
+              </div>
+            </div>
+            <div class="layout-left navs-toggle">
+              <button id="navs-toggle" type="button" class="navbar-toggle" data-target="#navs">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div id="navs" class="layout-left navbar-collapse collapsed">
+              <ul class="nav">
+                ${html_navigation_links()}
+              </ul>
+              <div id="pushybox-container" class="vscroll-pane">
+                <ul id="pushybox">
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-    </body>
+        <div class="content-column block">
+          <div>
+            <%block name="content"></%block>
+          </div>
+          <div class="footerbox">
+            ${content_footer}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

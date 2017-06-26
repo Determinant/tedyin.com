@@ -124,7 +124,7 @@ blockquote:after {
   content: ""; }
 
 pre {
-  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-family: "Fantasque Sans Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
   font-size: 14px;
   font-size: 1.4rem;
   -webkit-border-radius: 4px;
@@ -155,7 +155,7 @@ div.line-block div.line-block {
 .leftbar-column {
   background-color: #393337;
   overflow-y: hidden;
-  padding: 0 15px 0;
+  padding: 0;
   /* don't want to show the scroll bar :( */ }
 
 .content-column {
@@ -204,14 +204,14 @@ div.line-block div.line-block {
   padding-right: 15px; }
 
 .post-date {
-  color: #483e42;
-  background-color: #867c6f; }
+  color: #cfc8c1;
+  background-color: #483e42; }
 
 .post-text {
   margin-bottom: 20px; }
 
 .post-preamble {
-  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-family: "Fantasque Sans Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
   font-size: 12.8px;
   font-size: 1.28rem; }
 
@@ -222,7 +222,7 @@ div.line-block div.line-block {
 /* indexbox */
 .indexbox {
   border: none;
-  background-color: #544849;
+  background-color: #393337;
   padding: 15px;
   padding-left: 30px;
   padding-right: 30px;
@@ -269,12 +269,12 @@ pre.code {
 .msgbox {
   padding: 0 12px; }
   .msgbox .msg-text {
-    font-family: "Quikhand", "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif;
+    font-family: "Satisfy", "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif;
     display: block;
     padding-top: 10px;
     margin-bottom: 5px; }
   .msgbox .date {
-    font-family: "Quikhand", "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif;
+    font-family: "Satisfy", "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif;
     display: block;
     padding-bottom: 3px;
     text-align: right;
@@ -285,17 +285,26 @@ pre.code {
 /* logo */
 .logo {
   position: relative;
-  /*    height: 148px; */ }
+  height: 148px;
+  text-align: right; }
 
 .logo-text {
-  margin-left: 2px;
+  margin-right: 13px;
   padding-top: 8px;
   overflow: visible;
   position: relative; }
 
 .logo-img {
   position: absolute;
-  pointer-events: none; }
+  pointer-events: none;
+  display: inline-block;
+  margin-left: -254px;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH"; }
   .logo-img object {
     width: 255px;
     height: 120px; }
@@ -315,14 +324,12 @@ pre.code {
   /* clear float */ }
 
 .navs-toggle {
-  overflow: hidden;
-  margin-left: -20px;
-  margin-right: -15px; }
+  overflow: hidden; }
   .navs-toggle .navbar-toggle {
     position: relative;
     float: right;
     padding: 9px 10px;
-    margin: 8px 0;
+    margin: 0 0;
     background-color: #42393f;
     background-image: none;
     border: 1px solid transparent;
@@ -338,10 +345,6 @@ pre.code {
     .navs-toggle .icon-bar + .icon-bar {
       margin-top: 4px; }
 
-#navs {
-  margin-left: -20px;
-  margin-right: -20px; }
-
 .leftbar {
   float: right;
   width: 320px;
@@ -349,8 +352,8 @@ pre.code {
   overflow: visible;
   padding-top: 50px;
   padding-bottom: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 0;
+  padding-right: 0;
   /*
   background-image: url("images/bg.svg");
   background-repeat: no-repeat;
@@ -359,11 +362,11 @@ pre.code {
   */
   background-color: #393337; }
   .leftbar .logo {
-    width: 250px;
+    background-color: #393337;
     overflow: visible; }
   .leftbar .brand {
-    font-size: 70px;
-    font-family: "Quikhand", "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif;
+    font-size: 60px;
+    font-family: "Satisfy", "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif;
     line-height: 70px;
     text-shadow: 0 0 20px rgba(198, 243, 236, 0.75);
     overflow: visible;
@@ -378,17 +381,16 @@ pre.code {
       .leftbar .brand a:hover {
         text-shadow: 0 0 60px rgba(198, 243, 236, 0.75); }
   .leftbar .descr {
-    font-family: "Quikhand", "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif;
-    text-align: left;
+    font-family: "Satisfy", "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif;
     color: #cfc8c1;
-    margin-top: 5px;
-    margin-left: -20px;
-    margin-right: -20px;
+    margin-bottom: 0;
     padding: 5px 20px 5px 20px;
-    font-size: 14.4px;
-    font-size: 1.44rem;
-    background-color: #42393f;
-    background-color: rgba(67, 58, 64, 0.8); }
+    font-size: 19.2px;
+    font-size: 1.92rem;
+    -webkit-border-radius: 16px 0 0 16px;
+    -moz-border-radius: 16px 0 0 16px;
+    border-radius: 16px 0 0 16px;
+    background-color: #433a40; }
   .leftbar .nav {
     /* > li:nth-child(1) a { */
     /* > li:nth-child(2) a { */
@@ -396,10 +398,9 @@ pre.code {
     /* > li:nth-child(4) a { */
     /* > li:nth-child(5) a { */ }
     .leftbar .nav a {
-      font-family: "Quikhand", "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif;
-      font-size: 14.4px;
-      font-size: 1.44rem;
-      text-align: right;
+      font-family: "Satisfy", "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif;
+      font-size: 16px;
+      font-size: 1.6rem;
       margin-right: 0;
       padding: 5px 10px;
       margin-bottom: 3px;
@@ -447,6 +448,28 @@ pre.code {
       .leftbar .nav > li:first-child + li + li + li + li a:hover {
         width: 304px; }
 
+#navs {
+  margin-top: 5px; }
+
+.layout-left {
+  text-align: right; }
+
+.logo-rounded {
+  background-color: #433a40; }
+  .logo-rounded div {
+    -webkit-border-radius: 0 0 8px 0;
+    -moz-border-radius: 0 0 8px 0;
+    border-radius: 0 0 8px 0; }
+
+.descr-rounded {
+  background-color: #433a40; }
+  .descr-rounded div {
+    height: 15px;
+    background-color: #393337;
+    -webkit-border-radius: 0 8px 0 0;
+    -moz-border-radius: 0 8px 0 0;
+    border-radius: 0 8px 0 0; }
+
 .no-csstransitions .leftbar .nav {
   /* > li:nth-child(1) a { */
   /* > li:nth-child(2) a { */
@@ -476,14 +499,14 @@ pre.code {
   -moz-border-radius: 15px;
   border-radius: 15px; }
   .pager li > a:hover, .pager li > span:hover {
-    background-color: #544849;
+    background-color: #393337;
     color: #cfc8c1; }
 
 ul.pager {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  font-family: "Quikhand", "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif;
+  font-family: "Satisfy", "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif;
   list-style: none;
   text-align: center; }
   ul.pager:before, ul.pager:after {
@@ -513,13 +536,13 @@ ul.tags {
   display: block;
   padding: 0px 4px;
   line-height: 1.5;
-  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-family: "Fantasque Sans Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
   white-space: nowrap;
   text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.25);
   padding-left: 9px;
   padding-right: 9px;
-  background-color: #867c6f;
-  background-color: rgba(134, 124, 111, 0.6);
+  background-color: #4d4044;
+  background-color: rgba(95, 75, 79, 0.5);
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px; }
@@ -549,7 +572,7 @@ object.music-score {
   margin-bottom: 10px; }
 
 .comments, .more {
-  font-family: "Quikhand", "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif; }
+  font-family: "Satisfy", "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif; }
 
 .disqus-thread {
   margin-top: 60px; }
@@ -571,16 +594,97 @@ object.music-score {
 #pushybox {
   list-style: none;
   padding-left: 0px;
-  margin: 0px; }
+  margin: 0px;
+  /* > li:nth-child(1) a { */
+  /* > li:nth-child(2) a { */
+  /* > li:nth-child(3) a { */
+  /* > li:nth-child(4) a { */
+  /* > li:nth-child(5) a { */
+  /* > li:nth-child(6) a { */
+  /* > li:nth-child(7) a { */
+  /* > li:nth-child(8) a { */
+  /* > li:nth-child(9) a { */
+  /* > li:nth-child(10) a { */
+  /* > li:nth-child(11) a { */
+  /* > li:nth-child(12) a { */
+  /* > li:nth-child(13) a { */
+  /* > li:nth-child(14) a { */
+  /* > li:nth-child(15) a { */
+  /* > li:nth-child(16) a { */
+  /* > li:nth-child(17) a { */
+  /* > li:nth-child(18) a { */
+  /* > li:nth-child(19) a { */
+  /* > li:nth-child(20) a { */ }
   #pushybox > li {
     margin: 10px 0; }
     #pushybox > li:first-child {
       margin-top: 0; }
     #pushybox > li:last-child {
       margin-bottom: 0; }
+  #pushybox > li:first-child div {
+    display: inline-block;
+    width: 320px; }
+  #pushybox > li:first-child + li div {
+    display: inline-block;
+    width: 316.8px; }
+  #pushybox > li:first-child + li + li div {
+    display: inline-block;
+    width: 313.632px; }
+  #pushybox > li:first-child + li + li + li div {
+    display: inline-block;
+    width: 310.49568px; }
+  #pushybox > li:first-child + li + li + li + li div {
+    display: inline-block;
+    width: 307.39072px; }
+  #pushybox > li:first-child + li + li + li + li + li div {
+    display: inline-block;
+    width: 304.31682px; }
+  #pushybox > li:first-child + li + li + li + li + li + li div {
+    display: inline-block;
+    width: 301.27365px; }
+  #pushybox > li:first-child + li + li + li + li + li + li + li div {
+    display: inline-block;
+    width: 298.26091px; }
+  #pushybox > li:first-child + li + li + li + li + li + li + li + li div {
+    display: inline-block;
+    width: 295.2783px; }
+  #pushybox > li:first-child + li + li + li + li + li + li + li + li + li div {
+    display: inline-block;
+    width: 292.32552px; }
+  #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li div {
+    display: inline-block;
+    width: 289.40226px; }
+  #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li div {
+    display: inline-block;
+    width: 286.50824px; }
+  #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li + li div {
+    display: inline-block;
+    width: 283.64316px; }
+  #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li + li + li div {
+    display: inline-block;
+    width: 280.80673px; }
+  #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li + li + li + li div {
+    display: inline-block;
+    width: 277.99866px; }
+  #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li div {
+    display: inline-block;
+    width: 275.21867px; }
+  #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li div {
+    display: inline-block;
+    width: 272.46649px; }
+  #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li div {
+    display: inline-block;
+    width: 269.74182px; }
+  #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li div {
+    display: inline-block;
+    width: 267.0444px; }
+  #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li div {
+    display: inline-block;
+    width: 264.37396px; }
 
 #pushybox-container {
   margin: 0 0 0;
+  display: inline-block;
   overflow: hidden;
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
@@ -590,16 +694,16 @@ object.music-score {
   #pushybox-container .jspPane {
     width: 100% !important; }
 
+#pushybox .msgbox {
+  background-color: #4d4044;
+  background-color: rgba(95, 75, 79, 0.5); }
+
 @media (min-width: 992px) {
   .leftbar-column {
     width: 33.33333%; }
 
   .content-column {
     width: 66.66666%; }
-
-  #pushybox .msgbox {
-    background-color: #4d4044;
-    background-color: rgba(95, 75, 79, 0.5); }
 
   #navs {
     height: auto !important; } }
@@ -615,11 +719,13 @@ object.music-score {
 
   .leftbar {
     margin-right: 0;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     height: auto;
     width: auto;
     float: none;
     background-size: 100% auto; }
+    .leftbar .descr {
+      margin-left: 20px; }
 
   .container {
     background-size: 100% auto;
@@ -633,15 +739,8 @@ object.music-score {
     max-width: none;
     margin-top: 40px; }
 
-  #pushybox, #pushybox-container {
-    width: auto; }
-
   #pushybox-container {
-    height: 200px !important; }
-
-  #pushybox {
-    background-color: #4d4044;
-    background-color: rgba(95, 75, 79, 0.5); } }
+    height: 200px !important; } }
 @media (max-width: 750px) {
   .container {
     background-position: 0px 50px; }
@@ -688,11 +787,7 @@ object.music-score {
     margin-left: 0px;
     margin-right: 0px;
     padding-left: 10px;
-    padding-right: 10px; }
-
-  .leftbar {
-    margin-left: -20px;
-    margin-right: -20px; } }
+    padding-right: 10px; } }
 @media (max-width: 500px) {
   .container {
     background-position: 0px 150px; } }

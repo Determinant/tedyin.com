@@ -6,7 +6,13 @@
     %endif
     <meta name="author" content="${blog_author}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>${title|striphtml} | ${blog_title|striphtml}</title>
+    <title>
+      %if title == blog_title:
+        ${title}
+      %else:
+      ${title} | ${blog_title}
+      %endif
+    </title>
     ${mathjax_config}
     <link href="/assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
     <link href='/assets/fonts/fonts.min.css' rel='stylesheet' type='text/css'>
