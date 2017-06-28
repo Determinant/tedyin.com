@@ -715,6 +715,13 @@ object.music-score {
   background-color: #4d4044;
   background-color: rgba(95, 75, 79, 0.5); }
 
+.hyphenate {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto; }
+
 @media (min-width: 992px) {
   .leftbar-column {
     width: 33.33333%; }

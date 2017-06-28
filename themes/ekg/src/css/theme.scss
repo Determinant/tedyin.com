@@ -795,6 +795,14 @@ object.music-score {
     background-color: $color-msgbox-bg;
 }
 
+.hyphenate {
+    text-align:justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+}
+
 @media (min-width: 992px) {
     .leftbar-column {
         width: 33.33333%;
