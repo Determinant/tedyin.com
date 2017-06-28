@@ -70,8 +70,9 @@
 </%def>
 
 <%def name="mathjax_script(post)">
-    %if post.is_mathjax:
-        <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});</script>
-    %endif
+  %if post.is_mathjax:
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+    </script>
+  %endif
 </%def>

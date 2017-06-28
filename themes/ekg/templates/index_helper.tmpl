@@ -17,8 +17,9 @@
 </%def>
 
 <%def name="mathjax_script(posts)">
-    %if any(post.is_mathjax for post in posts):
-        <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});</script>
-    %endif
+  %if any(post.is_mathjax for post in posts):
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+    </script>
+  %endif
 </%def>
