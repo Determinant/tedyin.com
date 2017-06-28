@@ -194,8 +194,7 @@ div.line-block div.line-block {
     font-size: 10px;
     float: left;
     margin-left: -17px;
-    padding-top: 4px;
-    /* ugly fix */ }
+    padding-top: 0.5em; }
 
 .post-title {
   font-family: "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif;
@@ -529,6 +528,8 @@ ul.pager {
     clear: both; }
   ul.pager > li {
     display: inline; }
+  ul.pager > li:before {
+    content: ""; }
   ul.pager .next > a, ul.pager .next > span {
     float: right;
     line-height: 20px; }

@@ -290,7 +290,7 @@ div.line-block div.line-block {
         font-size: 10px;
         float: left;
         margin-left: -17px;
-        padding-top: 4px; /* ugly fix */
+        padding-top: 0.5em;
     }
 }
 
@@ -648,6 +648,10 @@ ul.pager {
 
     > li {
         display: inline;
+    }
+
+    > li:before {
+        content: "";
     }
 
     .next {

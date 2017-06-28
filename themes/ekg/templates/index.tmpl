@@ -4,29 +4,31 @@
 <%namespace name="comments" file="comments_helper_disqus.tmpl"/>
 <%inherit file="base.tmpl"/>
 <%block name="content">
-    % for post in posts:
-        <div class="postbox indexbox">
-            <h1 class="post-title">
-                <a href="${post.permalink(lang)}">${post.title(lang)}</a>
-            </h1>
-            <div class="post-preamble">
-                <div class="post-tags">
-                ${post_helper.html_tags(post)}
-                </div>
-                <div class="post-date">
-                    ${post.date.strftime(date_format)} @ ${post.meta('location') or 'Earth'}
-                </div>
-            </div>
-            <div class="post-text">
-                ${post.text(teaser_only=True)}
-            </div>
-            ${comments.comment_link(post.permalink(), post._base_path)}
+  % for post in posts:
+    <div class="postbox indexbox">
+      <h1 class="post-title">
+        <a href="${post.permalink(lang)}">${post.title(lang)}</a>
+      </h1>
+      <div class="post-preamble">
+        <div class="post-tags">
+          ${post_helper.html_tags(post)}
         </div>
-    % endfor
+        <div class="post-date">
+          ${post.date.strftime(date_format)} @ ${post.meta('location') or 'Earth'}
+        </div>
+      </div>
+      <div class="post-text">
+        ${post.text(teaser_only=True)}
+      </div>
+      ${comments.comment_link(post.permalink(), post._base_path)}
+    </div>
+  % endfor
+  <div class="postbox">
     ${helper.html_pager()}
     ${comments.comment_link_script()}
     ${helper.mathjax_script(posts)}
     % if not post.meta('nocomments'):
-        ${comments.comment_form(False, 'Home Page', 'index')}
+      ${comments.comment_form(False, 'Home Page', 'index')}
     % endif
+  </div>
 </%block>
