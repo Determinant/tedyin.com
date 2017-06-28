@@ -223,6 +223,15 @@ div.line-block div.line-block {
     margin: 0 0 0 1.5em;
 }
 
+.footnote {
+    .label {
+        padding-right: 0.5em;
+    }
+    td + td {
+        @include word-wrap();
+    }
+}
+
 /* layout */
 .container > .row {
     height: 100%;
@@ -257,7 +266,6 @@ div.line-block div.line-block {
 
 .content-column > div {
     padding-top: 50px;
-    max-width: 573px;
 }
 
 .footerbox {
@@ -269,6 +277,7 @@ div.line-block div.line-block {
 
 /* post */
 .postbox {
+    width: 573px;
     margin-bottom: 40px;
 
     ul > li {
@@ -309,11 +318,15 @@ div.line-block div.line-block {
 
 .post-date {
     color: $color-post-date-text;
-    background-color: $color-post-date-bg;
- }
+}
 
 .post-text {
     margin-bottom: 20px;
+    text-align: justify;
+}
+
+.post-title, .post-text, .post-preamble {
+    width: 513px;
 }
 
 .post-preamble {
@@ -334,6 +347,9 @@ div.line-block div.line-block {
     padding-left: 30px;
     padding-right: 30px;
     @include transition(0.2s);
+    .post-date {
+        background-color: $color-post-date-bg;
+    }
 }
 
 /* codebox */
@@ -775,7 +791,6 @@ object.music-score {
     background-color: $color-msgbox-bg;
 }
 
-
 @media (min-width: 992px) {
     .leftbar-column {
         width: 33.33333%;
@@ -801,6 +816,12 @@ object.music-score {
     }
     .content-column {
         width: 100%;
+        padding: 0;
+    }
+
+    .postbox {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .leftbar {
@@ -859,26 +880,23 @@ object.music-score {
         background-position: 0px 100px;
     }
 
+    //.postbox {
+    //    padding: 0px;
+    //}
     .postbox {
-        padding: 0px;
-        @include word-wrap();
+        width: auto;
     }
 
+    //.content-column > div {
+    //    margin-left: -15px;
+    //    margin-right: -15px;
+    //}
+
     .indexbox {
-        background: none;
-        @include border-radius(none);
+        //background: none;
         @include transition(0.2s);
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-        &:hover {
-            -webkit-box-shadow: none;
-            -moz-box-shadow: none;
-            box-shadow: none;
-        }
-    }
+        padding: 5px 15px;
 
-    .indexbox {
         .post-date {
             @include font-size($font-size-body-smaller);
             margin-bottom: 10px;
@@ -887,6 +905,10 @@ object.music-score {
             padding-left: 10px;
             padding-right: 10px;
         }
+    }
+
+    .post-text, .post-preamble, .post-title {
+        width: auto;
     }
 }
 

@@ -192,7 +192,7 @@ function remove_element(e) {
     e && e.parentNode && e.parentNode.removeChild(e);
 }
 
-function code_box(bid, data) {
+function code_box(bid, data, linenostart) {
     var div = document.getElementById("codebox_" + bid);
     remove_element(document.getElementById("cbjs_" + bid));
     div.className = "code";
@@ -224,7 +224,7 @@ function code_box(bid, data) {
             line.removeChild(chd);
             lines.appendChild(chd);
         }
-        linenos.push(i + 1);
+        linenos.push(i + linenostart);
     }
     text.appendChild(lines);
     lineno.innerHTML = linenos.join('\n');

@@ -134,6 +134,18 @@ pre {
 div.line-block div.line-block {
   margin: 0 0 0 1.5em; }
 
+.footnote .label {
+  padding-right: 0.5em; }
+.footnote td + td {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto; }
+
 /* layout */
 .container > .row {
   height: 100%;
@@ -162,8 +174,7 @@ div.line-block div.line-block {
   padding: 0 15px 0; }
 
 .content-column > div {
-  padding-top: 50px;
-  max-width: 573px; }
+  padding-top: 50px; }
 
 .footerbox {
   font-family: "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif;
@@ -173,6 +184,7 @@ div.line-block div.line-block {
 
 /* post */
 .postbox {
+  width: 573px;
   margin-bottom: 40px; }
   .postbox ul > li {
     list-style: none; }
@@ -204,11 +216,14 @@ div.line-block div.line-block {
   padding-right: 15px; }
 
 .post-date {
-  color: #cfc8c1;
-  background-color: #483e42; }
+  color: #cfc8c1; }
 
 .post-text {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  text-align: justify; }
+
+.post-title, .post-text, .post-preamble {
+  width: 513px; }
 
 .post-preamble {
   font-family: "Fantasque Sans Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
@@ -231,6 +246,8 @@ div.line-block div.line-block {
   -ms-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s; }
+  .indexbox .post-date {
+    background-color: #483e42; }
 
 /* codebox */
 pre.code {
@@ -714,7 +731,12 @@ object.music-score {
     width: 100%; }
 
   .content-column {
-    width: 100%; }
+    width: 100%;
+    padding: 0; }
+
+  .postbox {
+    margin-left: auto;
+    margin-right: auto; }
 
   .leftbar {
     margin-right: 0;
@@ -751,42 +773,26 @@ object.music-score {
     background-position: 0px 100px; }
 
   .postbox {
-    padding: 0px;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    -ms-word-break: break-all;
-    word-break: break-word;
-    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto; }
+    width: auto; }
 
   .indexbox {
-    background: none;
-    -webkit-border-radius: none;
-    -moz-border-radius: none;
-    border-radius: none;
     -webkit-transition: 0.2s;
     -moz-transition: 0.2s;
     -ms-transition: 0.2s;
     -o-transition: 0.2s;
     transition: 0.2s;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none; }
-    .indexbox:hover {
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
-      box-shadow: none; }
+    padding: 5px 15px; }
+    .indexbox .post-date {
+      font-size: 14.4px;
+      font-size: 1.44rem;
+      margin-bottom: 10px;
+      margin-left: 0px;
+      margin-right: 0px;
+      padding-left: 10px;
+      padding-right: 10px; }
 
-  .indexbox .post-date {
-    font-size: 14.4px;
-    font-size: 1.44rem;
-    margin-bottom: 10px;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 10px;
-    padding-right: 10px; } }
+  .post-text, .post-preamble, .post-title {
+    width: auto; } }
 @media (max-width: 500px) {
   .container {
     background-position: 0px 150px; } }

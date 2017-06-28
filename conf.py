@@ -823,7 +823,7 @@ COMMENT_SYSTEM_ID = "teddysworld"
 #          will not be generated for that directory.
 # STORY_INDEX = False
 # Enable comments on story pages?
-COMMENTS_IN_STORIES = True
+COMMENTS_IN_PAGES = True
 # Enable comments on picture gallery pages?
 # COMMENTS_IN_GALLERIES = False
 
