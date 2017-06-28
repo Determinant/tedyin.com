@@ -8,10 +8,10 @@
 .. type: text
 .. location: Ithaca
 
-There are chances one need a input method editor (IME). For CJK users,
+There are chances one need an input method editor (IME). For CJK users,
 supporting unicode and wide characters from Chinese, Japanese and Korean is not
 enough, since it only gives the display of their native languages, not the way
-of input. Western people, especially who can manage to directly type their
+of input. Western people, especially who can manage to type their
 characters and words directly from a standard keyboard, may not understand the
 need for such input facility, which could possibly be the reason why CJK
 support is usually added as an additional feature in the end of a software
@@ -48,7 +48,7 @@ The reader may have noticed the potential diversity of such input schemes or
 their implementations, input method editors (IMEs). So it is inevitable that an
 operating system, or a desktop environment needs to provide with a framework to
 support various kinds of IMEs. Unfortunately, the current situation of IME
-support in Linux is still a mess, according to the my opinion, which will
+support in Linux is still a mess, according to my opinion, which will
 be introduced later. The reason for such a complicated scenario might be due to
 the fact that early stage of developing such software systems was done by
 mostly people who speak a language which can be typed without an IME. English
@@ -68,10 +68,10 @@ input software in this messy software stack. Usually people mix the concept of
 an IME framework with IME implementation that relies on such framework.
 My opinion is to regard fcitx/ibus as a secondary framework which behaves
 like a normal single IME to the old IME framework (XIM, QTK IM, QT IM) but
-offers the interface to support a bunch of actual input method implementation
+offers the interface to support a bunch of actual input method implementations
 (rime, pinyin, anthy, etc). So they are like a transparent layer for current
 typical use, in the messy world of IME. I really wish there would be a general
-and canonical basic framework to unify IMEs and remove the necessarily layered
+and canonical basic framework to unify IMEs and remove the unnecessarily layered
 and entangled implementation.
 
 The rest of this blog post will introduce the basics of using XIM, a very old
@@ -100,7 +100,7 @@ XIM has two different architectures, front-end and back-end [#]_:
 
 - As for back-end architecture, the IME will behave like a filter which first
   takes in the user's input, updates its state, composes some characters, and
-  possibly pass some events over to the application key event handler. Since the
+  possibly passes some events over to the application key event handler. Since the
   application is handling events logically "behind" the IME, it is called "back-end".
 
 According to the documentation, XIM supports back-end mode by default, and front-end
@@ -175,11 +175,11 @@ Then we initialize an XIM object which serves as a handle to a chosen IME
 (XIC) for managing the state and context for the text input. The reason of
 having two different kinds of objects is because there could be multiple text
 input contexts in a complex application: think about a word processor which has
-textboxes for editing attributes of the document and also the large editing
+text boxes for editing attributes of the document and also the large editing
 area for inserting the main text. XIM models this by two general concepts XIM
 and XIC. An XIM Context is logical, and coressponds to a single XIM object which
 is the IME used for editing in the context. This means one can attach the same
-IME to all different context, or use different IMEs for some. It's hard to
+IME to all different contexts, or use different IMEs for some. It's hard to
 imagine a user using two different IMEs at the same time within one
 application, but having an abstract of XIC is fruitful because an IME can
 maintain a different state per context, to offer a consistent
@@ -204,8 +204,8 @@ single XIC attached to a single XIM, and use XIC for all inputs:
 Almost there, but need one more important thing. If you start the event loop
 and try to capture the output from IME using ``Xutf8LookupString``, you will
 find you can't even toggle the IME (by pressing ctrl-space for fcitx). This is
-because although you've set up everything needed, there is no logic of getting
-events from the IME. You may think, well, since it is in back-end architecture
+because although you've set up everything needed, there is no logic of fowarding
+events to the IME. You may think, well, since it is in back-end architecture
 by default, X11 will first forward the events to IME and then let them handled
 by my handler. It is partially correct. In fact, you need to manually forward
 your event to the IME by calling ``XFilterEvent``. The function will foward
@@ -257,14 +257,14 @@ length of the byte buffer. The example above uses a very small buffer which
 limits the capacity to only deilivering around five Chinese characters in one
 composition. Each utf-8 character takes around 3 bytes. Remember, it is quite
 usual for users to keep making key press until a phrase of several characters
-is formed. Only then will the composited string be deilivered to your
+is formed. Only then will the composed string be deilivered to your
 application. In rxvt-unicode, it is set to 512, a very reasonable size.
 
 The last thing is many IMEs (at least Chinese IMEs) allow users to preview and
 select the correct character/phrase candidates from an interactive box floating
 near the input cursor. The input cursor is application-dependent, so you might
 be interested in positioning  it to the right place. To position the IME
-editing GUI to a place, you should use ``XSetICValues`` to send the new spot given an XIC.
+editing GUI to a place, you should use ``XSetICValues`` to send the new spot to an XIC.
 Therefore, here comes the last missing piece:
 
 .. ccode:: c

@@ -27,14 +27,12 @@ However, the true story is, those scanned pdfs usually don't come with such deta
            else:
                title, page = entry
                sublevel = None
-           if sublevel:
-               sub_res = gen_pdfmarks(sublevel, page_offset)
            res.append("[{1} /Title {0}{2} /OUT pdfmark"\
                .format(to_utf16_bom_string(title),
                        " /Count {0}".format(len(sublevel)) if sublevel else "",
                        " /Page {0:d}".format(page + page_offset) if page else ""))
            if sublevel:
-               res.extend(sub_res)
+               res.extend(gen_pdfmarks(sublevel, page_offset))
        return res
    
    toc = [("目錄", -1),
