@@ -707,7 +707,8 @@ object.music-score {
   -moz-transition: 0.2s;
   -ms-transition: 0.2s;
   -o-transition: 0.2s;
-  transition: 0.2s; }
+  transition: 0.2s;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(1, transparent), color-stop(0.95, black), color-stop(0.05, black), color-stop(0, transparent)); }
   #pushybox-container .jspPane {
     width: 100% !important; }
 

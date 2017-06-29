@@ -788,6 +788,12 @@ object.music-score {
     overflow: hidden;
     @include transition(0.2s);
     .jspPane { width: 100% !important; }
+
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom,
+        color-stop(1, rgba(0,0,0,0)),
+        color-stop(0.95, rgba(0,0,0,1)),
+        color-stop(0.05, rgba(0,0,0,1)),
+        color-stop(0, rgba(0, 0, 0, 0)));
 }
 
 #pushybox .msgbox {
