@@ -723,7 +723,7 @@ object.music-score {
   -ms-hyphens: auto;
   -moz-hyphens: auto; }
 
-@media (min-width: 992px) {
+@media (min-width: 930px) {
   .leftbar-column {
     width: 33.33333%; }
 
@@ -735,7 +735,7 @@ object.music-score {
 @media (min-width: 751px) {
   .navs-toggle {
     display: none; } }
-@media (max-width: 991px) {
+@media (max-width: 929px) {
   .leftbar-column {
     width: 100%; }
 

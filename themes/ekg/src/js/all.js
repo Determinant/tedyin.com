@@ -24,13 +24,15 @@ $(function() {
         theme: 'rounded',
         autoHideScrollbar: true,
         autoDraggerLength: true,
+        scrollInertia: 200,
         mouseWheel: { enable: true, axis: 'y', scrollAmount: 50}
     });
     $('.hscroll-pane').mCustomScrollbar({
         axis: 'x',
-        theme: 'rounded',
+        theme: 'minimal',
         autoHideScrollbar: true,
         autoDraggerLength: true,
+        scrollInertia: 100,
         mousewheel: { enable: true, axis: 'x', scrollAmount: 50}
     });
     long_polling();

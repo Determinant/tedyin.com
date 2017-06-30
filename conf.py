@@ -129,9 +129,9 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ('/categories/index.html', '% Tags'),
         ('/stories/cooking/', '" Cooking'),
-        ('/archive.html', '# Archives'),
+        ('https://500px.com/Determinant', '// 500px'),
+        ('http://www.cs.cornell.edu/~tedyin/', '# About'),
         ('/rss.xml', '/* RSS */'),
-        ('https://500px.com/Determinant', '// 500px')
     ),
 }
 
