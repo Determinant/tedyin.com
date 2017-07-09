@@ -23,7 +23,7 @@ module.exports = function(grunt) {
     }
     var css_flist = ['normalize.css', 'pocketgrid.css', 'code.css', 'gist.css', 'theme.css'];
     var gphotos_css_flist = ['photoswipe.css', 'photoswipe-skin.css', 'gphotos.css'];
-    var js_flist = ['all.js', 'jquery.mCustomScrollbar.js', 'gphotos.js', 'freewall.js'];
+    var js_flist = ['all.js', 'gphotos.js'];
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         sass: {
@@ -38,8 +38,11 @@ module.exports = function(grunt) {
             }
         },
         uglify: {
-            build: {
+            main: {
                 files: gen_mapping('js', '.js', '.min.js', get_basename(js_flist))
+            },
+            freewall: {
+                files: [{'node_modules/freewall/freewall.min.js': 'node_modules/freewall/freewall.js'}]
             }
         },
         concat: {
@@ -77,6 +80,59 @@ module.exports = function(grunt) {
                 },
                 cwd: 'src/js/',
                 src: '**/*.min.js',
+                dest: 'build/js/',
+                expand: true
+            },
+            jquery: {
+                options: {
+                    timestamp: true
+                },
+                cwd: 'node_modules/jquery/dist/',
+                src: 'jquery.min.js',
+                dest: 'build/js/',
+                expand: true
+            },
+            custom_scrollbar: {
+                options: {
+                    timestamp: true
+                },
+                src: 'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js',
+                dest: 'build/js/jquery.mCustomScrollbar.min.js',
+            },
+            photoswipe: {
+                options: {
+                    timestamp: true
+                },
+                cwd: 'node_modules/photoswipe/dist/',
+                src: ['photoswipe.min.js',
+                      'photoswipe-ui-default.min.js'],
+                dest: 'build/js/',
+                expand: true
+            },
+            freewall: {
+                options: {
+                    timestamp: true
+                },
+                cwd: 'node_modules/freewall/',
+                src: ['freewall.min.js'],
+                dest: 'build/js/',
+                expand: true
+            },
+            html5shiv: {
+                options: {
+                    timestamp: true
+                },
+                cwd: 'node_modules/html5shiv/dist/',
+                src: ['html5shiv.min.js'],
+                dest: 'build/js/',
+                expand: true
+            },
+            respondjs: {
+                options: {
+                    timestamp: true
+                },
+                cwd: 'node_modules/respond.js/dest/',
+                src: ['respond.min.js'],
                 dest: 'build/js/',
                 expand: true
             },
