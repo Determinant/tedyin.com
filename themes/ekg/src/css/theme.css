@@ -124,7 +124,7 @@ blockquote:after {
   content: ""; }
 
 pre {
-  font-family: "Fantasque Sans Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-family: "Fantasque Sans Mono", Consolas, "Lucida Console", Courier, source-han-sans-traditional, monospace;
   font-size: 14px;
   font-size: 1.4rem;
   -webkit-border-radius: 4px;
@@ -225,7 +225,7 @@ div.line-block div.line-block {
   width: 513px; }
 
 .post-preamble {
-  font-family: "Fantasque Sans Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-family: "Fantasque Sans Mono", Consolas, "Lucida Console", Courier, source-han-sans-traditional, monospace;
   font-size: 12.8px;
   font-size: 1.28rem; }
 
@@ -553,7 +553,7 @@ ul.tags {
   display: block;
   padding: 0px 4px;
   line-height: 1.5;
-  font-family: "Fantasque Sans Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-family: "Fantasque Sans Mono", Consolas, "Lucida Console", Courier, source-han-sans-traditional, monospace;
   white-space: nowrap;
   text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.25);
   padding-left: 9px;

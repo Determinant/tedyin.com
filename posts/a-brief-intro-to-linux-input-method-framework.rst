@@ -200,6 +200,8 @@ single XIC attached to a single XIM, and use XIC for all inputs:
                             NULL);
         /* focus on the only IC */
         XSetICFocus(ic);
+        /* capture the input */
+        XSelectInput(dpy, win, KeyPressMask);
 
 Almost there, but need one more important thing. If you start the event loop
 and try to capture the output from IME using ``Xutf8LookupString``, you will
@@ -218,28 +220,33 @@ call ``XFilterEvent`` function on that. This twisted control flow makes up a log
 back-end implementation [#]_.
 
 .. ccode:: c
-   :number-lines: 52
+   :number-lines: 53
 
+       static char *buff;
+       size_t buff_size = 16;
+       buff = (char *)malloc(buff_size);
        for (;;)
        {
            KeySym ksym;
            Status status;
            XEvent ev;
-           static char buff[16];
            XNextEvent(dpy, &ev);
            if (XFilterEvent(&ev, None))
                continue;
            if (ev.type == KeyPress)
            {
                size_t c = Xutf8LookupString(ic, &ev.xkey,
-                                           buff, sizeof buff - 1,
+                                           buff, buff_size - 1,
                                            &ksym, &status);
                if (status == XBufferOverflow)
                {
-                   buff[sizeof buff - 1] = 0;
-                   printf("too many chars from IME: %s\n", buff);
+                   printf("reallocate to the size of: %lu\n", c + 1);
+                   buff = realloc(buff, c + 1);
+                   c = Xutf8LookupString(ic, &ev.xkey,
+                                       buff, c,
+                                       &ksym, &status);
                }
-               else if (c)
+               if (c)
                {
                    spot.x += 20;
                    spot.y += 20;
@@ -253,12 +260,13 @@ back-end implementation [#]_.
 
 ``Xutf8LookupString`` will pull the composed string from IME or the character
 of the pressed key passed through IME. Notice that you have to specify the
-length of the byte buffer. The example above uses a very small buffer which
-limits the capacity to only deilivering around five Chinese characters in one
-composition. Each utf-8 character takes around 3 bytes. Remember, it is quite
-usual for users to keep making key press until a phrase of several characters
-is formed. Only then will the composed string be deilivered to your
-application. In rxvt-unicode, it is set to 512, a very reasonable size.
+length of the byte buffer. The example above uses a very small initial buffer
+which limits the capacity to only deilivering around five Chinese characters in
+one composition. Each utf-8 character takes around 3 bytes. Remember, it is
+quite usual for users to keep making key press until a phrase of several
+characters is formed. Only then will the composed string be deilivered to your
+application. In rxvt-unicode, it is set to 512, a very reasonable size, or you
+could use ``realloc`` in the example to dynamically expand the buffer.
 
 The last thing is many IMEs (at least Chinese IMEs) allow users to preview and
 select the correct character/phrase candidates from an interactive box floating
@@ -277,6 +285,14 @@ Therefore, here comes the last missing piece:
        XFree(preedit_attr);
    }
 
+.. ccode:: c
+   :number-lines: 48
+
+   XPoint spot;
+   spot.x = 0;
+   spot.y = 0;
+   send_spot(ic, spot);
+
 Run the program with some key strokes and IME input (`full code <https://gist.github.com/Determinant/19bbecb6db35312861f6cf9f54fdd3a5>`_):
 
 ::
@@ -289,8 +305,9 @@ Run the program with some key strokes and IME input (`full code <https://gist.gi
     delievered string: t
     delievered string: 測試
     delievered string: 測試中文
-    delievered string: 測試中文輸
-    too many chars from IME: 測試中文輸
+    reallocate to the size of: 22
+    delievered string: 測試中文輸入法
+    delievered string: 測試
 
 
 .. [#] https://www.x.org/releases/X11R7.7/doc/libX11/libX11/libX11.html#Input_Method_Overview
