@@ -740,18 +740,22 @@ object.music-score {
     margin-top: 60px;
 }
 
-.mCSB_inside, .mCSB_horizontal.mCSB_inside {
-    >.mCSB_container {
-        margin: 0;
-    }
+.mCSB_inside > .mCSB_container {
+    margin: 0;
 }
 
-.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-    background-color: $color5;
-    filter: alpha(opacity=50); /* IE */
-    background-color: rgba(255, 255, 255, 0.50);
-    &:hover {
-        background-color: rgba(255, 255, 255, 0.70);
+
+.mCSB_scrollTools {
+    .mCSB_dragger, .mCSB_dragger.mCSB_dragger_onDrag {
+        .mCSB_dragger_bar {
+            background-color: $color5;
+            filter: alpha(opacity=30); /* IE */
+            background-color: rgba(255, 255, 255, 0.30);
+            &:hover {
+                filter: alpha(opacity=50); /* IE */
+                background-color: rgba(255, 255, 255, 0.50);
+            }
+        }
     }
 }
 

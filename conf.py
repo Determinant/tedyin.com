@@ -26,7 +26,7 @@ SITE_URL = "http://tedyin.com/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://example.com/"
 BLOG_EMAIL = "ted.sybil@gmail.com"
-BLOG_DESCRIPTION = "Blog of an IT enthusiast, GNU/Linux-lover and arty idiot."
+BLOG_DESCRIPTION = "Because I choose to."
 
 # Nikola is multilingual!
 #
