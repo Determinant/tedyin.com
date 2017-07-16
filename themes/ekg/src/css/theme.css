@@ -25,7 +25,8 @@ body {
   font-size: 1.6rem; }
 
 img {
-  max-width: 90%; }
+  max-width: 90%;
+  cursor: pointer; }
 
 img.align-center, .figure.align-center, object.align-center {
   display: block;
