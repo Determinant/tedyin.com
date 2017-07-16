@@ -234,3 +234,102 @@ function code_box(bid, data, linenostart) {
     wrapper.appendChild(text);
     div.appendChild(wrapper);
 }
+
+var photoswipeParseHash = function() {
+    var hash = window.location.hash.substring(1),
+        params = {};
+    if(hash.length < 5) {
+        return params;
+    }
+    var vars = hash.split('&');
+    for (var i = 0; i < vars.length; i++) {
+        if(!vars[i]) {
+            continue;
+        }
+        var pair = vars[i].split('=');
+        if(pair.length < 2) {
+            continue;
+        }
+        params[pair[0]] = pair[1];
+    }
+    if(params.gid) {
+        params.gid = parseInt(params.gid, 10);
+    }
+    return params;
+};
+
+var openPhotoSwipe = function(index, items, galleryUID, disableAnimation, fromURL) {
+    var pswpElement = document.querySelectorAll('.pswp')[0],
+        gallery,
+    options;
+    // define options (if needed)
+    options = {
+        // define gallery index (for URL)
+        galleryUID: galleryUID,
+        //galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+        getThumbBoundsFn: function(index) {
+            // See Options -> getThumbBoundsFn section of documentation for more info
+            //var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+            var thumbnail = items[index].el, // find thumbnail
+                pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                rect = thumbnail.getBoundingClientRect();
+            return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+        }
+
+    };
+    // PhotoSwipe opened from URL
+    if(fromURL) {
+        if(options.galleryPIDs) {
+            // parse real index when custom PIDs are used
+            // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+            for(var j = 0; j < items.length; j++) {
+                if(items[j].pid == index) {
+                    options.index = j;
+                    break;
+                }
+            }
+        } else {
+            // in URL indexes start from 1
+            options.index = parseInt(index, 10) - 1;
+        }
+    } else {
+        options.index = parseInt(index, 10);
+    }
+    // exit if index not found
+    if( isNaN(options.index) ) {
+        return;
+    }
+    if(disableAnimation) {
+        options.showAnimationDuration = 0;
+    }
+    // Pass data to PhotoSwipe and initialize it
+    gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+    gallery.init();
+};
+
+function path_split(p) {
+    return p.match(/(.*)\/([^/]*)/);
+}
+
+
+$(function () {
+    var items = [];
+    $('img.simpic').each(function (idx) {
+        var item = {
+            src: path_split(this.src)[1] + '/' + path_split(this.getAttribute('data-target'))[2],
+            w: this.getAttribute('data-orig-width'),
+            h: this.getAttribute('data-orig-height'),
+            el: this,
+            title: this.getAttribute('data-title') || ''
+        };
+        this.onclick = function () {
+            console.log(items);
+            openPhotoSwipe(idx, items, 0);
+        };
+        items.push(item);
+    });
+    var hashData = photoswipeParseHash();
+    if (hashData.pid && hashData.gid == 0) {
+        openPhotoSwipe(hashData.pid, items, 0, true, true);
+    }
+});

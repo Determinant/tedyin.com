@@ -129,5 +129,5 @@ The code above is used for generating the bookmark description according to the 
 
 Note that you need to change the variable ``toc`` in the above script to one which describes your table of contents.
 
-.. thumbnail:: /images/bookmarks.png
-   :align: center
+.. simpic:: /images/bookmarks.png
+   :class: align-center

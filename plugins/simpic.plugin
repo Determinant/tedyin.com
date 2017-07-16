@@ -1,0 +1,13 @@
+[Core]
+Name = rest_simpic
+Module = simpic
+
+[Nikola]
+compiler = rest
+PluginCategory = CompilerExtension
+
+[Documentation]
+Author = Ted Yin
+Version = 0.1
+Website = http://tedyin.com
+Description = reST directive for images with metadata
