@@ -80,6 +80,7 @@ $(function () {
                 container.appendChild(fig);
                 var item = {
                     src: content.url,
+                    msrc: thumbnail.url,
                     w: content.width,
                     h: content.height,
                     el: fig,

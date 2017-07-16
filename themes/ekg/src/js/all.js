@@ -317,6 +317,7 @@ $(function () {
     $('img.simpic').each(function (idx) {
         var item = {
             src: path_split(this.src)[1] + '/' + path_split(this.getAttribute('data-target'))[2],
+            msrc: this.src,
             w: this.getAttribute('data-orig-width'),
             h: this.getAttribute('data-orig-height'),
             el: this,

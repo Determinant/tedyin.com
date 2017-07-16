@@ -26,7 +26,10 @@ body {
 
 img {
   max-width: 90%;
-  cursor: pointer; }
+  cursor: pointer;
+  border-radius: 3px;
+  border: none;
+  overflow: hidden; }
 
 img.align-center, .figure.align-center, object.align-center {
   display: block;
@@ -172,7 +175,7 @@ div.line-block div.line-block {
   /* don't want to show the scroll bar :( */ }
 
 .content-column {
-  padding: 0 15px 0; }
+  padding: 0 30px 0; }
 
 .content-column > div {
   padding-top: 50px; }
