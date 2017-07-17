@@ -25,7 +25,7 @@ $(function() {
         autoHideScrollbar: true,
         autoDraggerLength: true,
         scrollInertia: 200,
-        mouseWheel: { enable: true, axis: 'y', scrollAmount: 50}
+        mousewheel: { enable: true, axis: 'y', scrollAmount: 50}
     });
     $('.hscroll-pane').mCustomScrollbar({
         axis: 'x',
@@ -33,7 +33,7 @@ $(function() {
         autoHideScrollbar: true,
         autoDraggerLength: true,
         scrollInertia: 100,
-        mousewheel: { enable: true, axis: 'x', scrollAmount: 50}
+        mousewheel: { enable: false }
     });
     long_polling();
     $('.navbar-toggle').each(function () {
@@ -195,44 +195,120 @@ function remove_element(e) {
 }
 
 function code_box(bid, data, linenostart) {
+    var collapsed_start = 50;
+    var collapsed_trigger = 60;
     var div = document.getElementById("codebox_" + bid);
     remove_element(document.getElementById("cbjs_" + bid));
     div.className = "code";
     div.style.display = "block";
     var lineno = document.createElement('div');
+    var lns = document.createElement('div');
     var text = document.createElement('div');
+    var lines = document.createElement('div');
     var wrapper = document.createElement('div');
+    var lwrapper = document.createElement('div');
     lineno.className = "lineno";
     text.className = "text hscroll-pane";
     wrapper.className = "wrapper";
-    var linenos = [];
-    var lines = document.createElement('div');
-    lines.style.display = "inline-block";
-    for (var i = 0; i < data.length; i++)
+    lwrapper.className = "lwrapper";
+    var collapse = data.length > collapsed_trigger;
+    var n = collapse ? collapsed_start + 1 : data.length;
+    for (var i = 0; i < n; i++)
     {
-        /*
-        var line = document.createElement('span');
-        var br = document.createElement('br');
-        line.className = "line";
-        line.innerHTML = data[i] ;
-        text.appendChild(line);
-        text.appendChild(br);
-        */ 
         var line = document.createElement('div');
+        var ln = document.createElement('div');
         line.innerHTML = data[i];
-        while (line.firstChild)
-        {
-            var chd = line.firstChild;
-            line.removeChild(chd);
-            lines.appendChild(chd);
-        }
-        linenos.push(i + linenostart);
+        lines.appendChild(line);
+        ln.innerHTML = linenostart++;
+        lns.appendChild(ln);
     }
-    text.appendChild(lines);
-    lineno.innerHTML = linenos.join('\n');
-    div.appendChild(lineno);
-    wrapper.appendChild(text);
+
+    div.appendChild(lwrapper);
     div.appendChild(wrapper);
+
+    lineno.appendChild(lns);
+    wrapper.appendChild(text);
+
+    text.appendChild(lines);
+    lwrapper.appendChild(lineno);
+
+    if (collapse)
+    {
+        var lines_rest = document.createElement('div');
+        var lns_rest = document.createElement('div');
+        lns_rest.className = 'lns-rest';
+        lines_rest.className = 'lines-rest';
+        for (var i = 0; i < data.length - n; i++)
+        {
+            var line = document.createElement('div');
+            var ln = document.createElement('div');
+            line.innerHTML = data[n + i];
+            lines_rest.appendChild(line);
+            ln.innerHTML = linenostart++;
+            lns_rest.appendChild(ln);
+        }
+        text.appendChild(lines_rest);
+        lineno.appendChild(lns_rest);
+        var last_line = lines.children[collapsed_start];
+        var last_lns = lns.children[collapsed_start];
+
+        var more = document.createElement('div');
+        var plus = document.createElement('div');
+        var less = document.createElement('div');
+        var minus = document.createElement('div');
+
+        more.className = 'code-more';
+        more.style.top = last_line.offsetTop + text.offsetTop + 'px';
+        more.style.left = last_line.offsetLeft + text.offsetLeft + 'px';
+        more.innerHTML = '<a>++ MORE ++</a>';
+
+        lns_rest.style.display = 'none';
+        lines_rest.style.display = 'none';
+        var display = false;
+        function toggle() {
+            function gen_check(cnt) {
+                return function check() {
+                    if (--cnt == 0)
+                        display = !display;
+                }
+            }
+            if (!display)
+            {
+                check = gen_check(2);
+                $(lns_rest).slideDown(400, check);
+                $(lines_rest).slideDown(400, check);
+            }
+            else
+            {
+                check = gen_check(2);
+                $(lns_rest).slideUp(400, check);
+                $(lines_rest).slideUp(400, check);
+            }
+            $(more).toggleClass('hidden');
+            $(plus).toggleClass('hidden');
+            $(less).toggleClass('hidden');
+            $(minus).toggleClass('hidden');
+        };
+        plus.className = 'code-more';
+        plus.style.top = last_lns.offsetTop + 'px';
+        plus.style.left = last_lns.offsetLeft + 'px';
+        plus.innerHTML = '+';
+
+        less.innerHTML = '<a>-- LESS --</a>';
+        less.className = 'code-less hidden';
+
+        minus.innerHTML = '-';
+        minus.className = 'code-less hidden';
+
+        more.onclick = toggle;
+        less.onclick = toggle;
+
+        wrapper.appendChild(more);
+        wrapper.appendChild(less);
+
+        lineno.appendChild(plus);
+        lineno.appendChild(minus);
+    }
 }
 
 var photoswipeParseHash = function() {
@@ -324,7 +400,6 @@ $(function () {
             title: this.getAttribute('data-title') || ''
         };
         this.onclick = function () {
-            console.log(items);
             openPhotoSwipe(idx, items, 0);
         };
         items.push(item);

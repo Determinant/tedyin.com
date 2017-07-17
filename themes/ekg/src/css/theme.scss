@@ -140,6 +140,7 @@ body {
     background-color: $color-body-bg;
     line-height: $main-line-height;
     @include font-size($font-size-body);
+    overflow: hidden;
 }
 
 img {
@@ -368,12 +369,12 @@ pre.code {
     border: 0;
     background-color: $color6;
 
-    .lineno, pre.code, .wrapper {
+    .lwrapper, pre.code, .wrapper {
         padding-top: 5px;
         padding-bottom: 5px;
     }
 
-    .lineno {
+    .lwrapper {
         float: left;
         text-align: right;
         padding-right: 5px;
@@ -382,20 +383,59 @@ pre.code {
         margin-right: 10px;
         min-width: 30px;
         background-color: $color-codebox-lineno-bg;
+        position: relative;
+
+        .code-more {
+            position: absolute;
+            width: 100%;
+            background-color: $color-codebox-lineno-bg;
+        }
+
+        .code-less.hidden{
+            display: none;
+        }
     }
 
     .text {
         outline: none;
         overflow-x: auto;
         cursor: text;
+        position: relative;
         span.line {
             display: inline-block;
         }
     }
 
+    .lineno {
+        position: relative;
+    }
+
     .wrapper {
         padding-right: 5px;
         overflow-x: hidden;
+        position: relative;
+
+        .code-more {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            background-color: $color6;
+            cursor: pointer;
+        }
+
+        .code-less {
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .code-less.hidden {
+            display: none;
+        }
+    }
+
+    .code-more.hidden {
+        display: none;
     }
 }
 
@@ -837,6 +877,10 @@ object.music-score {
 }
 
 @media (max-width: 929px) {
+    body {
+        overflow: visible;
+    }
+
     .leftbar-column {
         width: 100%;
     }

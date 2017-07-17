@@ -22,7 +22,8 @@ body {
   background-color: #433a40;
   line-height: 1.45;
   font-size: 16px;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  overflow: hidden; }
 
 img {
   max-width: 90%;
@@ -263,10 +264,10 @@ pre.code {
   overflow: hidden;
   border: 0;
   background-color: #483e42; }
-  pre.code .lineno, pre.code pre.code, pre.code .wrapper {
+  pre.code .lwrapper, pre.code pre.code, pre.code .wrapper {
     padding-top: 5px;
     padding-bottom: 5px; }
-  pre.code .lineno {
+  pre.code .lwrapper {
     float: left;
     text-align: right;
     padding-right: 5px;
@@ -274,16 +275,41 @@ pre.code {
     border-right: 2px solid #78756f;
     margin-right: 10px;
     min-width: 30px;
-    background-color: #433a40; }
+    background-color: #433a40;
+    position: relative; }
+    pre.code .lwrapper .code-more {
+      position: absolute;
+      width: 100%;
+      background-color: #433a40; }
+    pre.code .lwrapper .code-less.hidden {
+      display: none; }
   pre.code .text {
     outline: none;
     overflow-x: auto;
-    cursor: text; }
+    cursor: text;
+    position: relative; }
     pre.code .text span.line {
       display: inline-block; }
+  pre.code .lineno {
+    position: relative; }
   pre.code .wrapper {
     padding-right: 5px;
-    overflow-x: hidden; }
+    overflow-x: hidden;
+    position: relative; }
+    pre.code .wrapper .code-more {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      background-color: #483e42;
+      cursor: pointer; }
+    pre.code .wrapper .code-less {
+      width: 100%;
+      text-align: center;
+      cursor: pointer; }
+    pre.code .wrapper .code-less.hidden {
+      display: none; }
+  pre.code .code-more.hidden {
+    display: none; }
 
 /* msgbox */
 .msgbox {
@@ -742,6 +768,9 @@ object.music-score {
   .navs-toggle {
     display: none; } }
 @media (max-width: 929px) {
+  body {
+    overflow: visible; }
+
   .leftbar-column {
     width: 100%; }
 
