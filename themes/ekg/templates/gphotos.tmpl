@@ -1,20 +1,20 @@
 ## -*- coding: utf-8 -*-
 <%namespace name="comments" file="comments_helper_disqus.tmpl"/>
 <%def name="extra_head()">
-<script src="/assets/js/freewall.min.js"></script>
-<script src="/assets/js/gphotos.min.js"></script>
+  <script src="/assets/js/freewall.min.js"></script>
+  <script src="/assets/js/gphotos.min.js"></script>
 </%def>
 
 <%inherit file="base.tmpl"/>
 <%block name="content">
-<div class="postbox post-single">
-%if title:
-    <h1 class="post-title">${title}</h1>
-%endif
+  <div class="postbox singlepost">
+    %if title:
+      <h1 class="post-title">${title}</h1>
+    %endif
     ${post.text(lang)}
-<div class="gphotos" id="gphotos" data-pswp-uid="1"></div>
+    <div class="gphotos" id="gphotos" data-pswp-uid="1"></div>
     % if not post.meta('nocomments'):
-        ${comments.comment_form(post.permalink(absolute=True), post.title(), post._base_path)}
+      ${comments.comment_form(post.permalink(absolute=True), post.title(), post._base_path)}
     % endif
-</div>
+  </div>
 </%block>

@@ -12,8 +12,9 @@ $(function() {
             if ($(window).width() <= 991)
                 return;
             var flex_height = $('.leftbar').height() - ($('.nav').outerHeight(true) +
-                                                        $('.logo').outerHeight(true) +
-                                                       $('.descr').outerHeight(true));
+                                                        $('.logo-rounded').outerHeight(true) +
+                                                        $('.descr').outerHeight(true) +
+                                                       $('.descr-rounded').outerHeight(true));
             $('#pushybox-container').css('height', flex_height);
         }
         $(flexer);

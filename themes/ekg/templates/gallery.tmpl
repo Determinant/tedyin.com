@@ -5,37 +5,37 @@
 <%block name="sourcelink"></%block>
 
 <%block name="content">
-    ${ui.bar(crumbs)}
-    %if title:
+  ${ui.bar(crumbs)}
+  %if title:
     <h1>${title|h}</h1>
-    %endif
-    %if post:
+  %endif
+  %if post:
     <p>
-        ${post.text()}
+      ${post.text()}
     </p>
-    %endif
-    %if folders:
+  %endif
+  %if folders:
     <ul>
-    % for folder, ftitle in folders:
+      % for folder, ftitle in folders:
         <li><a href="${folder|u}"><i
-        class="icon-folder-open"></i>&nbsp;${ftitle|h}</a></li>
-    % endfor
+            class="icon-folder-open"></i>&nbsp;${ftitle|h}</a></li>
+      % endfor
     </ul>
-    %endif
-    %if photo_array:
+  %endif
+  %if photo_array:
     <ul class="thumbnails">
-        %for image in photo_array:
-            <li><a href="${image['url']}" class="thumbnail image-reference" title="${image['title']}">
-                <img src="${image['url_thumb']}" alt="${image['title']|h}" /></a>
-        %endfor
+      %for image in photo_array:
+        <li><a href="${image['url']}" class="thumbnail image-reference" title="${image['title']}">
+          <img src="${image['url_thumb']}" alt="${image['title']|h}" /></a>
+      %endfor
     </ul>
-    %endif
-%if site_has_comments and enable_comments:
+  %endif
+  %if site_has_comments and enable_comments:
     ${comments.comment_form(None, permalink, title)}
-%endif
+  %endif
 </%block>
 
 <%block name="extra_head">
-${parent.extra_head()}
-<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+  ${parent.extra_head()}
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 </%block>

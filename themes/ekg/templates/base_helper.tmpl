@@ -6,6 +6,12 @@
     %endif
     <meta name="author" content="${blog_author}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#433a40">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#433a40">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#433a40">
     <title>
       %if title == blog_title:
         ${title}
@@ -81,13 +87,6 @@
             <link rel="${name}" href="${file}" sizes="${size}"/>
         %endfor
     %endif
-</%def>
-
-<%def name="late_load_js()">
-</%def>
-
-<%def name="html_social()">
-    ${social_buttons_code}
 </%def>
 
 <%def name="html_navigation_links()">

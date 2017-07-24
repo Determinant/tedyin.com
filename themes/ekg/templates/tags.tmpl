@@ -1,31 +1,31 @@
 ## -*- coding: utf-8 -*-
 <%inherit file="base.tmpl"/>
 <%block name="content">
-    % if cat_items:
-        <div class="postbox indexbox">
-            <div class="post-title">
-                <h2>${messages("Categories")}</h2>
-            </div>
-            <ul>
-            % for text, link in cat_items:
-                % if text:
-                    <li><a class="reference" href="${link}">${text}</a></li>
-                % endif
-            % endfor
-            </ul>
-        </div>
-    % endif
-    % if items:
-        <div class="postbox indexbox">
-            <div class="post-title">
-                <h2>${messages("Tags")}</h2>
-            </div>
-            <ul class="tags">
-                % for text, link in items:
-                    <li><a class="tag reference" href="${link}">${text}</a></li>
-                % endfor
-            </p>
-        </ul>
+  % if cat_items:
+    <div class="postbox indexbox">
+      <div class="post-title">
+        <h2>${messages("Categories")}</h2>
+      </div>
+      <ul>
+        % for text, link in cat_items:
+          % if text:
+            <li><a class="reference" href="${link}">${text}</a></li>
+          % endif
+        % endfor
+      </ul>
     </div>
+  % endif
+  % if items:
+    <div class="postbox indexbox">
+      <div class="post-title">
+        <h2>${messages("Tags")}</h2>
+      </div>
+      <ul class="tags">
+        % for text, link in items:
+          <li><a class="tag reference" href="${link}">${text}</a></li>
+        % endfor
+      </p>
+    </ul>
+  </div>
 % endif
 </%block>
