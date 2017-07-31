@@ -260,7 +260,10 @@ div.line-block div.line-block {
     font-family: $sans-font-stack;
     text-align: center;
     margin-top: 100px;
-    margin-bottom: 5px;
+}
+
+.footerbox.postbox {
+    margin-bottom: 0;
 }
 
 /* post */

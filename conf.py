@@ -130,7 +130,7 @@ NAVIGATION_LINKS = {
         ('/categories/index.html', '% Tags'),
         ('/stories/cooking/', '" Cooking'),
         ('https://500px.com/Determinant', '// 500px'),
-        ('http://www.cs.cornell.edu/~tedyin/', '# About'),
+        ('https://www.cs.cornell.edu/~tedyin/', '# About'),
         ('/rss.xml', '/* RSS */'),
     ),
 }
@@ -769,7 +769,7 @@ FEED_LINKS_APPEND_QUERY = False
 LICENSE = """
  <div style="margin-top:10px;"><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
  <img alt="Creative Commons License BY-NC-SA"
- style="border-width:0; margin-bottom:12px;"
+ style="border-width:0;"
  src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></div>"""
 
 # A small copyright notice for the page footer (in HTML).
@@ -808,7 +808,7 @@ COMMENT_SYSTEM = "disqus"
 # depends on what comment system you use. The default is
 # "nikolademo" which is a test account for Disqus. More information
 # is in the manual.
-COMMENT_SYSTEM_ID = "teddysworld"
+COMMENT_SYSTEM_ID = "ekg-t"
 
 # Enable annotations using annotateit.org?
 # If set to False, you can still enable them for individual posts and pages
