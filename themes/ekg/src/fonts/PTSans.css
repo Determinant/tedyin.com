@@ -1,0 +1,120 @@
+
+/* PT Sans Bold */
+@font-face {
+    font-family:  'PT Sans';
+    src:          url('PTSans-Bold.eot');
+    src:          local('*'),
+                  url('PTSans-Bold.eot?#iefix') format('embedded-opentype'),
+                  url('PTSans-Bold.woff') format('woff'),
+                  url('PTSans-Bold.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  bold;
+    font-stretch: normal;
+    font-variant: normal;
+}
+
+
+/* PT Sans Bold Italic */
+@font-face {
+    font-family:  'PT Sans';
+    src:          url('PTSans-BoldItalic.eot');
+    src:          local('*'),
+                  url('PTSans-BoldItalic.eot?#iefix') format('embedded-opentype'),
+                  url('PTSans-BoldItalic.woff') format('woff'),
+                  url('PTSans-BoldItalic.ttf') format('truetype');
+    font-style:   italic;
+    font-weight:  bold;
+    font-stretch: normal;
+    font-variant: normal;
+}
+
+
+/* PT Sans Italic */
+@font-face {
+    font-family:  'PT Sans';
+    src:          url('PTSans-Italic.eot');
+    src:          local('*'),
+                  url('PTSans-Italic.eot?#iefix') format('embedded-opentype'),
+                  url('PTSans-Italic.woff') format('woff'),
+                  url('PTSans-Italic.ttf') format('truetype');
+    font-style:   italic;
+    font-weight:  normal;
+    font-stretch: normal;
+    font-variant: normal;
+}
+
+
+/* PT Sans */
+@font-face {
+    font-family:  'PT Sans';
+    src:          url('PTSans-Regular.eot');
+    src:          local('*'),
+                  url('PTSans-Regular.eot?#iefix') format('embedded-opentype'),
+                  url('PTSans-Regular.woff') format('woff'),
+                  url('PTSans-Regular.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  normal;
+    font-stretch: normal;
+    font-variant: normal;
+}
+
+
+/* PT Sans Caption Bold */
+@font-face {
+    font-family:  'PT Sans Caption';
+    src:          url('PTSansCaption-Bold.eot');
+    src:          local('*'),
+                  url('PTSansCaption-Bold.eot?#iefix') format('embedded-opentype'),
+                  url('PTSansCaption-Bold.woff') format('woff'),
+                  url('PTSansCaption-Bold.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  bold;
+    font-stretch: normal;
+    font-variant: small-caps;
+}
+
+
+/* PT Sans Caption */
+@font-face {
+    font-family:  'PT Sans Caption';
+    src:          url('PTSansCaption-Regular.eot');
+    src:          local('*'),
+                  url('PTSansCaption-Regular.eot?#iefix') format('embedded-opentype'),
+                  url('PTSansCaption-Regular.woff') format('woff'),
+                  url('PTSansCaption-Regular.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  normal;
+    font-stretch: normal;
+    font-variant: small-caps;
+}
+
+
+/* PT Sans Narrow Bold */
+@font-face {
+    font-family:  'PT Sans Narrow';
+    src:          url('PTSansNarrow-Bold.eot');
+    src:          local('*'),
+                  url('PTSansNarrow-Bold.eot?#iefix') format('embedded-opentype'),
+                  url('PTSansNarrow-Bold.woff') format('woff'),
+                  url('PTSansNarrow-Bold.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  bold;
+    font-stretch: condensed;
+    font-variant: normal;
+}
+
+
+/* PT Sans Narrow */
+@font-face {
+    font-family:  'PT Sans Narrow';
+    src:          url('PTSansNarrow-Regular.eot');
+    src:          local('*'),
+                  url('PTSansNarrow-Regular.eot?#iefix') format('embedded-opentype'),
+                  url('PTSansNarrow-Regular.woff') format('woff'),
+                  url('PTSansNarrow-Regular.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  normal;
+    font-stretch: condensed;
+    font-variant: normal;
+}
+
