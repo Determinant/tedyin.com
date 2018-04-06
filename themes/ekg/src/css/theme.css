@@ -306,13 +306,13 @@ pre.code {
     padding-top: 10px;
     margin-bottom: 5px; }
   .msgbox .date {
-    font-family: "Satisfy", "Open Sans", Calibri, Candara, Arial, source-han-sans-traditional, "Microsoft YaHei", "SimHei", sans-serif;
+    font-family: "Fantasque Sans Mono", Consolas, "Lucida Console", Courier, source-han-sans-traditional, monospace;
     display: block;
     padding-bottom: 3px;
     text-align: right;
     font-size: 14.4px;
     font-size: 1.44rem;
-    color: #cfc8c1; }
+    color: #575153; }
 
 /* logo */
 .logo {

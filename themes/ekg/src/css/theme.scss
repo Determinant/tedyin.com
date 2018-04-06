@@ -43,10 +43,10 @@ $color-post-date-bg:                    $color6;
 $color-indexbox-bg:                     $color5;
 $color-codebox-lineno-border-right:     $color4;
 $color-codebox-lineno-bg:               $color2;
-$color-msgbox-date-text:                $color1;
 $color-leftbar-bg:                      $color5;
 $color-leftbar-descr-text:              $color1;
 $color-leftbar-descr-bg:                $color-body-bg;
+$color-msgbox-date-text:                mix($color1, $color-leftbar-bg, 20%);
 $color-navs-toggle-bg:                  $color-leftbar-descr-bg;
 $color-navs-toggle-bar-bg:              $color-leftbar-descr-text;
 $color-pager-bg:                        $color-body-text;
@@ -431,7 +431,7 @@ pre.code {
     }
 
     .date {
-        font-family: $art-sans-font-stack;
+        font-family: $mono-font-stack;
         display: block;
         padding-bottom: 3px;
         text-align: right;
