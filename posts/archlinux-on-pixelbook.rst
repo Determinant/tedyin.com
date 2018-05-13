@@ -62,13 +62,20 @@ To get Archlinux working on your Pixelbook, try the following steps (in termina 
 
    lxc exec archlinux -- bash
 
-3. You can use bazel to build the Debian packages provided here [#]_, and convert them to Archlinux packages using debtap [#]_. The conversion isn't perfect, so don't forget to create a symlink from ``/usr/bin/sommelier`` to ``/opt/google/cros-containers/bin/sommelier``.
+3. Or use console to login:
 
-4. To avoid annoying retry messages, disable the ttys by ``systemctl disable getty@lxc-tty1``, and the other five.
+.. ccode:: bash
+   :number-lines: 1
 
-5. For those slackers, here [#]_ is the link to the converted packages.
+   lxc console archlinux
 
-6. Finally, a picture is worth a thousand words:
+4. You can use bazel to build the Debian packages provided here [#]_, and convert them to Archlinux packages using debtap [#]_. The conversion isn't perfect, so don't forget to create a symlink from ``/usr/bin/sommelier`` to ``/opt/google/cros-containers/bin/sommelier``.
+
+5. To avoid annoying retry messages, disable the ttys by ``systemctl disable getty@lxc-tty1``, and the other five.
+
+6. For those slackers, here [#]_ is the link to the converted packages.
+
+7. Finally, a picture is worth a thousand words:
 
 .. simpic:: /images/pixelbook-with-archlinux.png
    :class: align-center
