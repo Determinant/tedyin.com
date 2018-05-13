@@ -33,11 +33,12 @@ body {
   overflow: hidden; }
 
 img {
-  max-width: 90%;
+  max-width: 100%;
   cursor: pointer;
   border-radius: 3px;
   border: none;
-  overflow: hidden; }
+  overflow: hidden;
+  margin: 2rem; }
 
 img.align-center, .figure.align-center, object.align-center {
   display: block;
@@ -678,67 +679,67 @@ object.music-score {
     background-color: #3e363b; }
   #pushybox > li:first-child + li + li + li + li div {
     display: inline-block;
-    width: 307.39072px;
+    width: 307.3907232px;
     background-color: #41383e; }
   #pushybox > li:first-child + li + li + li + li + li div {
     display: inline-block;
-    width: 304.31682px;
+    width: 304.316815968px;
     background-color: #433a40; }
   #pushybox > li:first-child + li + li + li + li + li + li div {
     display: inline-block;
-    width: 301.27365px;
+    width: 301.2736478083px;
     background-color: #433a40; }
   #pushybox > li:first-child + li + li + li + li + li + li + li div {
     display: inline-block;
-    width: 298.26091px;
+    width: 298.2609113302px;
     background-color: #433a40; }
   #pushybox > li:first-child + li + li + li + li + li + li + li + li div {
     display: inline-block;
-    width: 295.2783px;
+    width: 295.2783022169px;
     background-color: #433a40; }
   #pushybox > li:first-child + li + li + li + li + li + li + li + li + li div {
     display: inline-block;
-    width: 292.32552px;
+    width: 292.3255191948px;
     background-color: #433a40; }
   #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li div {
     display: inline-block;
-    width: 289.40226px;
+    width: 289.4022640028px;
     background-color: #433a40; }
   #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li div {
     display: inline-block;
-    width: 286.50824px;
+    width: 286.5082413628px;
     background-color: #433a40; }
   #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li + li div {
     display: inline-block;
-    width: 283.64316px;
+    width: 283.6431589492px;
     background-color: #433a40; }
   #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li + li + li div {
     display: inline-block;
-    width: 280.80673px;
+    width: 280.8067273597px;
     background-color: #433a40; }
   #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li + li + li + li div {
     display: inline-block;
-    width: 277.99866px;
+    width: 277.9986600861px;
     background-color: #433a40; }
   #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li div {
     display: inline-block;
-    width: 275.21867px;
+    width: 275.2186734852px;
     background-color: #433a40; }
   #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li div {
     display: inline-block;
-    width: 272.46649px;
+    width: 272.4664867504px;
     background-color: #433a40; }
   #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li div {
     display: inline-block;
-    width: 269.74182px;
+    width: 269.7418218829px;
     background-color: #433a40; }
   #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li div {
     display: inline-block;
-    width: 267.0444px;
+    width: 267.044403664px;
     background-color: #433a40; }
   #pushybox > li:first-child + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li + li div {
     display: inline-block;
-    width: 264.37396px;
+    width: 264.3739596274px;
     background-color: #433a40; }
 
 #pushybox-container {
@@ -750,7 +751,7 @@ object.music-score {
   -ms-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
-  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(1, transparent), color-stop(0.98, black), color-stop(0.02, black), color-stop(0, transparent)); }
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(1, rgba(0, 0, 0, 0)), color-stop(0.98, black), color-stop(0.02, black), color-stop(0, rgba(0, 0, 0, 0))); }
   #pushybox-container .jspPane {
     width: 100% !important; }
 
