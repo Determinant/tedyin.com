@@ -6,6 +6,7 @@
 .. link:
 .. description:
 .. type: text
+.. location: Ithaca
 
 It's been a while since I last paid attention to the laptop market. With a
 little disappointment, the hardware spec hasn't been improved as much as I
