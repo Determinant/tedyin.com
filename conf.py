@@ -526,7 +526,7 @@ DEPLOY_COMMANDS = {
          'default': [
              'find /home/ymf/web/remote/nikola_output -type f -exec chmod 644 {} \;',
              'find /home/ymf/web/remote/nikola_output -type d -exec chmod 755 {} \;',
-             'rsync --delete -az -v /home/ymf/web/remote/nikola_output/ ymf@hydrogen.tedyin.com:~/web/tedyin/'],
+             'rsync --delete -az -v /home/ymf/web/remote/nikola_output/ ymf@do:~/web/tedyin/'],
          'obsolete': [
              #'rsync --delete -az -v /home/ymf/web/remote/nikola_output/ ted@irc.tedyin.com:~/http'],
              'rsync -e ssh --delete -az -v output/ fqj1994@omni.tuna.tsinghua.edu.cn:/home/fqj1994/public/tedyin.com']
