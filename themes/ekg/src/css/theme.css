@@ -336,7 +336,11 @@ pre.code {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
   filter: FlipH;
-  -ms-filter: "FlipH"; }
+  -ms-filter: "FlipH";
+  -moz-transform: scaleX(-1) skewX(10deg);
+  -o-transform: scaleX(-1) skewX(10deg);
+  -webkit-transform: scaleX(-1) skewX(10deg);
+  transform: scaleX(-1) skewX(10deg); }
   .logo-img object {
     width: 255px;
     height: 120px; }
