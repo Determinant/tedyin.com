@@ -37,7 +37,10 @@ of figuring out how to apply the changes to in theory make containers of any Lin
 I use Archlinux since my conversion from Gentoo two years ago. It is easy to setup and
 bare-bones enough to customize. It has very up-to-date binary packages and the rolling update does not break as frequently as in its early years. Archlinux also uses systemd as in Debian, so it shouldn't be hard to make it work in crostini.
 
-So far, I managed to run Archlinux as a container with working network, console, and Wayland display. I fixed the network issue using the lxc profile modification found here [#]_, and converted the Debian packages to make Wayland work. In theory, X11 should work as well, but due to some bug inside sommelier, I'm currently unable to run any X11-only program.
+.. role:: strike
+    :class: strike
+
+So far, I managed to run Archlinux as a container with working network, console, and Wayland display. I fixed the network issue using the lxc profile modification found here [#]_, and converted the Debian packages to make Wayland work. In theory, X11 should work as well, :strike:`but due to some bug inside sommelier, I'm currently unable to run any X11-only program` see the picture below.
 
 To get Archlinux working on your Pixelbook, try the following steps (in termina prompt):
 
@@ -80,7 +83,10 @@ To get Archlinux working on your Pixelbook, try the following steps (in termina 
 .. simpic:: /images/pixelbook-with-archlinux.png
    :class: align-center
 
-It shows a running Archlinux with a GUI terminal emulator, proper fonts, Rust, Texlive, etc.
+It shows a running Archlinux with a Wayland terminal emulator, proper fonts, Rust, Texlive, etc. Here is another picture showing X11 support with urxvt, fcitx IME and open file dialog of evince:
+
+.. simpic:: /images/pixelbook-with-archlinux2.png
+   :class: align-center
 
 .. [#] https://chromium.googlesource.com/chromiumos/containers/sommelier
 .. [#] https://linuxcontainers.org/
