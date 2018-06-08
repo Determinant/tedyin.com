@@ -617,7 +617,7 @@ CACHE_FOLDER = 'cache'
 # Default is:
 # GALLERY_FOLDERS = {"galleries": "galleries"}
 # More gallery options:
-# THUMBNAIL_SIZE = 180
+# THUMBNAIL_SIZE = 500
 MAX_IMAGE_SIZE = 2400
 # USE_FILENAME_AS_TITLE = True
 # EXTRA_IMAGE_EXTENSIONS = []
@@ -632,7 +632,7 @@ MAX_IMAGE_SIZE = 2400
 # The format is a dictionary of {source: relative destination}.
 
 IMAGE_FOLDERS = {'images': 'images'}
-# IMAGE_THUMBNAIL_SIZE = 400
+IMAGE_THUMBNAIL_SIZE = 512
 
 # #############################################################################
 # HTML fragments and diverse things that are used by the templates

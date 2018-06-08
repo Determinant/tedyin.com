@@ -28,10 +28,13 @@
 
 import os
 
-from docutils.parsers.rst import directives, Directive
+from docutils.parsers.rst import directives
+from docutils.parsers.rst.directives.images import Image, Figure
+
 from nikola.plugin_categories import RestExtension
-from docutils import nodes
-from PIL import Image
+import docutils
+from xml.dom.minidom import parseString
+from PIL import Image as Image2
 
 class Plugin(RestExtension):
     """Plugin for thumbnail directive."""
@@ -45,24 +48,24 @@ class Plugin(RestExtension):
         return super(Plugin, self).set_site(site)
 
 
-class Thumbnail(Directive):
+class Thumbnail(Figure):
     """Thumbnail directive for reST."""
 
     def align(argument):
         """Return thumbnail alignment."""
         return directives.choice(argument, Image.align_values)
 
-    required_arguments = 1
-    optional_arguments = 0
-    final_argument_whitespace = True
-    option_spec = {'alt': directives.unchanged,
-                   'height': directives.length_or_unitless,
-                   'width': directives.length_or_percentage_or_unitless,
-                   'scale': directives.percentage,
-                   'align': align,
-                   'name': directives.unchanged,
-                   'target': directives.unchanged_required,
-                   'class': directives.class_option}
+    def figwidth_value(argument):
+        """Return figure width."""
+        if argument.lower() == 'image':
+            return 'image'
+        else:
+            return directives.length_or_percentage_or_unitless(argument, 'px')
+
+    option_spec = Image.option_spec.copy()
+    option_spec['figwidth'] = figwidth_value
+    option_spec['figclass'] = directives.class_option
+    has_content = True
 
     def run(self):
         """Run the thumbnail directive."""
@@ -73,20 +76,19 @@ class Thumbnail(Directive):
         else:
             self.arguments[0] = '.thumbnail'.join(os.path.splitext(uri))
         self.options['target'] = uri
-        with Image.open('.' + uri) as im:
+        with Image2.open('.' + uri) as im:
             ow, oh = im.size
-        attrs = {'data-orig-width': ow,
-                'data-orig-height': oh,
-                'src': self.arguments[0],
+        attrs = {'data-orig-width': str(ow),
+                'data-orig-height': str(oh),
                 'data-target': uri}
-        if 'class' in self.options:
-            classes = self.options['class']
-        else:
-            classes = []
-        classes.append('simpic')
-        attrs['class'] = ' '.join(classes)
-        raw_html = '<img {0}>'.format(
-                        ' '.join(["{0}=\"{1}\"".format(i[0], i[1])
-                                    for i in attrs.items()]))
-        node = nodes.raw('', raw_html, format='html')
+        (orig_node,) = Image.run(self)
+        html_doc = docutils.utils.new_document("")
+        html_doc.append(orig_node)
+        html_root = parseString(docutils.core.publish_from_doctree(html_doc, writer_name='html').decode())
+        html_node = html_root.getElementsByTagName("img")[0]
+        for key, val in attrs.items():
+            html_node.setAttribute(key, val)
+        html_node.setAttribute('class', "{0} simpic".format(html_node.getAttribute('class')))
+        raw_html = html_node.toxml()
+        node = docutils.nodes.raw('', raw_html, format='html')
         return [node]
