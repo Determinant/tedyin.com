@@ -775,8 +775,8 @@ object.music-score {
 }
 
 
-.mCSB_scrollTools {
-    .mCSB_dragger, .mCSB_dragger.mCSB_dragger_onDrag {
+.mCS-minimal.mCSB_scrollTools {
+    .mCSB_dragger { //, .mCSB_dragger.mCSB_dragger_onDrag {
         .mCSB_dragger_bar {
             background-color: $color0;
             filter: alpha(opacity=30); /* IE */
@@ -785,6 +785,7 @@ object.music-score {
                 filter: alpha(opacity=50); /* IE */
                 background-color: rgba(255, 255, 255, 0.50);
             }
+            margin: 14px auto 0 auto;
         }
     }
 }

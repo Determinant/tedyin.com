@@ -621,12 +621,13 @@ object.music-score {
 .mCSB_inside > .mCSB_container {
   margin: 0; }
 
-.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+.mCS-minimal.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
   background-color: #ffffff;
   filter: alpha(opacity=30);
   /* IE */
-  background-color: rgba(255, 255, 255, 0.3); }
-  .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar:hover, .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 14px auto 0 auto; }
+  .mCS-minimal.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar:hover {
     filter: alpha(opacity=50);
     /* IE */
     background-color: rgba(255, 255, 255, 0.5); }
