@@ -47,28 +47,24 @@ To get Archlinux working on your Pixelbook, try the following steps (in termina 
 0. Adjust the profile for networking:
 
 .. ccode:: bash
-   :number-lines: 1
 
    lxc profile set default security.syscalls.blacklist "keyctl errno 38"
 
 1. Create and run the container:
 
 .. ccode:: bash
-   :number-lines: 1
 
    run_container.sh --container_name archlinux --user ymf --lxd_image archlinux/current --lxd_remote https://us.images.linuxcontainers.org/
 
 2. Enter the root shell:
 
 .. ccode:: bash
-   :number-lines: 1
 
    lxc exec archlinux -- bash
 
 3. Or use console to login:
 
 .. ccode:: bash
-   :number-lines: 1
 
    lxc console archlinux
 

@@ -195,7 +195,7 @@ function remove_element(e) {
     e && e.parentNode && e.parentNode.removeChild(e);
 }
 
-function code_box(bid, data, linenostart) {
+function code_box(bid, data, linenostart, linenos) {
     var collapsed_start = 50;
     var collapsed_trigger = 60;
     var div = document.getElementById("codebox_" + bid);
@@ -224,7 +224,8 @@ function code_box(bid, data, linenostart) {
         lns.appendChild(ln);
     }
 
-    div.appendChild(lwrapper);
+    if (linenos)
+        div.appendChild(lwrapper);
     div.appendChild(wrapper);
 
     lineno.appendChild(lns);

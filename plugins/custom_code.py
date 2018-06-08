@@ -15,9 +15,10 @@ class CustomHtmlFormatter(HtmlFormatter):
     aliases = ['chtml']
     filenames = ['*.html', '*.htm']
 
-    def __init__(self, linenostart=1):
-        super(CustomHtmlFormatter, self).__init__(linenos=None)
+    def __init__(self, linenostart=1, mylinenos=False):
+        super(CustomHtmlFormatter, self).__init__(linenos=False)
         self.linenostart = linenostart
+        self.mylinenos = mylinenos
     def wrap(self, source, outfile):
         return self._wrap_code(source)
 
@@ -25,7 +26,8 @@ class CustomHtmlFormatter(HtmlFormatter):
         box_id = uuid.uuid4()
         yield 0, '<pre id="codebox_{0}" style="display:none;"><script id="cbjs_{0}">code_box("{0}", '.format(box_id)
         yield 0, json.dumps([t for i, t in source if i == 1])
-        yield 0, ', {0});</script></pre>\n'.format(self.linenostart)
+        yield 0, ', {0}, {1});</script></pre>\n'.format(self.linenostart,
+                                                        "true" if self.mylinenos else "false")
 
 class CodeBlock(Directive):
     """Parse and mark up content of a code block."""
@@ -64,22 +66,22 @@ class CodeBlock(Directive):
             raise self.error('Cannot find pygments lexer for language "{0}"'.format(language))
 
         if 'number-lines' in self.options:
-            linenos = 'table'
+            linenos = True
             # optional argument `startline`, defaults to 1
             try:
                 linenostart = int(self.options['number-lines'] or 1)
             except ValueError:
                 raise self.error(':number-lines: with non-integer start value')
         else:
+            linenostart = 1
             linenos = False
-            linenostart = 1  # actually unused
 
         if self.site.invariant:  # for testing purposes
             anchor_ref = 'rest_code_' + 'fixedvaluethatisnotauuid'
         else:
             anchor_ref = 'rest_code_' + uuid.uuid4().hex
 
-        formatter = CustomHtmlFormatter(linenostart=linenostart)
+        formatter = CustomHtmlFormatter(linenostart=linenostart, mylinenos=linenos)
         out = pygments.highlight(code, lexer, formatter)
         node = nodes.raw('', out, format='html')
 

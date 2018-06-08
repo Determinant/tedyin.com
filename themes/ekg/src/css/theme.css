@@ -259,8 +259,6 @@ pre.code {
     text-align: right;
     padding-right: 5px;
     padding-left: 5px;
-    border-right: 2px solid #483e42;
-    margin-right: 10px;
     min-width: 30px;
     background-color: #433a40;
     position: relative; }
@@ -280,6 +278,7 @@ pre.code {
   pre.code .lineno {
     position: relative; }
   pre.code .wrapper {
+    padding-left: 5px;
     padding-right: 5px;
     overflow-x: hidden;
     position: relative; }
