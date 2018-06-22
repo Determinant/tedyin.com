@@ -1,7 +1,7 @@
 .. title: Write A Diary with Sphinx
 .. slug: writing-a-diary-using-sphinx
 .. date: 2018-06-22 13:49:54 UTC+08:00
-.. tags: sphinx, python, linux, hacking
+.. tags: sphinx, reST, python, hacking
 .. category: coding
 .. link:
 .. description:
