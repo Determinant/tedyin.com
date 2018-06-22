@@ -1,7 +1,7 @@
 .. title: Archlinux on Pixelbook
 .. slug: archlinux-on-pixelbook
 .. date: 2018-05-13 11:19:26 UTC+08:00
-.. tags: hacking
+.. tags: archlinux, pixelbook, hacking
 .. category: life
 .. link:
 .. description:

@@ -1,7 +1,7 @@
 .. title: Scripts for Adding Bookmarks to a PDF
 .. slug: scripts-for-adding-bookmarks-to-a-pdf
 .. date: 2015-12-26 17:26:53 UTC+08:00
-.. tags: hacking, pdf
+.. tags: bookmarks, pdf, hacking
 .. category: coding
 .. link: 
 .. description: 

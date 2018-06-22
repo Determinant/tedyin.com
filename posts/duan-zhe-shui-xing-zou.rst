@@ -1,7 +1,7 @@
 .. title: 端着水行走
 .. slug: duan-zhe-shui-xing-zou
 .. date: 2013/07/06 21:37:29
-.. tags: My Life, 悟
+.. tags: 悟
 .. category: life
 .. link: 
 .. description: 

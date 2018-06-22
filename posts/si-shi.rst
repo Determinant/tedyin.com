@@ -1,7 +1,7 @@
 .. title: 四時
 .. slug: si-shi
 .. date: 2013/01/16 10:46:27
-.. tags: 悟, SJTU, UPGRADE
+.. tags: 悟, SJTU, upgrade
 .. category: life
 
 ------

@@ -1,6 +1,6 @@
 .. link: 
 .. description: 
-.. tags: lyrics, My Life
+.. tags: lyrics
 .. category: life
 .. date: 2013/11/14 23:45:09
 .. title: 沒時間
