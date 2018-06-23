@@ -174,7 +174,7 @@ h1, h2, h3, h4 {
     }
 }
 
-pre, blockquote, p {
+pre, blockquote, p, img {
     margin-top: 0;
     @include to_rem(margin-bottom, 2.5 * 0.8);
 

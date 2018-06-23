@@ -94,13 +94,13 @@ h4 {
   letter-spacing: 0rem;
   line-height: 1.1; }
 
-pre, blockquote, p {
+pre, blockquote, p, img {
   margin-top: 0;
   margin-bottom: 20px;
   margin-bottom: 2rem; }
-  pre:last-child, blockquote:last-child, p:last-child {
+  pre:last-child, blockquote:last-child, p:last-child, img:last-child {
     margin-bottom: 0 !important; }
-  pre:first-child, blockquote:first-child, p:first-child {
+  pre:first-child, blockquote:first-child, p:first-child, img:first-child {
     margin-top: 0 !important; }
 
 strong {
