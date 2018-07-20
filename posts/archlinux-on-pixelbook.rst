@@ -84,6 +84,24 @@ It shows a running Archlinux with a Wayland terminal emulator, proper fonts, Rus
 .. simpic:: /images/pixelbook-with-archlinux2.png
    :class: align-center
 
+Troubleshooting
+---------------
+
+- If X11 programs refuse to start and complain about keycodes, try to comment
+  out the following lines in ``/usr/share/X11/xkb/keycodes/evdev``:
+
+  ::
+
+      ...
+      <I255> = 255;   // #define KEY_RFKILL              247
+
+      //<I372> = 372;   // #define KEY_FAVORITES           364
+      //<I374> = 374;   // #define KEY_KEYBOARD            366
+      ...
+
+  This is because sommelier does not support the keycodes only exist in the latest version of ``xkeyboard-config``.
+
+
 .. [#] https://chromium.googlesource.com/chromiumos/containers/sommelier
 .. [#] https://linuxcontainers.org/
 .. [#] https://github.com/lxc/lxd/issues/4071
