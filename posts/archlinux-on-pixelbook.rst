@@ -13,7 +13,7 @@ little disappointment, the hardware spec hasn't been improved as much as I
 expected. Ultrabooks are still mostly shipped with two typical combinations: 8G RAM
 with i5 or 16G RAM with i7. I don't need i7 because I weigh
 portability over performance. I have my nice Linux desktop for performance
-demanded tasks and I would like to have a skinny laptop that is
+demanding tasks and I would like to have a skinny laptop that is
 friendly to both surfing and coding. Moreover, I've been waiting for a "dream" machine
 that can properly serve both as a laptop and a tablet. Pixelbook seems just right.
 
