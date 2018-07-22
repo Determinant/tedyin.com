@@ -221,7 +221,7 @@ div.line-block div.line-block {
   .postbox .post-title, .postbox .post-text, .postbox .post-preamble {
     width: 513px; }
 
-.singlepost .post-preamble {
+.singlepost .post-text, .singlepost .post-preamble {
   margin-bottom: 40px; }
 
 /* indexbox */

@@ -321,8 +321,10 @@ div.line-block div.line-block {
     }
 }
 
-.singlepost .post-preamble {
-    margin-bottom: 40px;
+.singlepost {
+    .post-text, .post-preamble {
+        margin-bottom: 40px;
+    }
 }
 
 /* indexbox */
