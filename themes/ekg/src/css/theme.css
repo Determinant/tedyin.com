@@ -223,6 +223,8 @@ div.line-block div.line-block {
 
 .singlepost .post-text, .singlepost .post-preamble {
   margin-bottom: 40px; }
+.singlepost .tag {
+  background-color: #644957; }
 
 /* indexbox */
 .indexbox {
@@ -563,10 +565,11 @@ ul.pager {
 
 /* tags */
 ul.tags {
-  line-height: 1.67;
+  font-size: 12.8px;
+  font-size: 1.28rem;
+  line-height: 1.7;
   display: inline-block;
-  padding: 0;
-  margin: 0; }
+  padding: 0; }
   ul.tags > li {
     display: inline-block;
     vertical-align: middle; }

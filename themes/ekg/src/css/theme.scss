@@ -54,6 +54,7 @@ $color-pager-text:                      $color-body-bg;
 $color-pager-bg-hover:                  $color-indexbox-bg;
 $color-pager-text-hover:                $color-body-text;
 $color-tag-bg:                          $color6;
+$color-tag-bg2:                         mix($color-tag-bg, $color-body-text, 90%);
 $color-preamble-text-shadow:                 $color-indexbox-bg;
 $color-tag-text:                        $color1;
 $color-msgbox-bg:                       $color6;
@@ -324,6 +325,9 @@ div.line-block div.line-block {
 .singlepost {
     .post-text, .post-preamble {
         margin-bottom: 40px;
+    }
+    .tag {
+        background-color: $color-tag-bg2;
     }
 }
 
@@ -704,10 +708,10 @@ ul.pager {
 /* tags */
 
 ul.tags {
-    line-height: 1.67;
+    @include font-size($font-size-body-ssmaller);
+    line-height: 1.7;
     display: inline-block;
     padding: 0;
-    margin: 0;
 
     > li {
         display: inline-block;
