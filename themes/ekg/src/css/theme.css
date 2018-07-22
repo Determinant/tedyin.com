@@ -201,6 +201,8 @@ div.line-block div.line-block {
     margin-top: 15px; }
   .postbox .post-tags {
     margin-bottom: 5px; }
+    .postbox .post-tags .tags {
+      margin: 0px; }
   .postbox .post-date {
     margin-bottom: 10px;
     margin-right: -30px;
