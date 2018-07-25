@@ -132,7 +132,7 @@ body {
 img {
     max-width: 100%;
     cursor: pointer;
-    border-radius: 3px;
+    @include border-radius(3px);
     border: none;
     overflow: hidden;
 }
