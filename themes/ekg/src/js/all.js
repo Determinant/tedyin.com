@@ -26,7 +26,7 @@ $(function() {
         autoHideScrollbar: true,
         autoDraggerLength: true,
         scrollInertia: 200,
-        mousewheel: { enable: true, axis: 'y', scrollAmount: 50}
+        mouseWheel: { enable: true, axis: 'y', scrollAmount: 50}
     });
     $('.hscroll-pane').mCustomScrollbar({
         axis: 'x',
@@ -34,7 +34,8 @@ $(function() {
         autoHideScrollbar: true,
         autoDraggerLength: true,
         scrollInertia: 100,
-        mousewheel: { enable: false }
+        mouseWheel: { enable: true, axis: 'x' },
+        documentTouchScroll: true
     });
     long_polling();
     $('.navbar-toggle').each(function () {

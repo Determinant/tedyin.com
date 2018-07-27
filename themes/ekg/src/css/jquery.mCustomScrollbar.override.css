@@ -1,0 +1,19 @@
+.mCustomScrollbar,
+.mCustomScrollbar.mCS_touch_action,
+.mCustomScrollbar.mCS_touch_action .mCS-aviva.mCSB_scrollTools {
+    -ms-touch-action: auto;
+    touch-action: auto;
+}
+.mCustomScrollBox {
+    -ms-touch-action: pan-x pinch-zoom;
+    touch-action: pan-x pinch-zoom;
+}
+
+.mCustomScrollBox.mCSB_vertical_horizontal {
+    -ms-touch-action: pinch-zoom;
+    touch-action: pinch-zoom;
+}
+.mCustomScrollBox.mCSB_horizontal {
+    -ms-touch-action: pan-y pinch-zoom;
+    touch-action: pan-y pinch-zoom;
+}

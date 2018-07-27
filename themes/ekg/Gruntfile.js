@@ -48,12 +48,20 @@ module.exports = function(grunt) {
         concat: {
             css: {
                 files: {
-                    'build/css/all.min.css': gen_filename(build_dir + '/css', '.min.css', get_basename(css_flist)),
+                    'build/css/all.min.css': ['build/css/jquery.mCustomScrollbar.min.css',
+                                            'build/css/jquery.mCustomScrollbar.override.min.css'].concat(
+                                                gen_filename(build_dir + '/css', '.min.css', get_basename(css_flist))),
                     'build/css/gphotos_all.min.css': gen_filename(build_dir + '/css', '.min.css', get_basename(gphotos_css_flist))
                 }
             }
         },
         cssmin: {
+            mscrollbar: {
+                files: {'build/css/jquery.mCustomScrollbar.min.css':
+                        'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
+                        'build/css/jquery.mCustomScrollbar.override.min.css':
+                        'src/css/jquery.mCustomScrollbar.override.css'}
+            },
             fonts: {
                 files: {'build/fonts/fonts.min.css': 'src/fonts/fonts.css'}
             },
