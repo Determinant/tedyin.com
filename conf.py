@@ -129,7 +129,7 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ('/categories/index.html', '% Tags'),
         ('/stories/cooking/', '" Cooking'),
-        ('https://500px.com/Determinant', '// 500px'),
+        ('/git/', '// Code'),
         ('https://www.cs.cornell.edu/~tedyin/', '# About'),
         ('/rss.xml', '/* RSS */'),
     ),
