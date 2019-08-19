@@ -117,7 +117,9 @@ blockquote {
   font-weight: 300;
   padding: 10px 10px 10px 15px;
   border-left: 5px solid #433a40;
-  background-color: #483e42; }
+  background-color: #483e42;
+  margin-left: 0px;
+  margin-right: 0px; }
 
 blockquote:before,
 blockquote:after {
@@ -257,13 +259,13 @@ pre.code {
   border: 0;
   background-color: #483e42; }
   pre.code .lwrapper, pre.code pre.code, pre.code .wrapper {
-    padding-top: 5px;
-    padding-bottom: 5px; }
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem; }
   pre.code .lwrapper {
     float: left;
     text-align: right;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
     min-width: 30px;
     background-color: #433a40;
     position: relative; }
@@ -283,8 +285,8 @@ pre.code {
   pre.code .lineno {
     position: relative; }
   pre.code .wrapper {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
     overflow-x: hidden;
     position: relative; }
     pre.code .wrapper .code-more {
