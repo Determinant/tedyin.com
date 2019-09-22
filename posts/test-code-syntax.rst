@@ -1,11 +1,10 @@
 .. title: Code Syntax Highlight
 .. slug: test-code-syntax
 .. date: 2014/07/06 06:07:44
-.. tags: mathjax
-.. link:
+.. tags: 
 .. category: coding
-.. description:
 .. type: text
+.. has_math: yes
 .. location: Singapore
 
 Test music score:

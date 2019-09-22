@@ -14,7 +14,7 @@
           ${post_helper.html_tags(post)}
         </div>
         <div class="post-date">
-          ${post.date.strftime(date_format)} @ ${post.meta('location') or 'Earth'}
+          ${post.formatted_date(date_format)} @ ${post.meta('location') or 'Earth'}
         </div>
       </div>
       <div class="post-text">

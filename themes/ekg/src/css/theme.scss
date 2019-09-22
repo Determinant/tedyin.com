@@ -22,12 +22,14 @@ $main-line-height: 1.45;
 
 /* colors */
 $color0: #ffffff; /* white */
-$color1: #cfc8c1; /* base text color */
+$color1: #C6BBA8; /* base text color */
+$color1a: #fbf1c7; /* base text color */
 
-$color2: #433a40; /* base bg color, main color 1 */
-$color4: #483e42; /* main color 1.1 */
-$color5: #393337; /* sidebar bg color, main color 2 */
-$color6: #583b4b; /* main color 3 */
+$color2: #393534; /* base bg color, main color 1 */
+$color4: #33302F; /* main color 1.1 */
+$color5: #282828; /* sidebar bg color, main color 2 */
+$color7: #fabd2f; /* main color 3 */
+$color6: #fe8019; /* main color 3.1 */
 
 /* color mappings */
 $color-body-text:                       $color1;
@@ -35,14 +37,15 @@ $color-body-bg:                         $color2;
 $color-anchor-text:                     $color1;
 $color-anchor-text-focus:               $color1;
 $color-anchor-text-hover:               $color0;
-$color-bquote-border-left:              $color2;
+$color-bquote-border-left:              mix(#000, $color4, 10%);
 $color-bquote-bg:                       $color4;
 $color-leftcolumn-bg:                   $color5;
-$color-post-date-text:                  $color1;
+$color-post-date-text:                  $color2;
 $color-post-date-bg:                    $color6;
+$color-post-date-bg2:                   $color7;
 $color-indexbox-bg:                     $color5;
 $color-codebox-lineno-border-right:     $color4;
-$color-codebox-lineno-bg:               $color2;
+$color-codebox-lineno-bg:               $color-bquote-border-left;
 $color-leftbar-bg:                      $color5;
 $color-leftbar-descr-text:              $color1;
 $color-leftbar-descr-bg:                $color-body-bg;
@@ -55,8 +58,8 @@ $color-pager-bg-hover:                  $color-indexbox-bg;
 $color-pager-text-hover:                $color-body-text;
 $color-tag-bg:                          $color6;
 $color-tag-bg2:                         mix($color-tag-bg, $color-body-text, 90%);
-$color-preamble-text-shadow:                 $color-indexbox-bg;
-$color-tag-text:                        $color1;
+$color-preamble-text-shadow:            $color1;
+$color-tag-text:                        $color2;
 $color-msgbox-bg:                       $color6;
 $color-brand-glow:                      $color-body-text;
 
@@ -317,7 +320,7 @@ div.line-block div.line-block {
     .post-preamble {
         font-family: $mono-font-stack;
         @include font-size($font-size-body-ssmaller);
-        text-shadow: 1px 2px 0 $color-preamble-text-shadow;
+        //text-shadow: 1px 1px 0 $color-preamble-text-shadow;
     }
 
     .post-title, .post-text, .post-preamble {
@@ -341,7 +344,8 @@ div.line-block div.line-block {
     background-color: $color-indexbox-bg;
     @include transition(0.2s);
     .post-date {
-        background-color: mix($color-post-date-bg, $color-body-bg, 50%);
+        background-color: $color-post-date-bg2;
+        //mix($color-post-date-bg2, $color-body-bg, 50%);
     }
 }
 

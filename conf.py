@@ -195,7 +195,8 @@ TIMEZONE = 'Asia/Shanghai'
 
 # Date format used to display post dates. (translatable)
 # (str used by datetime.datetime.strftime)
-DATE_FORMAT = '%b %d, %Y %H:%M'
+DATE_FORMAT = 'MMM dd, YYYY HH:mm'
+#DATE_FORMAT = 'YYYY-MM-dd HH:mm'
 
 # Date format used to display post dates, if local dates are used. (translatable)
 # (str used by moment.js)
@@ -1066,7 +1067,7 @@ INDEX_DISPLAY_POST_COUNT = 5
 
 # If you hate "Filenames with Capital Letters and Spaces.md", you should
 # set this to true.
-UNSLUGIFY_TITLES = True
+FILE_METADATA_UNSLUGIFY_TITLES = True
 
 # Additional metadata that is added to a post when creating a new_post
 # ADDITIONAL_METADATA = {}
